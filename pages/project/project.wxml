@@ -1,0 +1,102 @@
+<view>
+
+    <view class="swiper">
+    </view>
+    <view class="filter">
+        <view class="filter-items">
+            <view class="filter-item">发布日期</view>
+            <view class="filter-item">距离远近</view>
+        </view>
+        <view>筛选</view>
+    </view>
+    <view class="results">
+        <view class="result-item">
+            <view class="result-title">“助力创城，文明交通我先行”系列活动</view>
+            <view class="result-content">
+                <view>北京市密云区红十字会志愿服务队</view>
+                <view>2022-07-12</view>
+            </view>
+            <view class="result-info">
+                <view style="margin-right:20rpx">计划：23 </view><view>已招募：20</view>
+                <view style="margin-left:30rpx" class="cu-tag line-gray round">丰台区</view>
+            </view>
+        </view>
+        <view class="result-item">
+            <view class="result-title">“助力创城，文明交通我先行”系列活动</view>
+            <view class="result-content">
+                <view>北京市密云区红十字会志愿服务队</view>
+                <view>2022-07-12</view>
+            </view>
+            <view class="result-info">
+                <view style="margin-right:20rpx">计划：23 </view><view>已招募：20</view>
+                <view style="margin-left:30rpx" class="cu-tag line-gray round">丰台区</view>
+            </view>
+        </view>
+        <view class="result-item">
+            <view class="result-title">“助力创城，文明交通我先行”系列活动</view>
+            <view class="result-content">
+                <view>北京市密云区红十字会志愿服务队</view>
+                <view>2022-07-12</view>
+            </view>
+            <view class="result-info">
+                <view style="margin-right:20rpx">计划：23 </view><view>已招募：20</view>
+                <view style="margin-left:30rpx" class="cu-tag line-gray round">丰台区</view>
+            </view>
+        </view>
+        <view class="result-item">
+            <view class="result-title">“助力创城，文明交通我先行”系列活动</view>
+            <view class="result-content">
+                <view>北京市密云区红十字会志愿服务队</view>
+                <view>2022-07-12</view>
+            </view>
+            <view class="result-info">
+                <view style="margin-right:20rpx">计划：23 </view><view>已招募：20</view>
+                <view style="margin-left:30rpx" class="cu-tag line-gray round">丰台区</view>
+            </view>
+        </view>
+        <view class="result-item">
+            <view class="result-title">“助力创城，文明交通我先行”系列活动</view>
+            <view class="result-content">
+                <view>北京市密云区红十字会志愿服务队</view>
+                <view>2022-07-12</view>
+            </view>
+            <view class="result-info">
+                <view style="margin-right:20rpx">计划：23 </view><view>已招募：20</view>
+                <view style="margin-left:30rpx" class="cu-tag line-gray round">丰台区</view>
+            </view>
+        </view>
+        <view class="result-item">
+            <view class="result-title">“助力创城，文明交通我先行”系列活动</view>
+            <view class="result-content">
+                <view>北京市密云区红十字会志愿服务队</view>
+                <view>2022-07-12</view>
+            </view>
+            <view class="result-info">
+                <view style="margin-right:20rpx">计划：23 </view><view>已招募：20</view>
+                <view style="margin-left:30rpx" class="cu-tag line-gray round">丰台区</view>
+            </view>
+        </view>
+        <view class="result-item">
+            <view class="result-title">“助力创城，文明交通我先行”系列活动</view>
+            <view class="result-content">
+                <view>北京市密云区红十字会志愿服务队</view>
+                <view>2022-07-12</view>
+            </view>
+            <view class="result-info">
+                <view style="margin-right:20rpx">计划：23 </view><view>已招募：20</view>
+                <view style="margin-left:30rpx" class="cu-tag line-gray round">丰台区</view>
+            </view>
+        </view>
+        <view class="result-item">
+            <view class="result-title">“助力创城，文明交通我先行”系列活动</view>
+            <view class="result-content">
+                <view>北京市密云区红十字会志愿服务队</view>
+                <view>2022-07-12</view>
+            </view>
+            <view class="result-info">
+                <view style="margin-right:20rpx">计划：23 </view><view>已招募：20</view>
+                <view style="margin-left:30rpx" class="cu-tag line-gray round">丰台区</view>
+            </view>
+        </view>
+    </view>
+</view>

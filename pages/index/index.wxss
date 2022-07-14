@@ -1,0 +1,145 @@
+.container {
+
+}
+
+.header {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search {
+    height: 40px;
+    width: 100%;
+    padding: 0 20px;
+    background-color: #f8f8f9;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search text {
+    width: 5%;
+}
+
+.search input {
+    width: 90%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+
+.grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 20rpx;
+    background-color: white;
+    padding: 20rpx 0;
+}
+
+.grid-item {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.grid-item image {
+    height: 80rpx;
+    width: 80rpx;
+    margin-bottom: 10rpx;
+}
+
+.tips {
+    margin: 20rpx 0;
+    height: 60rpx;
+    width: 100%;
+    background-color: white;
+}
+
+.projects {
+    padding: 30rpx;
+    background-color: white;
+}
+
+.p-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.p-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 30rpx 0;
+}
+
+.p-item-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 150rpx;
+    width: calc(100% - 220rpx);
+}
+
+.p-item-desc {
+    font-size: 23rpx;
+    color: #515a6e;
+}
+
+.more {
+    color: #515a6e;
+}
+
+.p-item-status {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 23rpx;
+    color: #515a6e;
+    width: 100%;
+}
+
+.shadow {
+    box-shadow: 0 2px 8px#f0f1f2;
+}
+
+.p-item image {
+    height: 150rpx;
+    width: 200rpx;
+    margin-right: 20rpx;
+    box-shadow: 0 2px 8px#f0f1f2;
+}
+
+.team {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 30rpx 0;
+}
+.team-item {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30rpx;
+}
+.team-item image{
+    height: 300rpx;
+    margin-bottom: 30rpx;
+}

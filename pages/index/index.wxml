@@ -1,0 +1,118 @@
+<view class="container">
+    <view class="header">
+        <view class="search">
+            <text class="cuIcon-search lg text-gray"></text>
+            <input placeholder="搜索项目，团体，文章"/>
+            <text class="cuIcon-scan lg text-gray"></text>
+        </view>
+    </view>
+    <swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true"
+            autoplay="true"
+            interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3"
+            indicator-active-color="#0081ff">
+        <swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
+            <view class="swiper-item">
+                <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+                <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}"
+                       objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+            </view>
+        </swiper-item>
+    </swiper>
+    <view class="grid">
+        <view class="grid-item" bindtap="navigate" data-url="userRegister">
+            <image src="../../images/icons/personal.png"/>
+            个人注册
+        </view>
+        <view class="grid-item" bindtap="navigate" data-url="groupRegister">
+            <image src="../../images/icons/personal.png"/>
+            团体注册
+        </view>
+        <view class="grid-item" bindtap="switchTab" data-url="project">
+            <image src="../../images/icons/personal.png"/>
+            加入项目
+        </view>
+        <view class="grid-item" bindtap="switchTab" data-url="team">
+            <image src="../../images/icons/personal.png"/>
+            加入团体
+        </view>
+        <view class="grid-item">
+            <image src="../../images/icons/personal.png"/>
+            服务信息查询
+        </view>
+        <view class="grid-item">
+            <image src="../../images/icons/personal.png"/>
+            自助服务
+        </view>
+        <view class="grid-item">
+            <image src="../../images/icons/personal.png"/>
+            常见问题
+        </view>
+        <view class="grid-item">
+            <image src="../../images/icons/personal.png"/>
+            帮助中文
+        </view>
+    </view>
+    <view class="tips">
+    </view>
+    <view class="projects">
+        <view class="p-header">
+            <view>志愿项目</view>
+            <view class="more">更多 ></view>
+        </view>
+        <view class="p-item">
+            <image src="../../images/icons/love.png"/>
+            <view class="p-item-info">
+                <view class="p-item-title">丰台区-北京市核算志愿者招募</view>
+                <view class="p-item-desc">中华医学会北京分会秘书处志愿服务队</view>
+                <view class="p-item-status">
+                    <view>招募进展：7602/10000</view>
+                    <view>招募截止：2022-12-31</view>
+                </view>
+            </view>
+        </view>
+        <view class="p-item">
+            <image src="../../images/icons/love.png"/>
+            <view class="p-item-info">
+                <view class="p-item-title">丰台区-北京市核算志愿者招募</view>
+                <view class="p-item-desc">中华医学会北京分会秘书处志愿服务队</view>
+                <view class="p-item-status">
+                    <view>招募进展：7602/10000</view>
+                    <view>招募截止：2022-12-31</view>
+                </view>
+            </view>
+        </view>
+        <view class="p-item">
+            <image src="../../images/icons/love.png"/>
+            <view class="p-item-info">
+                <view class="p-item-title">丰台区-北京市核算志愿者招募</view>
+                <view class="p-item-desc">中华医学会北京分会秘书处志愿服务队</view>
+                <view class="p-item-status">
+                    <view>招募进展：7602/10000</view>
+                    <view>招募截止：2022-12-31</view>
+                </view>
+            </view>
+        </view>
+        <view class="p-header" style="margin-top:60rpx;">
+            <view>志愿团体</view>
+            <view class="more">更多 ></view>
+        </view>
+        <view class="team">
+            <view class="team-item">
+                <image class="shadow" src="../../images/icons/love.png"/>
+                aaa志愿团体
+            </view>
+            <view class="team-item">
+                <image class="shadow" src="../../images/icons/love.png"/>
+                bbb志愿团体
+            </view>
+            <view class="team-item">
+                <image class="shadow" src="../../images/icons/love.png"/>
+                cccc志愿团体
+            </view>
+            <view class="team-item">
+                <image class="shadow" src="../../images/icons/love.png"/>
+                aaad志愿团体
+            </view>
+        </view>
+    </view>
+</view>

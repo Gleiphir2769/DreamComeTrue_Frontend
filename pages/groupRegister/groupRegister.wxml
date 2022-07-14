@@ -1,0 +1,88 @@
+<form>
+	<view class="cu-form-group margin-top">
+		<view class="title">用户名</view>
+		<input placeholder="以字母开头，由数字和字母组成"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">密码</view>
+		<input placeholder="必须包含大小写字母和数字"></input>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">电子邮箱</view>
+		<input placeholder="请输入邮箱"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">验证码</view>
+		<input placeholder="请输入邮箱验证码"></input>
+		<button class="cu-btn bg-green shadow">发送验证码</button>
+	</view>
+
+  <view class="cu-form-group margin-top">
+		<view class="title">团体名称</view>
+		<input placeholder="请输入团体名称"></input>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">登记状态</view>
+		<picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+			<view class="picker">
+				{{index?picker[index]:'未登记的志愿服务组织'}}
+			</view>
+		</picker>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">联络团体</view>
+		<picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+			<view class="picker">
+				{{index?picker[index]:'山东省慈善总会义工团'}}
+			</view>
+		</picker>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">团体注册码</view>
+		<input placeholder="请与联络团体沟通申请注册码"></input>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">主管单位类型</view>
+		<picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+			<view class="picker">
+				{{index?picker[index]:'党政机关'}}
+			</view>
+		</picker>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">主管单位名称</view>
+		<input placeholder="请输入主管单位名称"></input>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">所在区域</view>
+		<picker mode="region" bindchange="RegionChange" value="{{region}}" custom-item="{{customItem}}">
+			<view class="picker">
+				{{region[0]}}，{{region[1]}}，{{region[2]}}
+			</view>
+		</picker>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">详细地址</view>
+		<input placeholder="请输入组织详细地址"></input>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">服务类别</view>
+		<picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+			<view class="picker">
+				{{index?picker[index]:'法律服务'}}
+			</view>
+		</picker>
+	</view>
+
+	<view class="cu-form-group margin-top">
+		<view class="title">联系人姓名</view>
+		<input placeholder="请输入联系人姓名"></input>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">联系人手机</view>
+		<input placeholder="请输入联系人手机号"></input>
+	</view>
+</form>
+<view class="padding-xl">
+  <button class="cu-btn block bg-blue lg">申请</button>
+</view>
