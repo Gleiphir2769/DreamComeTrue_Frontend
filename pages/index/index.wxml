@@ -21,35 +21,35 @@
     <view class="grid">
         <view class="grid-item" bindtap="navigate" data-url="userRegister">
             <image src="../../images/icons/personal.png"/>
-            个人注册
+            活动动态
         </view>
         <view class="grid-item" bindtap="navigate" data-url="groupRegister">
-            <image src="../../images/icons/personal.png"/>
-            团体注册
+            <image src="../../images/icons/team3.png"/>
+            报名注册
         </view>
         <view class="grid-item" bindtap="switchTab" data-url="project">
-            <image src="../../images/icons/personal.png"/>
-            加入项目
+            <image src="../../images/icons/project3.png"/>
+            队伍注册
         </view>
         <view class="grid-item" bindtap="switchTab" data-url="team">
-            <image src="../../images/icons/personal.png"/>
-            加入团体
+            <image src="../../images/icons/join.png"/>
+            加入队伍
         </view>
         <view class="grid-item">
-            <image src="../../images/icons/personal.png"/>
-            服务信息查询
+            <image src="../../images/icons/query.png"/>
+            项目发布
         </view>
         <view class="grid-item">
-            <image src="../../images/icons/personal.png"/>
-            自助服务
+            <image src="../../images/icons/zizhu.png"/>
+            加入项目
         </view>
         <view class="grid-item">
-            <image src="../../images/icons/personal.png"/>
-            常见问题
+            <image src="../../images/icons/question.png"/>
+            签到服务
         </view>
         <view class="grid-item">
-            <image src="../../images/icons/personal.png"/>
-            帮助中文
+            <image src="../../images/icons/help.png"/>
+            在线培训
         </view>
     </view>
     <view class="tips">
@@ -98,20 +98,20 @@
         </view>
         <view class="team">
             <view class="team-item">
-                <image class="shadow" src="../../images/icons/love.png"/>
-                aaa志愿团体
+                <image class="shadow" src="https://s.zhiyuanyun.com/www.bv2008.cn/avatar/201603/11/thumb_56e224479fb87.jpg"/>
+                北京市禁毒志愿者总
             </view>
             <view class="team-item">
-                <image class="shadow" src="../../images/icons/love.png"/>
-                bbb志愿团体
+                <image class="shadow" src="https://s.zhiyuanyun.com/www.bv2008.cn/avatar/3471956/201311090013009325.jpg"/>
+                北京红十字志愿者
             </view>
             <view class="team-item">
-                <image class="shadow" src="../../images/icons/love.png"/>
-                cccc志愿团体
+                <image class="shadow" src="https://s.zhiyuanyun.com/www.bv2008.cn/avatar/201912/13/thumb_5df35b66cd9aa.jpg"/>
+                国家游泳中心
             </view>
             <view class="team-item">
-                <image class="shadow" src="../../images/icons/love.png"/>
-                aaad志愿团体
+                <image class="shadow" src="https://s.zhiyuanyun.com/www.bv2008.cn/avatar/201808/03/thumb_5b64200e01e6a.png"/>
+                北京憨福儿公益基金
             </view>
         </view>
     </view>
