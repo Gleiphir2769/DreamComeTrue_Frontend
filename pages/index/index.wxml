@@ -60,7 +60,7 @@
             <view class="more">更多 ></view>
         </view>
         <view class="p-item">
-            <image src="../../images/icons/love.png"/>
+            <image src="../../images/icons/blank.png"/>
             <view class="p-item-info">
                 <view class="p-item-title">丰台区-北京市核算志愿者招募</view>
                 <view class="p-item-desc">中华医学会北京分会秘书处志愿服务队</view>
@@ -71,7 +71,7 @@
             </view>
         </view>
         <view class="p-item">
-            <image src="../../images/icons/love.png"/>
+            <image src="../../images/icons/blank.png"/>
             <view class="p-item-info">
                 <view class="p-item-title">丰台区-北京市核算志愿者招募</view>
                 <view class="p-item-desc">中华医学会北京分会秘书处志愿服务队</view>
@@ -82,7 +82,7 @@
             </view>
         </view>
         <view class="p-item">
-            <image src="../../images/icons/love.png"/>
+            <image src="../../images/icons/blank.png"/>
             <view class="p-item-info">
                 <view class="p-item-title">丰台区-北京市核算志愿者招募</view>
                 <view class="p-item-desc">中华医学会北京分会秘书处志愿服务队</view>

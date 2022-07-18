@@ -1,6 +1,5 @@
 {
   "pages": [
-
     "pages/index/index",
     "pages/userRegister/userRegister",
     "pages/groupRegister/groupRegister",
@@ -8,7 +7,8 @@
     "pages/projects",
     "pages/project/project",
     "pages/team/team",
-    "pages/activity/activity"
+    "pages/activity/activity",
+    "pages/my/my"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -38,6 +38,12 @@
         "iconPath": "images/icons/project.png",
         "pagePath": "pages/project/project",
         "text": "志愿项目"
+      },
+      {
+        "selectedIconPath": "images/icons/me.png",
+        "iconPath": "images/icons/me.png",
+        "pagePath": "pages/my/my",
+        "text": "我"
       }
     ]
   },

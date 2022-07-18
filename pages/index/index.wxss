@@ -40,7 +40,7 @@
     flex-wrap: wrap;
     margin-top: 20rpx;
     background-color: white;
-    padding: 20rpx 0;
+    padding: 20rpx;
 }
 
 .grid-item {
@@ -53,8 +53,8 @@
 }
 
 .grid-item image {
-    height: 60rpx;
-    width: 60rpx;
+    height: 50rpx;
+    width: 50rpx;
     margin-bottom: 20rpx;
 }
 
@@ -117,9 +117,9 @@
 }
 
 .p-item image {
-    height: 150rpx;
-    width: 200rpx;
-    margin-right: 20rpx;
+    height: 130rpx;
+    width: 170rpx;
+    margin-right: 30rpx;
     box-shadow: 0 2px 8px#f0f1f2;
 }
 
