@@ -19,11 +19,11 @@
         </swiper-item>
     </swiper>
     <view class="grid">
-        <view class="grid-item" bindtap="navigate" data-url="userRegister">
+        <view class="grid-item" bindtap="navigate" data-url="activity">
             <image src="../../images/icons/trends.png"/>
             活动动态
         </view>
-        <view class="grid-item" bindtap="navigate" data-url="groupRegister">
+        <view class="grid-item" bindtap="navigate" data-url="userRegister">
             <image src="../../images/icons/baoming.png"/>
             报名注册
         </view>
