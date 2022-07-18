@@ -1,12 +1,14 @@
 {
   "pages": [
+
     "pages/index/index",
     "pages/userRegister/userRegister",
     "pages/groupRegister/groupRegister",
     "pages/logs/logs",
     "pages/projects",
     "pages/project/project",
-    "pages/team/team"
+    "pages/team/team",
+    "pages/activity/activity"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -15,7 +17,7 @@
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
-    "color": "black",
+    "color": "#515a6e",
     "selectedColor": "#6db2f2",
     "borderStyle": "white",
     "list": [
@@ -25,7 +27,6 @@
         "pagePath": "pages/index/index",
         "text": "首页"
       },
-  
       {
         "selectedIconPath": "images/icons/team2.png",
         "iconPath": "images/icons/team.png",

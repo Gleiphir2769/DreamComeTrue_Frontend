@@ -20,15 +20,15 @@
     </swiper>
     <view class="grid">
         <view class="grid-item" bindtap="navigate" data-url="userRegister">
-            <image src="../../images/icons/personal.png"/>
+            <image src="../../images/icons/trends.png"/>
             活动动态
         </view>
         <view class="grid-item" bindtap="navigate" data-url="groupRegister">
-            <image src="../../images/icons/team3.png"/>
+            <image src="../../images/icons/baoming.png"/>
             报名注册
         </view>
         <view class="grid-item" bindtap="switchTab" data-url="project">
-            <image src="../../images/icons/project3.png"/>
+            <image src="../../images/icons/team2.png"/>
             队伍注册
         </view>
         <view class="grid-item" bindtap="switchTab" data-url="team">
@@ -40,15 +40,15 @@
             项目发布
         </view>
         <view class="grid-item">
-            <image src="../../images/icons/zizhu.png"/>
+            <image src="../../images/icons/join_project.png"/>
             加入项目
         </view>
         <view class="grid-item">
-            <image src="../../images/icons/question.png"/>
+            <image src="../../images/icons/qiandao.png"/>
             签到服务
         </view>
         <view class="grid-item">
-            <image src="../../images/icons/help.png"/>
+            <image src="../../images/icons/peixun.png"/>
             在线培训
         </view>
     </view>

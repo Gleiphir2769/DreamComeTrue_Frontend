@@ -1,0 +1,58 @@
+<scroll-view scroll-x class="bg-white nav">
+    <view class="flex text-center">
+        <view class="cu-item flex-sub {{index==TabCur?'text-blue cur':''}}" wx:for="{{TabContent}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+            {{item}}
+        </view>
+    </view>
+</scroll-view>
+<view class="cu-card article no-card">
+    <view class="cu-item shadow">
+        <view class="title">
+            <view class="text-cut">丁元竹：探索新发展阶段的志愿服务事业</view>
+        </view>
+        <view class="content">
+            <image src="https://s.zhiyuanyun.com/www.chinavolunteer.cn/cms/202002/13/5e44c3240ecb7.jpg" mode="aspectFill"></image>
+            <view class="desc">
+                <view class="text-content"> 近年来，共青团在志愿服务公益创业方面做了大量工作，是很好的探索。通过阅览第五届中国青年志愿服务公益创业赛的项目资料，我有三点感受分享，一是志愿服务新发展阶段的新趋势新特点，呈现“两坚持、四探索”;二是努力讲好志愿服务的中国故事，拓宽认识方式;三是不断发展和完善理论与</view>
+                <view>
+                    <view class="cu-tag bg-red light sm round">2021-12-15</view>
+                    <view class="cu-tag bg-green light sm round">中国青年志愿者</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="cu-card article no-card">
+    <view class="cu-item shadow">
+        <view class="title">
+            <view class="text-cut">丁元竹：探索新发展阶段的志愿服务事业</view>
+        </view>
+        <view class="content">
+            <image src="https://s.zhiyuanyun.com/www.chinavolunteer.cn/cms/202002/13/5e44c3240ecb7.jpg" mode="aspectFill"></image>
+            <view class="desc">
+                <view class="text-content"> 近年来，共青团在志愿服务公益创业方面做了大量工作，是很好的探索。通过阅览第五届中国青年志愿服务公益创业赛的项目资料，我有三点感受分享，一是志愿服务新发展阶段的新趋势新特点，呈现“两坚持、四探索”;二是努力讲好志愿服务的中国故事，拓宽认识方式;三是不断发展和完善理论与</view>
+                <view>
+                    <view class="cu-tag bg-red light sm round">2021-12-15</view>
+                    <view class="cu-tag bg-green light sm round">中国青年志愿者</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="cu-card article no-card">
+    <view class="cu-item shadow">
+        <view class="title">
+            <view class="text-cut">丁元竹：探索新发展阶段的志愿服务事业</view>
+        </view>
+        <view class="content">
+            <image src="https://s.zhiyuanyun.com/www.chinavolunteer.cn/cms/202002/13/5e44c3240ecb7.jpg" mode="aspectFill"></image>
+            <view class="desc">
+                <view class="text-content"> 近年来，共青团在志愿服务公益创业方面做了大量工作，是很好的探索。通过阅览第五届中国青年志愿服务公益创业赛的项目资料，我有三点感受分享，一是志愿服务新发展阶段的新趋势新特点，呈现“两坚持、四探索”;二是努力讲好志愿服务的中国故事，拓宽认识方式;三是不断发展和完善理论与</view>
+                <view>
+                    <view class="cu-tag bg-red light sm round">2021-12-15</view>
+                    <view class="cu-tag bg-green light sm round">中国青年志愿者</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

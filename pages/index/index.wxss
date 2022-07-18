@@ -53,9 +53,9 @@
 }
 
 .grid-item image {
-    height: 80rpx;
-    width: 80rpx;
-    margin-bottom: 10rpx;
+    height: 60rpx;
+    width: 60rpx;
+    margin-bottom: 20rpx;
 }
 
 .tips {
