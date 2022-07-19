@@ -9,7 +9,9 @@
         "pages/team/team",
         "pages/activity/activity",
         "pages/my/my",
-        "pages/projectRealease/projectRealease"
+        "pages/projectRealease/projectRealease",
+        "pages/team/teamDetail/teamDetail",
+        "pages/project/projectDetail/projectDetail"
     ],
     "window": {
         "backgroundTextStyle": "light",

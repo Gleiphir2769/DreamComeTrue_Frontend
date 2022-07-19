@@ -15,7 +15,7 @@
         <view>筛选</view>
     </view>
     <view class="results">
-        <view class="result-item">
+        <view class="result-item" bindtap="detail">
             <view class="result-title">石榴庄街道核酸志愿服务队</view>
             <view class="result-content">
                 <view>正式成员：26</view>

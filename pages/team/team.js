@@ -62,5 +62,14 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+
+  /**
+   * 跳转到队伍详情
+   */
+  detail() {
+    wx.navigateTo({
+      url: '../team/teamDetail/teamDetail',
+    })
   }
 })

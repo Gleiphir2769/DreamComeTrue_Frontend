@@ -1,0 +1,38 @@
+<form>
+    <view class="cu-form-group margin-top">
+		<view class="title">队伍名称：测试</view>
+    </view>
+    <view class="cu-form-group">
+		<view class="title">负责人姓名：测试</view>
+    </view>
+	<view class="cu-form-group">
+		<view class="title">负责人电话：测试</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">负责人邮箱：测试</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">联系人姓名：测试</view>
+	</view>
+    <view class="cu-form-group">
+		<view class="title">联系人电话：测试</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">主管单位：测试</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">人数：测试</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">服务领域：测试</view>
+	</view>
+    <view class="cu-form-group">
+		<view class="title">队伍区域：测试</view>
+	</view>
+    <view class="cu-form-group">
+		<view class="title">详细地址：测试</view>
+	</view>
+</form>
+<view class="padding-xl">
+  <button class="cu-btn block bg-blue lg">我要加入</button>
+</view>

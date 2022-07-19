@@ -1,0 +1,29 @@
+<form>
+    <view class="cu-form-group margin-top">
+		<view class="title">负责人姓名：测试</view>
+    </view>
+	<view class="cu-form-group">
+		<view class="title">负责人电话：测试</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">负责人邮箱：测试</view>
+	</view>
+    <view class="cu-form-group">
+		<view class="title">所属志愿中心名称：测试</view>
+    </view>
+    <view class="cu-form-group">
+		<view class="title">项目名称：测试</view>
+    </view>
+	<view class="cu-form-group">
+		<view class="title">服务地点：测试</view>
+	</view>
+    <view class="cu-form-group">
+		<view class="title">服务领域：测试</view>
+	</view>
+    <view class="cu-form-group">
+		<view class="title">服务对象：测试</view>
+	</view>
+</form>
+<view class="padding-xl">
+  <button class="cu-btn block bg-blue lg">我要报名</button>
+</view>
