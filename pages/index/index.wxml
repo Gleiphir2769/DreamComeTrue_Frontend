@@ -47,7 +47,7 @@
             <image src="../../images/icons/qiandao.png"/>
             签到服务
         </view>
-        <view class="grid-item">
+        <view class="grid-item" bindtap="navigate" data-url="training">
             <image src="../../images/icons/peixun.png"/>
             在线培训
         </view>

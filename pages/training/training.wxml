@@ -1,0 +1,41 @@
+<!--pages/training/training.wxml-->
+<view class="cu-list grid col-{{gridCol}} {{gridBorder?'':'no-border'}}">
+  <view class="cu-item" wx:for="{{iconList}}" wx:key wx:if="{{index<gridCol*2}}">
+    <view class="cuIcon-{{item.icon}} text-{{item.color}}">
+    </view>
+    <text>{{item.name}}</text>
+  </view>
+</view>
+<view class="cu-card case {{isCard?'no-card':''}}">
+  <view class="cu-item shadow">
+    <view class="image">
+      <image src="https://s.zhiyuanyun.com/www.chinavolunteer.cn/cms/202006/09/5edefd1a52334.jpg" mode="widthFix"></image>
+      <view class="cu-tag bg-red">视频课程</view>
+      <view class="cu-bar bg-shadeBottom">
+        <text class="text-cut">习近平为社区志愿者点赞</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="cu-card case {{isCard?'no-card':''}}">
+  <view class="cu-item shadow">
+    <view class="image">
+      <image src="https://s.zhiyuanyun.com/www.zhiyuanyun.com/cms/202107/05/60e26df709912.jpg" mode="widthFix"></image>
+      <view class="cu-tag bg-orange">活动指南</view>
+      <view class="cu-bar bg-shadeBottom">
+        <text class="text-cut">[中国青年志愿者]请党放心，强国有我！青年志愿者向党报到！</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="cu-card case {{isCard?'no-card':''}}">
+  <view class="cu-item shadow">
+    <view class="image">
+      <image src="https://s.zhiyuanyun.com/www.zhiyuanyun.com/cms/202202/23/6215cc0611067.jpg" mode="widthFix"></image>
+      <view class="cu-tag bg-red">视频课程</view>
+      <view class="cu-bar bg-shadeBottom">
+        <text class="text-cut">工人日报：1.8万名赛会志愿者展示青春风采，这是双奥之城最好的名片</text>
+      </view>
+    </view>
+  </view>
+</view>

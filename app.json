@@ -7,7 +7,8 @@
     "pages/project/project",
     "pages/team/team",
     "pages/activity/activity",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/training/training"
   ],
   "window": {
     "backgroundTextStyle": "light",
