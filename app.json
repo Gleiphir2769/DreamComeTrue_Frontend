@@ -1,52 +1,53 @@
 {
-  "pages": [
-    "pages/index/index",
-    "pages/userRegister/userRegister",
-    "pages/groupRegister/groupRegister",
-    "pages/logs/logs",
-    "pages/projects",
-    "pages/project/project",
-    "pages/team/team",
-    "pages/activity/activity",
-    "pages/my/my"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#6db2f2",
-    "navigationBarTitleText": "志愿小程序",
-    "navigationBarTextStyle": "white"
-  },
-  "tabBar": {
-    "color": "#515a6e",
-    "selectedColor": "#6db2f2",
-    "borderStyle": "white",
-    "list": [
-      {
-        "selectedIconPath": "images/icons/home2.png",
-        "iconPath": "images/icons/home.png",
-        "pagePath": "pages/index/index",
-        "text": "首页"
-      },
-      {
-        "selectedIconPath": "images/icons/team2.png",
-        "iconPath": "images/icons/team.png",
-        "pagePath": "pages/team/team",
-        "text": "志愿团体"
-      },
-      {
-        "selectedIconPath": "images/icons/project2.png",
-        "iconPath": "images/icons/project.png",
-        "pagePath": "pages/project/project",
-        "text": "志愿项目"
-      },
-      {
-        "selectedIconPath": "images/icons/me.png",
-        "iconPath": "images/icons/me.png",
-        "pagePath": "pages/my/my",
-        "text": "我"
-      }
-    ]
-  },
-  "style": "v2",
-  "sitemapLocation": "sitemap.json"
+    "pages": [
+        "pages/index/index",
+        "pages/userRegister/userRegister",
+        "pages/groupRegister/groupRegister",
+        "pages/logs/logs",
+        "pages/projects",
+        "pages/project/project",
+        "pages/team/team",
+        "pages/activity/activity",
+        "pages/my/my",
+        "pages/projectRealease/projectRealease"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#6db2f2",
+        "navigationBarTitleText": "志愿小程序",
+        "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+        "color": "#515a6e",
+        "selectedColor": "#6db2f2",
+        "borderStyle": "white",
+        "list": [
+            {
+                "selectedIconPath": "images/icons/home2.png",
+                "iconPath": "images/icons/home.png",
+                "pagePath": "pages/index/index",
+                "text": "首页"
+            },
+            {
+                "selectedIconPath": "images/icons/team2.png",
+                "iconPath": "images/icons/team.png",
+                "pagePath": "pages/team/team",
+                "text": "志愿团体"
+            },
+            {
+                "selectedIconPath": "images/icons/project2.png",
+                "iconPath": "images/icons/project.png",
+                "pagePath": "pages/project/project",
+                "text": "志愿项目"
+            },
+            {
+                "selectedIconPath": "images/icons/me.png",
+                "iconPath": "images/icons/me.png",
+                "pagePath": "pages/my/my",
+                "text": "我"
+            }
+        ]
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
 }
