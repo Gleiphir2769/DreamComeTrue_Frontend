@@ -27,7 +27,7 @@
             <image src="../../images/icons/baoming.png"/>
             报名注册
         </view>
-        <view class="grid-item" bindtap="switchTab" data-url="project">
+        <view class="grid-item" bindtap="navigate" data-url="groupRegister">
             <image src="../../images/icons/team2.png"/>
             队伍注册
         </view>
@@ -35,11 +35,11 @@
             <image src="../../images/icons/join.png"/>
             加入队伍
         </view>
-        <view class="grid-item">
+        <view class="grid-item" bindtap="navigate" data-url="projectRealease">
             <image src="../../images/icons/query.png"/>
             项目发布
         </view>
-        <view class="grid-item">
+        <view class="grid-item" bindtap="switchTab" data-url="project">
             <image src="../../images/icons/join_project.png"/>
             加入项目
         </view>

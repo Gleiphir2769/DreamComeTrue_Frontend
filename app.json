@@ -4,11 +4,15 @@
     "pages/userRegister/userRegister",
     "pages/groupRegister/groupRegister",
     "pages/logs/logs",
+    "pages/projects",
     "pages/project/project",
     "pages/team/team",
     "pages/activity/activity",
     "pages/my/my",
-    "pages/training/training"
+    "pages/training/training",
+    "pages/projectRealease/projectRealease",
+    "pages/team/teamDetail/teamDetail",
+    "pages/project/projectDetail/projectDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -40,7 +44,7 @@
         "text": "志愿项目"
       },
       {
-        "selectedIconPath": "images/icons/me2.png",
+        "selectedIconPath": "images/icons/me.png",
         "iconPath": "images/icons/me.png",
         "pagePath": "pages/my/my",
         "text": "我"

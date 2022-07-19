@@ -10,7 +10,7 @@
         <view>筛选</view>
     </view>
     <view class="results">
-        <view class="result-item">
+        <view class="result-item" bindtap="detail">
             <view class="result-title">“助力创城，文明交通我先行”系列活动</view>
             <view class="result-content">
                 <view>北京市密云区红十字会志愿服务队</view>

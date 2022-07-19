@@ -62,5 +62,13 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+    /**
+   * 跳转到项目详情
+   */
+  detail() {
+    wx.navigateTo({
+      url: '../project/projectDetail/projectDetail',
+    })
   }
 })
