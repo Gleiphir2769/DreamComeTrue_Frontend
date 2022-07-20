@@ -6,6 +6,7 @@ Component({
     starCount: 1,
     forksCount: 24,
     visitTotal: 1,
+    flag: true
   },
   attached() {
  
@@ -47,5 +48,10 @@ Component({
         current: 'https://image.weilanwl.com/color2.0/zanCode.jpg' // 当前显示图片的http链接      
       })
     },
+    control() {
+      this.setData({
+        flag: !this.data.flag
+      })
+    }
   }
 })
