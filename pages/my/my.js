@@ -1,57 +1,101 @@
-Component({
-  options: {
-    addGlobalClass: true,
-  },
+Page({
   data: {
-    starCount: 1,
-    forksCount: 24,
-    visitTotal: 1,
+    projectCount: 1,
+    teamCount: 24,
+    timeCount: 1,
+    currentRole: 0,
+    roles: ['志愿者', '志愿队伍', '志愿中心'],
+    colors:['orange','olive','red'],
+    menus: [],
+    menuData: [{
+        title: '我的队伍',
+        role: '志愿者'
+      },
+      {
+        title: '我的项目',
+        role: '志愿者'
+      },
+      {
+        title: '我的时长',
+        role: '志愿者'
+      },
+      {
+        title: '我的项目',
+        role: '志愿队伍'
+      },
+      {
+        title: '项目申请',
+        role: '志愿队伍'
+      },
+      {
+        title: '团队审核',
+        role: '志愿中心'
+      },
+      {
+        title: '项目审核',
+        role: '志愿中心'
+      }
+    ],
     flag: true
   },
-  attached() {
- 
+  loadMenu() {
+    let {
+      menus,menuData,roles,currentRole
+    } = this.data
+    menus = menuData.filter(item => item.role === roles[currentRole])
+    this.setData({
+      menus
+    })
   },
-  methods: {
-    coutNum(e) {
-      if (e > 1000 && e < 10000) {
-        e = (e / 1000).toFixed(1) + 'k'
-      }
-      if (e > 10000) {
-        e = (e / 10000).toFixed(1) + 'W'
-      }
-      return e
-    },
-    CopyLink(e) {
-      wx.setClipboardData({
-        data: e.currentTarget.dataset.link,
-        success: res => {
-          wx.showToast({
-            title: '已复制',
-            duration: 1000,
-          })
-        }
-      })
-    },
-    showModal(e) {
-      this.setData({
-        modalName: e.currentTarget.dataset.target
-      })
-    },
-    hideModal(e) {
-      this.setData({
-        modalName: null
-      })
-    },
-    showQrcode() {
-      wx.previewImage({
-        urls: ['https://image.weilanwl.com/color2.0/zanCode.jpg'],
-        current: 'https://image.weilanwl.com/color2.0/zanCode.jpg' // 当前显示图片的http链接      
-      })
-    },
-    control() {
-      this.setData({
-        flag: !this.data.flag
-      })
-    }
+  switchRole() {
+    let {
+      currentRole,
+    } = this.data
+    currentRole=(currentRole+1)%3
+    this.setData({
+      currentRole
+    })
+    this.loadMenu()
+  },
+
+  onLoad: function (options) {
+    this.loadMenu()
+  },
+
+
+  onReady: function () {
+
+  },
+
+
+  onShow: function () {
+
+  },
+
+  onHide: function () {
+
+  },
+
+ 
+  onUnload: function () {
+
+  },
+
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
   }
 })

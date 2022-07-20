@@ -1,123 +1,66 @@
-<scroll-view scroll-y class="scrollPage" wx:if="{{ flag == true }}">
-  
+<scroll-view scroll-y class="scrollPage" >
+
   <view class="UCenter-bg">
     <view class="avatar">
-        <image src="https://img2.baidu.com/it/u=222577945,1335509040&fm=253&fmt=auto&app=138&f=JPEG?w=817&h=500"></image>
+      <image src="https://img2.baidu.com/it/u=222577945,1335509040&fm=253&fmt=auto&app=138&f=JPEG?w=817&h=500"></image>
     </view>
-      <view class="info">
-          <view class="name">小明</view>
-          <view class="desc">
-         <text>志愿者编号：12345678121213</text>
-         <text class="cuIcon-qrcode"></text> 
-          </view>
+    <view class="info">
+      <view class="name">
+        <view style="margin-right: 10px;">小明</view>
+        <view class="cu-tag bg-{{colors[currentRole]}} light">{{roles[currentRole]}}</view>
       </view>
-  
+      <view class="desc">
+        <text>志愿者编号：12345678121213</text>
+        <text class="cuIcon-qrcode"></text>
+      </view>
+    </view>
+
   </view>
 
-  <view class="padding flex text-center text-grey bg-white ">
+  <view wx:if="{{currentRole===0}}" class="padding flex text-center text-grey bg-white ">
     <view class="flex flex-sub flex-direction solid-right">
-      <view class="text-xxl text-orange">{{visitTotal}}</view>
+      <view class="text-xxl text-orange">{{projectCount}}</view>
       <view class="margin-top-sm">
-        <text class="cuIcon-file"></text> 项目</view>
+        <text class="cuIcon-file"></text> 项目
+      </view>
     </view>
     <view class="flex flex-sub flex-direction solid-right">
-      <view class="text-xxl text-blue">{{starCount}}</view>
+      <view class="text-xxl text-blue">{{teamCount}}</view>
       <view class="margin-top-sm">
-        <text class="cuIcon-peoplefill"></text> 团体</view>
+        <text class="cuIcon-peoplefill"></text> 团体
+      </view>
     </view>
     <view class="flex flex-sub flex-direction">
-      <view class="text-xxl text-green">{{forksCount}}</view>
+      <view class="text-xxl text-green">{{timeCount}}</view>
       <view class="margin-top-sm">
-        <text class="cuIcon-time"></text> 时长</view>
+        <text class="cuIcon-time"></text> 时长
+      </view>
     </view>
   </view>
+
   <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
-    <view class="cu-item arrow">
-      <view class="content" >
-        <text class="text-grey">我的队伍</text>
+    <view wx:for="{{menus}}" class="cu-item arrow">
+      <view class="content">
+        <text class="text-grey">{{item.title}}</text>
       </view>
     </view>
- 
-    <view class="cu-item arrow">
-      <view class="content" url="/pages/about/log/log" hover-class="none">
-        <text class="text-grey">我的项目</text>
-      </view>
-    </view>
-    <!-- <view class="cu-item arrow">
-      <view class="content" bindtap="showQrcode">
-        <text class="text-grey">使用规则</text>
-      </view>
-    </view>
-    <view class="cu-item arrow">
-      <view class="content" bindtap="showQrcode">
-        <text class="text-grey">常见问题</text>
-      </view>
-    </view> -->
-   
+
+
   </view>
   <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
     <view class="cu-item ">
-      <view class="content" >
+      <view class="content">
         <text class="text-red">退出登陆</text>
       </view>
     </view>
 
-   
+
   </view>
   <view class="cu-tabbar-height"></view>
 </scroll-view>
 
-<scroll-view scroll-y class="scrollPage" wx:else="">
-  <view class="UCenter-bg">
-    <view class="avatar">
-        <image src="https://img2.baidu.com/it/u=222577945,1335509040&fm=253&fmt=auto&app=138&f=JPEG?w=817&h=500"></image>
-    </view>
-      <view class="info">
-          <view class="name">小明</view>
-          <view class="desc">
-         <text>队伍编号：12345678121213</text>
-         <text class="cuIcon-qrcode"></text> 
-          </view>
-      </view>
-  
-  </view>
 
-  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
-    <view class="cu-item arrow">
-      <view class="content" >
-        <text class="text-grey">我的成员</text>
-      </view>
-    </view>
- 
-    <view class="cu-item arrow">
-      <view class="content" url="/pages/about/log/log" hover-class="none">
-        <text class="text-grey">我的项目</text>
-      </view>
-    </view>
-    <!-- <view class="cu-item arrow">
-      <view class="content" bindtap="showQrcode">
-        <text class="text-grey">使用规则</text>
-      </view>
-    </view>
-    <view class="cu-item arrow">
-      <view class="content" bindtap="showQrcode">
-        <text class="text-grey">常见问题</text>
-      </view>
-    </view> -->
-   
-  </view>
-  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
-    <view class="cu-item ">
-      <view class="content" >
-        <text class="text-red">退出登陆</text>
-      </view>
-    </view>
-
-   
-  </view>
-  <view class="cu-tabbar-height"></view>
-</scroll-view>
 
 <view class="padding-xl">
-  <button class="cu-btn block bg-blue lg" bindtap="control">控制按钮</button>
+  <button class="cu-btn block bg-{{colors[currentRole]}} lg" bindtap="switchRole">切换角色（测试）</button>
 </view>
