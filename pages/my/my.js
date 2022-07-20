@@ -22,24 +22,33 @@ Page({
         role: '志愿者'
       },
       {
+        title: '发布项目',
+        role: '志愿队伍'
+      },
+      {
+        title: '加入队伍审核',
+        role: '志愿队伍',
+        url:'/pages/my/project/project?p=3&title=成员审核'
+      },
+      {
+        title: '加入项目审核',
+        role: '志愿队伍',
+        url:'/pages/my/project/project?p=4&title=成员审核'
+      },
+      {
         title: '我的项目',
         role: '志愿队伍',
-        url:'/pages/my/project/project?p=3&title=我的项目'
+        url:'/pages/my/project/project?p=5&title=我的项目'
       },
       {
-        title: '项目申请',
-        role: '志愿队伍',
-        url:'/pages/my/project/project?p=4&title=项目申请'
-      },
-      {
-        title: '团队审核',
+        title: '队伍审核',
         role: '志愿中心',
-        url:'/pages/my/project/project?p=5&title=团队审核'
+        url:'/pages/my/project/project?p=6&title=队伍审核'
       },
       {
         title: '项目审核',
         role: '志愿中心',
-        url:'/pages/my/project/project?p=6&title=项目审核'
+        url:'/pages/my/project/project?p=7&title=项目审核'
       }
     ],
     flag: true

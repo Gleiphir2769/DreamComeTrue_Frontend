@@ -12,7 +12,8 @@
     "pages/projectRealease/projectRealease",
     "pages/team/teamDetail/teamDetail",
     "pages/project/projectDetail/projectDetail",
-    "pages/my/project/project"
+    "pages/my/project/project",
+    "pages/my/time/time"
   ],
   "window": {
     "backgroundTextStyle": "light",
