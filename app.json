@@ -4,7 +4,6 @@
     "pages/userRegister/userRegister",
     "pages/groupRegister/groupRegister",
     "pages/logs/logs",
-    "pages/projects",
     "pages/project/project",
     "pages/team/team",
     "pages/activity/activity",
