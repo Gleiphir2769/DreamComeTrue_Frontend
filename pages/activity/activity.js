@@ -1,9 +1,7 @@
 // pages/activity/activity.js
 Page({
 
-    /**
-     * 页面的初始数据
-     */
+
     data: {
         TabCur: 0,
         Tabs: ['通知公告', '活动动态', '志愿故事', '心得感悟'],
