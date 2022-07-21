@@ -1,0 +1,59 @@
+.my-container{
+    width: 100%;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding: 100rpx  5% 0 5%;
+}
+.logo{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo image{
+    height: 300rpx;
+    width: 300rpx;
+    border-radius: 50%;
+}
+.form-item{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid #dcdee2;
+    padding: 20rpx 0;
+    margin: 20rpx 0;
+}
+
+.form-item text{
+    font-size: 40rpx;
+    margin-right: 30rpx;
+}
+.form-item input{
+    width: calc(100% - 30rpx);
+}
+.footer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 60rpx;
+}
+.footer text{
+    color: #0081ff;
+}
+.privacy{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 300rpx;
+}
+.privacy view{
+    margin-left: 10rpx;
+}

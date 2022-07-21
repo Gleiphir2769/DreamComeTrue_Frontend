@@ -1,0 +1,27 @@
+<view class="my-container">
+    <form class="form">
+        <view class="logo">
+            <image src="https://dummyimage.com/250/ffffff/000000"></image>
+        </view>
+        <view class="form-item">
+            <text class="cuIcon-people lg text-gray"></text>
+            <input placeholder="用户名" />
+        </view>
+        <view class="form-item">
+            <text class="cuIcon-lock lg text-gray"></text>
+            <input placeholder="请输入密码" type="password" />
+        </view>
+        <view class="padding flex flex-direction">
+            <button class="cu-btn bg-blue lg">登录</button>
+        </view>
+        <view class="footer">
+            <text>志愿者注册</text>
+            <text>志愿队伍注册</text>
+        </view>
+        <view class="privacy">
+            <checkbox class="round blue" checked></checkbox>
+            <view>
+                登录即表示同意<text class="text-blue">《用户协议》</text></view>
+        </view>
+    </form>
+</view>
