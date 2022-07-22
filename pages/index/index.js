@@ -18,6 +18,7 @@ Page({
             type: 'image',
             url: 'https://s.zhiyuanyun.com/www.bv2008.cn/cms/202202/13/62090a745bc5a.jpg'
         }],
+        src: '../../images/main.png'
     },
     onLoad() {
         this.towerSwiper('swiperList');

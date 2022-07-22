@@ -6,7 +6,10 @@
             <text class="cuIcon-scan lg text-gray"></text>
         </view>
     </view>
-    <swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true"
+    <view class="header">
+        <image style="width: 100%;" src="{{src}}" mode="scaleToFill"></image>
+    </view>         
+    <!-- <swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true"
             autoplay="true"
             interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3"
             indicator-active-color="#0081ff">
@@ -17,7 +20,7 @@
                        objectFit="cover" wx:if="{{item.type=='video'}}"></video>
             </view>
         </swiper-item>
-    </swiper>
+    </swiper> -->
     <view class="grid">
         <view class="grid-item" bindtap="navigate" data-url="activity">
             <image src="../../images/icons/trends.png"/>
