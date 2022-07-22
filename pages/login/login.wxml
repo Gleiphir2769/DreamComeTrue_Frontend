@@ -15,8 +15,9 @@
             <button class="cu-btn bg-blue lg">登录</button>
         </view>
         <view class="footer">
-            <text>志愿者注册</text>
-            <text>志愿队伍注册</text>
+           <navigator url="/pages/userRegister/userRegister"> <text>志愿者注册</text></navigator>
+           <navigator url="/pages/groupRegister/groupRegister"> <text>志愿队伍注册</text></navigator>
+      
         </view>
         <view class="privacy">
             <checkbox class="round blue" checked></checkbox>

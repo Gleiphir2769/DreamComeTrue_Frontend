@@ -1,1 +1,3 @@
-/* pages/groupRegister/groupRegister.wxss */
+.cu-form-group .title {
+  min-width: calc(4em + 60rpx);
+}

@@ -21,19 +21,19 @@
     <view class="flex flex-sub flex-direction solid-right">
       <view class="text-xxl text-orange">{{projectCount}}</view>
       <view class="margin-top-sm">
-        <text class="cuIcon-file"></text> 项目
+        项目
       </view>
     </view>
     <view class="flex flex-sub flex-direction solid-right">
       <view class="text-xxl text-blue">{{teamCount}}</view>
       <view class="margin-top-sm">
-        <text class="cuIcon-peoplefill"></text> 团体
+         团体
       </view>
     </view>
     <view class="flex flex-sub flex-direction">
       <view class="text-xxl text-green">{{timeCount}}</view>
       <view class="margin-top-sm">
-        <text class="cuIcon-time"></text> 时长
+        时长
       </view>
     </view>
   </view>

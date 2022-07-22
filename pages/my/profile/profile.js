@@ -5,7 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    sexPicker:['男','女'],
+    date: '2022-07-25',
+    modalVisible:false,
+    educationPicker:['本科','硕士','博士','其他']
   },
 
   /**
