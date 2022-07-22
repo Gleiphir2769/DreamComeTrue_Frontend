@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/login/login",
     "pages/index/index",
     "pages/userRegister/userRegister",
     "pages/groupRegister/groupRegister",
@@ -14,7 +13,9 @@
     "pages/team/teamDetail/teamDetail",
     "pages/project/projectDetail/projectDetail",
     "pages/my/project/project",
-    "pages/my/time/time"
+    "pages/my/time/time",
+    "pages/login/login",
+    "pages/my/profile/profile"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -53,6 +54,5 @@
       }
     ]
   },
-  "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

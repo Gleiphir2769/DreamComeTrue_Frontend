@@ -8,6 +8,9 @@ Page({
     colors:['orange','olive','red'],
     menus: [],
     menuData: [{
+      title: '个人资料',
+      role: '志愿者'
+    },{
         title: '我的队伍',
         role: '志愿者',
         url:'/pages/my/project/project?p=1&title=我的队伍'

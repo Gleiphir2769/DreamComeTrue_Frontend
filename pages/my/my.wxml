@@ -48,11 +48,11 @@
 
   </view>
   <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
-    <view class="cu-item ">
+    <navigator class="cu-item " url="/pages/login/login">
       <view class="content">
         <text class="text-red">退出登陆</text>
       </view>
-    </view>
+    </navigator>
 
 
   </view>

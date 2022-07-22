@@ -8,54 +8,27 @@
         <input placeholder="必须包含大小写字母和数字"></input>
     </view>
 
-    <view class="cu-form-group margin-top">
-        <view class="title">真实姓名</view>
-        <input placeholder="请输入真实姓名"></input>
-    </view>
 
-
-    <view class="cu-form-group">
-        <view class="title">性别</view>
-        <picker bindchange="PickerChange" value="{{index}}" range="{{sexPicker}}">
-            <view class="picker">
-                {{index ? picker[index] : '男'}}
-            </view>
-        </picker>
-    </view>
-    <view class="cu-form-group">
-        <view class="title">出生日期</view>
-        <picker mode="date" value="{{date}}" start="2015-09-01" end="2020-09-01" bindchange="DateChange">
-            <view class="picker">
-                {{date}}
-            </view>
-        </picker>
-    </view>
-    <view class="cu-form-group">
-        <view class="title">手机号码</view>
-        <input placeholder="输入手机号"></input>
-        <view class="cu-capsule radius">
-            <view class="cu-tag bg-blue">
-                +86
-            </view>
-            <view class="cu-tag line-blue">
-                中国大陆
-            </view>
-        </view>
-    </view>
-
-
-    <view class="cu-form-group">
-        <view class="title">学历</view>
-        <picker bindchange="PickerChange" value="{{index}}" range="{{educationPicker}}">
-            <view class="picker">
-                {{index ? picker[index] : '本科'}}
-            </view>
-        </picker>
-    </view>
-    <view class="cu-form-group margin-top">
-        <textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaAInput" placeholder="专业特长"></textarea>
-    </view>
 </form>
 <view class="padding-xl">
-    <button class="cu-btn block bg-blue lg">申请</button>
+    <button bindtap="showModal" class="cu-btn block bg-blue lg">申请</button>
+</view>
+<view class="cu-modal {{modalVisible?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">申请成功</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="padding-xl">
+     是否现在更新个人信息
+    </view>
+    <view class="cu-bar bg-white justify-end">
+      <view class="action">
+        <button class="cu-btn line-red text-red" bindtap="hideModal">取消</button>
+        <navigator url="/pages/my/profile/profile"><button class="cu-btn bg-blue margin-left" bindtap="hideModal">确定</button></navigator>
+      </view>
+    </view>
+  </view>
 </view>
