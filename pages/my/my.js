@@ -51,8 +51,8 @@ Page({
       },
       {
         title: '加入队伍审核',
-        role: 'master',
-        url:'/pages/my/project/project?p=3&title=成员审核'
+        role: '志愿队伍',
+        url:'/pages/my/teamReview/teamReview?p=3&title=成员审核'
       },
       {
         title: '加入项目审核',
