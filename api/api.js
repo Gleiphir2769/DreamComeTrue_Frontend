@@ -5,8 +5,11 @@ const domain = "http://101.43.233.220:5651"
 
 const api = {
     // post example
-    login() {
-       return post(`${domain}/login`, {})
+    login(data) {
+       return post(`${domain}/login`, data)
+    },
+    reigster(){
+      return post(`${domain}/register`, {})
     }
 }
 
