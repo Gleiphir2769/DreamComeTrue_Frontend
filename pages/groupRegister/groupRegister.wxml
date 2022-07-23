@@ -1,11 +1,11 @@
-<form>
+<form bindsubmit="registLeader">
 	<view class="cu-form-group margin-top">
 		<view class="title">用户名</view>
-		<input placeholder="以字母开头，由数字和字母组成"></input>
+		<input placeholder="以字母开头，由数字和字母组成" name="username" bindinput="username"></input>
 	</view>
 	<view class="cu-form-group">
 		<view class="title">密码</view>
-		<input placeholder="必须包含大小写字母和数字"></input>
+		<input placeholder="必须包含大小写字母和数字" name="password" bindinput="password"></input>
 	</view>
 	<!-- <view class="cu-bar bg-white margin-top">
 		<view class="action">
@@ -83,7 +83,7 @@
 		<view class="title">详细地址</view>
 		<input placeholder="请输入队伍详细地址"></input>
 	</view> -->
+  <view class="padding-xl">
+    <button class="cu-btn block bg-blue lg" form-type="submit">申请</button>
+  </view>
 </form>
-<view class="padding-xl">
-  <button class="cu-btn block bg-blue lg">申请</button>
-</view>
