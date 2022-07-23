@@ -1,4 +1,5 @@
 // pages/login/login.js
+import {api} from "../../api/api"
 const app = getApp();
 Page({
 
@@ -11,11 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    api.login({username:'',password:''}).then(data=>{
-     if(data.code===50004){
-       alert(data.message)
-     }
-    })
+
   },
 
   /**
@@ -81,19 +78,11 @@ Page({
 
   login() {
     let that = this
-    wx.request({
-      url: app.globalData.domain + '/login',
-      method: 'POST',
-      header: {
-        "Content-Type": "multipart/form-data"
-      },
-      data: {
-        username: that.data.username,
-        password: that.data.password
-      },
-      success(res) {
-        console.log(res)
-      }
+    api.login({
+      username: that.data.username,
+      password: that.data.password
+    }).then(data=>{
+      console.log(data)
     })
   }
 })
