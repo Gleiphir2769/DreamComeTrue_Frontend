@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    //队伍列表是个json数组
+    teamList = [],
   },
 
   /**
@@ -71,5 +72,33 @@ Page({
     wx.navigateTo({
       url: '../team/teamDetail/teamDetail',
     })
-  }
+  },
+
+  // 获取队伍列表
+  getTeamList(){
+    let that=this;
+    wx.request({
+      url: 'https://www.baidu.com', //仅为示例，并非真实的接口地址
+      method:"GET",
+     
+      success (res) {
+        if(res.statusCode == 200){
+          //获得队伍列表
+          this.setData({
+            teamList: res.data
+          })
+        }else{
+          //失败
+          wx.showToast({
+            title: '获取队伍列表失败',
+            icon: 'none',
+            duration: 2000
+          })
+        }
+      }
+    })
+  },
+
+
+
 })

@@ -1,8 +1,8 @@
 const app = getApp();
 Page({
   data: {
-    username: '小牛马',
-    password: '233',
+    username: '',
+    password: '',
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
     index: null,
