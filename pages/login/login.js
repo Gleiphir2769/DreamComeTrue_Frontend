@@ -1,9 +1,6 @@
-// pages/login/login.js
+import {api} from "../../api/api"
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
 
   },
@@ -12,7 +9,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    api.login({username:'',password:''}).then(data=>{
+     if(data.code===50004){
+       alert(data.message)
+     }
+    })
   },
 
   /**

@@ -196,5 +196,20 @@ Page({
     this.setData({
       textareaBValue: e.detail.value
     })
-  }
+  },
+
+  // 查询所有志愿中心
+  findAllCenter() {
+    wx.request({
+      url: app.globalData.host + '/master/project/admins/3',
+      method: 'GET',
+      success (res) {
+        console.log(res, '查询所有志愿中心')
+      }
+    })
+  },
+
+  onShow: function () {
+    this.findAllCenter()
+  },
 })
