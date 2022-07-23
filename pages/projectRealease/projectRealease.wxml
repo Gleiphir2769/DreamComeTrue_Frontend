@@ -1,18 +1,18 @@
 <form>
-    <view class="cu-form-group margin-top">
+    <view class="cu-form-group margin-top text-right">
 		<view class="title">负责人姓名</view>
 		<input placeholder="请输入负责人姓名"></input>
 	</view>
-	<view class="cu-form-group">
+	<view class="cu-form-group text-right">
 		<view class="title">负责人电话</view>
-		<input placeholder="请输入负责人电话"></input>
+		<input type="number" placeholder="请输入负责人电话"></input>
 	</view>
-    <view class="cu-form-group">
+    <view class="cu-form-group text-right">
 		<view class="title">负责人邮箱</view>
 		<input placeholder="请输入负责人邮箱"></input>
 	</view>
-    <view class="cu-form-group margin-top">
-		<view class="title">所属志愿中心</view>
+	<view class="cu-form-group margin-top">
+		<view class="title">队伍名称</view>
 		<picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
 			<view class="picker">
 				{{index?picker[index]:'禁止换行，超出容器部分会以 ... 方式截断'}}
@@ -20,6 +20,14 @@
 		</picker>
 	</view>
     <view class="cu-form-group">
+		<view class="title">所属志愿中心</view>
+		<picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+			<view class="picker">
+				{{index?picker[index]:'禁止换行，超出容器部分会以 ... 方式截断'}}
+			</view>
+		</picker>
+	</view>
+    <view class="cu-form-group text-right">
 		<view class="title">项目名称</view>
 		<input placeholder="请输入项目名称"></input>
 	</view>
@@ -44,19 +52,15 @@
 			</view>
 		</view>
 	</view>
-	<view class="cu-form-group">
+	<view class="cu-form-group text-right">
 		<view class="title">服务地点</view>
 		<input placeholder="请输入服务地点"></input>
 	</view>
-    <view class="cu-form-group">
+	<view class="cu-form-group text-right">
 		<view class="title">服务领域</view>
-		<picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
-			<view class="picker">
-				{{index?picker[index]:'法律服务'}}
-			</view>
-		</picker>
+		<input placeholder="请输入服务领域"></input>
 	</view>
-    <view class="cu-form-group">
+    <view class="cu-form-group text-right">
 		<view class="title">服务对象</view>
 		<input placeholder="请输入服务对象"></input>
 	</view>
