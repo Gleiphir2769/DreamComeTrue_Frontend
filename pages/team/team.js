@@ -6,14 +6,31 @@ Page({
    */
   data: {
     //队伍列表是个json数组
-    teamList = [],
+    teamList : [
+      {
+        name : '小牛马',
+        headcount : 1,
+        teamStatus : 1,
+        createTime : 1,
+        area : '丰台',
+        tid : 10
+      },
+      {
+        name : '小牛马',
+        headcount : 1,
+        teamStatus : 1,
+        createTime : 1,
+        area : '丰台',
+        tid : 15
+      },
+    ],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    this.getTeamList()
   },
 
   /**
@@ -27,7 +44,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    this.getTeamList()
   },
 
   /**
@@ -68,9 +85,11 @@ Page({
   /**
    * 跳转到队伍详情
    */
-  detail() {
+  detail(e) {
+    let id = e.currentTarget.dataset.index;
+    console.log(id)
     wx.navigateTo({
-      url: '../team/teamDetail/teamDetail',
+      url: `../team/teamDetail/teamDetail?id=`+id,
     })
   },
 
@@ -78,22 +97,27 @@ Page({
   getTeamList(){
     let that=this;
     wx.request({
-      url: 'https://www.baidu.com', //仅为示例，并非真实的接口地址
+      url: 'https://dream.cihss.net/api/teams',
       method:"GET",
      
       success (res) {
         if(res.statusCode == 200){
           //获得队伍列表
-          this.setData({
+          that.setData({
             teamList: res.data
-          })
+          });
+          wx.showToast({
+            title: '获取队伍列表失败',
+            icon: 'none',
+            duration: 2000
+          });
         }else{
           //失败
           wx.showToast({
             title: '获取队伍列表失败',
             icon: 'none',
             duration: 2000
-          })
+          });
         }
       }
     })

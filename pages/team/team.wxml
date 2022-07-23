@@ -15,81 +15,16 @@
         <view>筛选</view>
     </view>
     <view class="results">
-        <view class="result-item" bindtap="detail">
-            <view class="result-title">石榴庄街道核酸志愿服务队</view>
+        <view class="result-item" bindtap="detail" wx:for="{{teamList}}"
+        data-item="{{item.id}}">
+            <view class="result-title">{{item.name}}</view>
             <view class="result-content">
-                <view>正式成员：26</view>
-                <view>服务时间：834</view>
+                <view>正式成员：{{item.headcount}}</view>
+                <view>服务时间：{{item.teamStatus}}</view>
             </view>
             <view class="result-info">
-                <view>成立日期：2022-06-23</view>
-                <view style="margin-left:30rpx" class="cu-tag line-gray round">丰台区</view>
-            </view>
-        </view>
-        <view class="result-item">
-            <view class="result-title">石榴庄街道核酸志愿服务队</view>
-            <view class="result-content">
-                <view>正式成员：26</view>
-                <view>服务时间：834</view>
-            </view>
-            <view class="result-info">
-                <view>成立日期：2022-06-23</view>
-                <view style="margin-left:30rpx" class="cu-tag line-gray round">丰台区</view>
-            </view>
-        </view>
-        <view class="result-item">
-            <view class="result-title">石榴庄街道核酸志愿服务队</view>
-            <view class="result-content">
-                <view>正式成员：26</view>
-                <view>服务时间：834</view>
-            </view>
-            <view class="result-info">
-                <view>成立日期：2022-06-23</view>
-                <view style="margin-left:30rpx" class="cu-tag line-gray round">丰台区</view>
-            </view>
-        </view>
-        <view class="result-item">
-            <view class="result-title">石榴庄街道核酸志愿服务队</view>
-            <view class="result-content">
-                <view>正式成员：26</view>
-                <view>服务时间：834</view>
-            </view>
-            <view class="result-info">
-                <view>成立日期：2022-06-23</view>
-                <view style="margin-left:30rpx" class="cu-tag line-gray round">丰台区</view>
-            </view>
-        </view>
-        <view class="result-item">
-            <view class="result-title">石榴庄街道核酸志愿服务队</view>
-            <view class="result-content">
-                <view>正式成员：26</view>
-                <view>服务时间：834</view>
-            </view>
-            <view class="result-info">
-                <view>成立日期：2022-06-23</view>
-                <view style="margin-left:30rpx" class="cu-tag line-gray round">丰台区</view>
-            </view>
-        </view>
-        <view class="result-item">
-            <view class="result-title">石榴庄街道核酸志愿服务队</view>
-            <view class="result-content">
-                <view>正式成员：26</view>
-                <view>服务时间：834</view>
-            </view>
-            <view class="result-info">
-                <view>成立日期：2022-06-23</view>
-                <view style="margin-left:30rpx" class="cu-tag line-gray round">丰台区</view>
-            </view>
-        </view>
-        <view class="result-item">
-            <view class="result-title">石榴庄街道核酸志愿服务队</view>
-            <view class="result-content">
-                <view>正式成员：26</view>
-                <view>服务时间：834</view>
-            </view>
-            <view class="result-info">
-                <view>成立日期：2022-06-23</view>
-                <view style="margin-left:30rpx" class="cu-tag line-gray round">丰台区</view>
+                <view>成立日期：{{item.createTime}}</view>
+                <view style="margin-left:30rpx" class="cu-tag line-gray round">{{item.area}}</view>
             </view>
         </view>
     </view>

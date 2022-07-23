@@ -5,31 +5,49 @@ Page({
      * 页面的初始数据
      */
     data: {
-      //队伍详情应该是一个json字典
-      teamDetail = {},
+      // 队伍详情应该是一个json数组,里面是字典
+      teamDetail : [
+        {
+          name:1,
+          leader:1,
+          leaderTelephone:1,
+          contactEmail:1,
+          contact:1,
+          contactTelephone:1,
+          organizer:1,
+          headcount:1,
+          serveField:1,
+          area:1,
+          address:1
+        }
+      ],
       // 用户uid,这玩意从哪获取？
-      uid = '',
+      uid : 1,
+      tid : 1,
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+      this.setData({
+        uid:options.uid,
+        tid:options.tid
+      })
     },
 
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function () {
-
+      this.getTeamDetail()
     },
 
     /**
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+      this.getTeamDetail()
     },
 
     /**
@@ -70,15 +88,16 @@ Page({
       // 获取队伍详情
     getTeamDetail(){
       let that=this;
+      let tid=that.data.tid;
       wx.request({
-        url: 'https://www.baidu.com', //仅为示例，并非真实的接口地址
+        url: `https://dream.cihss.net/api/teams/${tid}`, //仅为示例，并非真实的接口地址
         method:"GET",
       
         success (res) {
           if(res.statusCode == 200){
             //成功
             that.setData({
-              teamDetail: res.data
+              teamDetail : res.data
             })
           }else{
             //失败
@@ -92,15 +111,13 @@ Page({
       })
     },
     // 提交入队申请
-    joinTeam(){
+    joinTeam : function(){
       let that=this;
+      let tid=that.data.tid;
+      let uid=that.data.uid;
       wx.request({
-        url: 'https://www.baidu.com', //仅为示例，并非真实的接口地址
-        method:"POST",
-        data:{
-          uid: that.data.uid,
-          gid: that.data.teamDetail.gid
-        },
+        url: `https://dream.cihss.net/api/teams/${tid}/applications/${uid}`, //仅为示例，并非真实的接口地址
+        method:"GET",
         success (res) {
           if(res.statusCode == 200){
             //成功
