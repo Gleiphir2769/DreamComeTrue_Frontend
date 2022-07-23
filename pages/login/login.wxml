@@ -5,14 +5,14 @@
         </view>
         <view class="form-item">
             <text class="cuIcon-people lg text-gray"></text>
-            <input placeholder="用户名" />
+            <input placeholder="用户名" bindinput="inputUsername" value="{{username}}"/>
         </view>
         <view class="form-item">
             <text class="cuIcon-lock lg text-gray"></text>
-            <input placeholder="请输入密码" type="password" />
+            <input placeholder="请输入密码" type="password" bindinput="inputPassword" value="{{password}}" />
         </view>
         <view class="padding flex flex-direction">
-            <button class="cu-btn bg-blue lg">登录</button>
+            <button class="cu-btn bg-blue lg" bindtap="login">登录</button>
         </view>
         <view class="footer">
            <navigator url="/pages/userRegister/userRegister"> <text>志愿者注册</text></navigator>

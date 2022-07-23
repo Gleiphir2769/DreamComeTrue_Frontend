@@ -201,8 +201,11 @@ Page({
   // 查询所有志愿中心
   findAllCenter() {
     wx.request({
-      url: app.globalData.host + '/master/project/admins/3',
+      url: app.globalData.domain + '/master/project/admins/3',
       method: 'GET',
+      header: {
+        token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVzSW4iOjE2NTg1OTU3MDAxMTMsInVpZCI6Mywicm9sZSI6Im1hc3RlciIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX21hc3RlciJ9XSwiZW5hYmxlZCI6dHJ1ZSwidXNlcm5hbWUiOiIxMzMzMzQzNTY1MSJ9.itmypWXp4z6QY0WPIMajZmVD-82T6xjGB81zPDGIx2U'
+      },
       success (res) {
         console.log(res, '查询所有志愿中心')
       }

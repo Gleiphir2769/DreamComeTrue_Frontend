@@ -1,11 +1,13 @@
 // pages/login/login.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    username: '',
+    password: ''
   },
 
   /**
@@ -62,5 +64,35 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+
+  inputUsername(e) {
+    this.setData({
+      username: e.detail.value
+    })
+  },
+  
+  inputPassword(e) {
+    this.setData({
+      password: e.detail.value
+    })
+  },
+
+  login() {
+    let that = this
+    wx.request({
+      url: app.globalData.domain + '/login',
+      method: 'POST',
+      header: {
+        "Content-Type": "multipart/form-data"
+      },
+      data: {
+        username: that.data.username,
+        password: that.data.password
+      },
+      success(res) {
+        console.log(res)
+      }
+    })
   }
 })

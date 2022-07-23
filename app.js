@@ -15,6 +15,6 @@ App({
   },
   globalData: {
     userInfo: null,
-    host: 'http://101.42.173.159:5651'
+    domain: 'https://dream.cihss.net'
   }
 })
