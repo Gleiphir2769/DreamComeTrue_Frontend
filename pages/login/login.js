@@ -1,67 +1,47 @@
 import {api} from "../../api/api"
+
+let timer;
 Page({
 
-  data: {
+    data: {
+        alertVisible: false,
+        alertContent: ''
+    },
 
-  },
+    onLoad(options) {
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-    api.login({username:'',password:''}).then(data=>{
-     if(data.code===50004){
-       alert(data.message)
-     }
-    })
-  },
+    },
+    showAlert(alertContent) {
+        let self = this;
+        this.setData({
+            alertVisible: true,
+            alertContent
+        })
+        timer = setInterval(function () {
+            self.setData({
+                alertVisible: false,
+            })
+            clearInterval(timer)
+        }, 1000)
+    },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
-  }
+    onLogin(e) {
+        let self = this;
+        api.login(e.detail.value).then(data => {
+            data = data.data
+            // login success
+            if (data.code === 20000) {
+                wx.setStorageSync('token', data.data.token)
+                wx.setStorageSync('role', data.data.role)
+                wx.setStorageSync('uid', data.data.uid)
+                wx.switchTab({
+                  url: '../../pages/index/index',
+                })
+            }
+            // login failed
+            else {
+                self.showAlert(data.message)
+            }
+        })
+    }
 })

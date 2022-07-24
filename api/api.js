@@ -1,12 +1,12 @@
 import {get, post} from './http'
 
-const domain = "http://101.43.233.220:5651"
+const domain = "https://dream.cihss.net"
 
 
 const api = {
     // post example
     login(data) {
-       return post(`${domain}/login`, data)
+       return post(`${domain}/login`, data, {'Content-Type': 'application/x-www-form-urlencoded' })
     },
     reigster(){
       return post(`${domain}/register`, {})
