@@ -1,38 +1,67 @@
-<form>
-    <view class="cu-form-group margin-top">
-		<view class="title">队伍名称：测试</view>
+<view class="logo">
+  <image src="https://dummyimage.com/300/&text=logo"></image>
+</view>
+<view class="detail">
+
+  <view class="cu-list menu  margin-top">
+    <view class="cu-item">
+      <view class="content">
+        <text>绿茵之心伴你同行助力星星的孩子</text>
+      </view>
     </view>
-    <view class="cu-form-group">
-		<view class="title">负责人姓名：测试</view>
+    <view class="cu-item">
+      <view class="content">
+        <text class="title"><text></text>团体地址:</text>
+        <text class="text-grey">北京市北京市朝阳区安贞西里二区21-5号</text>
+      </view>
     </view>
-	<view class="cu-form-group">
-		<view class="title">负责人电话：测试</view>
-	</view>
-	<view class="cu-form-group">
-		<view class="title">负责人邮箱：测试</view>
-	</view>
-	<view class="cu-form-group">
-		<view class="title">联系人姓名：测试</view>
-	</view>
-    <view class="cu-form-group">
-		<view class="title">联系人电话：测试</view>
-	</view>
-	<view class="cu-form-group">
-		<view class="title">主管单位：测试</view>
-	</view>
-	<view class="cu-form-group">
-		<view class="title">人数：测试</view>
-	</view>
-	<view class="cu-form-group">
-		<view class="title">服务领域：测试</view>
-	</view>
-    <view class="cu-form-group">
-		<view class="title">队伍区域：测试</view>
-	</view>
-    <view class="cu-form-group">
-		<view class="title">详细地址：测试</view>
-	</view>
-</form>
-<view class="padding-xl">
-  <button class="cu-btn block bg-blue lg">我要加入</button>
+    <view class="cu-item">
+      <view class="content">
+        <view>
+          <text class="title">联系人:</text>
+          <text class="text-grey">闫仲华</text>
+        </view>
+      </view>
+    </view>
+    <view class="cu-item">
+      <view class="content">
+        <view>
+          <text class="title">电话:</text>
+          <text class="text-grey">123456789</text>
+        </view>
+      </view>
+    </view>
+    <view class="cu-item">
+      <view class="content">
+        <view>
+          <text class="title">邮箱:</text>
+          <text class="text-grey">dsadandj@qq.com</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- <view class="cu-item {{menuArrow?'arrow':''}}">
+      <view class="content">
+        <text class="cuIcon-tagfill text-red"></text>
+        <text class="text-grey">标签</text>
+      </view>
+      <view class="action">
+        <view class="cu-tag round bg-orange light">音乐</view>
+        <view class="cu-tag round bg-olive light">电影</view>
+        <view class="cu-tag round bg-blue light">旅行</view>
+      </view>
+    </view> -->
+
+
+  </view>
+</view>
+
+<view class="cu-bar bg-white tabbar border shop fixed-bottom">
+
+  <view class="action">
+    <view class="cuIcon-share">
+    </view>
+    分享
+  </view>
+  <view class="bg-blue submit">我要加入</view>
 </view>
