@@ -1,18 +1,18 @@
 <view class="my-container">
-    <form class="form">
+    <form class="form" bindsubmit="onLogin">
         <view class="logo">
             <image src="https://dummyimage.com/250/ffffff/000000"></image>
         </view>
         <view class="form-item">
             <text class="cuIcon-people lg text-gray"></text>
-            <input placeholder="用户名" bindinput="inputUsername" value="{{username}}"/>
+            <input name="username" placeholder="用户名" />
         </view>
         <view class="form-item">
             <text class="cuIcon-lock lg text-gray"></text>
-            <input placeholder="请输入密码" type="password" bindinput="inputPassword" value="{{password}}" />
+            <input name="password" placeholder="请输入密码" type="password" />
         </view>
         <view class="padding flex flex-direction">
-            <button class="cu-btn bg-blue lg" bindtap="login">登录</button>
+            <button form-type="submit" class="cu-btn bg-blue lg">登录</button>
         </view>
         <view class="footer">
            <navigator url="/pages/userRegister/userRegister"> <text>志愿者注册</text></navigator>
@@ -25,4 +25,7 @@
                 登录即表示同意<text class="text-blue">《用户协议》</text></view>
         </view>
     </form>
+</view>
+<view class="alert" wx:if="{{alertVisible}}">
+<view class="alert-content">{{alertContent}}</view>
 </view>

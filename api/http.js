@@ -6,19 +6,19 @@ const getToken=()=>{
   return token
 }
 const getHeader=(extraHeaders)=>{
-    let h={"Token":getToken()}
+    let h={"Authorization":getToken()}
     for(let item in extraHeaders){
-      h[item]=headers[item]
+      h[item]=extraHeaders[item]
     }
     return h
 }
 
-function get(url, headers={}) {
+function get(url, header={}) {
     return new Promise((resolve, reject) => {
         wx.request({
             url,
             method:'get',
-            headers:getHeader(headers),
+            header:getHeader(header),
             success: (res) => {
                 resolve(res)
             },
@@ -29,12 +29,14 @@ function get(url, headers={}) {
     })
 }
 
-function post(url,data,headers={}) {
+function post(url,data,header={}) {
+  console.log(getHeader(header))
   return new Promise((resolve, reject) => {
       wx.request({
           url,
           method:'post',
-          headers:getHeader(headers),
+          header:getHeader(header),
+          data,
           success: (res) => {
               resolve(res)
           },
