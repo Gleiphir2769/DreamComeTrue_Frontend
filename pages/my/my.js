@@ -27,8 +27,9 @@ Page({
       //   url:'/pages/my/time/time'
       // },
       {
-        title: '发布项目',
-        role: '志愿队伍'
+        title: '我的成员',
+        role: '志愿队伍',
+        url:'/pages/my/member/member'
       },
       {
         title: '加入队伍审核',
