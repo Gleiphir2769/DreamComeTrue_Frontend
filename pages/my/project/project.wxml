@@ -10,7 +10,7 @@
         <view class="result-item" bindtap="fillProjectList" data-item="{{item}}">
             <view class="result-title">{{item.projectName}}</view>
             <view class="result-content">
-                <view>{{item.teamName}}</view>
+                <text>{{item.teamName}}</text>
                 <view class="margin-right:20px">{{item.serviceStartDate}}</view>
             </view>
             <view class="result-info">

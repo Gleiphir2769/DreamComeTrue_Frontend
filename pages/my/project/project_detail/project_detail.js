@@ -8,6 +8,8 @@ Page({
   data: {
     item: {},
     projectTime: 0,
+    // 当前页面处于那种状态
+    page_status: '',
   },
   // 签到处理函数
   signin(e) {
@@ -94,9 +96,11 @@ Page({
     console.log("onShow : p" + p)
     let res = JSON.parse(p)
     console.log("res: " + res)
-
+    let status = options.status
+    console.log("onLoad status :" + status)
     this.setData({
-      item: res
+      item: res,
+      page_status: status,
     })
   },
 

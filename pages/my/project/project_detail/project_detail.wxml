@@ -61,7 +61,7 @@
   </view>
 </view>
 
-<view class="cu-bar bg-white tabbar border shop">
+<view wx:if="{{page_status == 'ongoing'}}" class="cu-bar bg-white tabbar border shop">
 
   <view class="action">
     <view class="cuIcon-share">

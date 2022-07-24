@@ -61,8 +61,12 @@ Page({
       let item = e.currentTarget.dataset.item
       console.log("fillProjectList item: " + item)
       item = JSON.stringify(item)
+      let status = ""
+      if (this.data.TabCur == 2) {
+        status = this.data.Status["ONGOING"]
+      }
       wx.navigateTo({
-        url: './project_detail/project_detail?item=' + item,
+        url: './project_detail/project_detail?item=' + item + '&status=' + status,
       })
     },
     onLoad(options) {
