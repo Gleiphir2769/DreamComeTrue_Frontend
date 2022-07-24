@@ -1,4 +1,4 @@
-<form>
+<!-- <form>
     <view class="cu-form-group margin-top">
 		<view class="title">负责人姓名：测试</view>
     </view>
@@ -26,4 +26,104 @@
 </form>
 <view class="padding-xl">
   <button class="cu-btn block bg-blue lg">我要报名</button>
+</view> -->
+
+<view class="logo">
+  <image src="https://dummyimage.com/300/&text=logo"></image>
+</view>
+<view class="detail padding-tb">
+
+  <view class="cu-list menu">
+    <view class="cu-item">
+      <view class="content">
+        <text class="title">负责人姓名：</text>
+        <text class="text-grey">{{item.leaderName}}</text>
+      </view>
+    </view>
+    <view class="cu-item">
+      <view class="content">
+        <view>
+          <text class="title">负责人电话：</text>
+          <text class="text-grey">{{item.leaderTelephone}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="cu-item">
+      <view class="content">
+        <view>
+          <text class="title">负责人邮箱：</text>
+          <text class="text-grey">{{item.leaderEmail}}</text>
+        </view>
+      </view>
+    </view>
+	<view class="cu-item">
+      <view class="content">
+        <view>
+          <text class="title">队伍名称：</text>
+          <text class="text-grey">{{item.teamName}}</text>
+        </view>
+      </view>
+    </view>
+	<view class="cu-item">
+      <view class="content">
+        <view>
+          <text class="title">所属志愿中心：</text>
+          <text class="text-grey">{{item.centerName}}</text>
+        </view>
+      </view>
+    </view>
+	<view class="cu-item">
+      <view class="content">
+        <view>
+          <text class="title">项目名称：</text>
+          <text class="text-grey">{{item.projectName}}</text>
+        </view>
+      </view>
+    </view>
+	<view class="cu-item">
+      <view class="content">
+        <view>
+          <text class="title">服务地点：</text>
+          <text class="text-grey">{{item.projectLocation}}</text>
+        </view>
+      </view>
+    </view>
+	<view class="cu-item">
+      <view class="content">
+        <view>
+          <text class="title">服务领域：</text>
+          <text class="text-grey">{{item.serviceArea}}</text>
+        </view>
+      </view>
+    </view>
+	<view class="cu-item">
+      <view class="content">
+        <view>
+          <text class="title">服务对象：</text>
+          <text class="text-grey">{{item.serviceTarget}}</text>
+        </view>
+      </view>
+    </view>
+	<view class="cu-item">
+      <view class="content">
+        <view>
+          <text class="title">项目开始日期：</text>
+          <text class="text-grey">{{item.serviceStartDate}}</text>
+        </view>
+      </view>
+    </view>
+	<view class="cu-item">
+      <view class="content">
+        <view>
+          <text class="title">项目结束日期：</text>
+          <text class="text-grey">{{item.serviceEndDate}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="cu-bar bg-white tabbar border shop fixed-bottom">
+
+  <view class="bg-blue submit" bindtap="apply">我要报名</view>
 </view>

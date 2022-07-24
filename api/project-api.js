@@ -13,6 +13,14 @@ const api = {
 
     publishProject(uid, data) {
         return post(`${domain}/api/master/project/apply/${uid}`, data)
+    },
+
+    getProjects(id) {
+        return get(`${domain}/api/user/${id}/pros`)
+    },
+
+    apply(uid, pid) {
+        return post(`${domain}/api/user/va/${uid}/application/${pid}`)
     }
 }
 
