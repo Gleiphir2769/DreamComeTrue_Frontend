@@ -8,16 +8,16 @@ Page({
     //队伍列表是个json数组
     teamList : [
       {
-        name : '小牛马',
-        headcount : 1,
+        name : '小小1',
+        headcount : 15,
         teamStatus : 1,
         createTime : 1,
         area : '丰台',
         tid : 10
       },
       {
-        name : '小牛马',
-        headcount : 1,
+        name : '小小2',
+        headcount : 15,
         teamStatus : 1,
         createTime : 1,
         area : '丰台',
@@ -103,6 +103,7 @@ Page({
       success (res) {
         if(res.statusCode == 200){
           //获得队伍列表
+          //和后端目前还没有通
           that.setData({
             teamList: res.data
           });
@@ -113,11 +114,11 @@ Page({
           });
         }else{
           //失败
-          wx.showToast({
-            title: '获取队伍列表失败',
-            icon: 'none',
-            duration: 2000
-          });
+          // wx.showToast({
+          //   title: '获取队伍列表失败',
+          //   icon: 'none',
+          //   duration: 2000
+          // });
         }
       }
     })

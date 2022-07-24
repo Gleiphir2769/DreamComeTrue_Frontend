@@ -96,16 +96,17 @@ Page({
         success (res) {
           if(res.statusCode == 200){
             //成功
+            //和后端还没通
             that.setData({
               teamDetail : res.data
             })
           }else{
             //失败
-            wx.showToast({
-              title: '获取队伍详情失败',
-              icon: 'none',
-              duration: 2000
-            })
+            // wx.showToast({
+            //   title: '获取队伍详情失败',
+            //   icon: 'none',
+            //   duration: 2000
+            // })
           }
         }
       })
@@ -121,6 +122,7 @@ Page({
         success (res) {
           if(res.statusCode == 200){
             //成功
+            //和后端还没通
             wx.showToast({
               title: '申请加入队伍成功',
               icon: 'none',
@@ -128,11 +130,11 @@ Page({
             })
           }else{
             //失败
-            wx.showToast({
-              title: '申请加入队伍失败',
-              icon: 'none',
-              duration: 2000
-            })
+            // wx.showToast({
+            //   title: '申请加入队伍失败',
+            //   icon: 'none',
+            //   duration: 2000
+            // })
           }
         }
       })
