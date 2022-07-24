@@ -12,12 +12,19 @@ Page({
         IngProjectLists: [],
         // 根据项目id 返回的具体project
         ProjectDetails: '',
+        // 状态常量
+        Status: {
+          "PENDING": 'pending',
+          "ONGOING": 'ongoing',
+          "FINISHED": 'finished',
+        }
     },
 
     tabSelect(e) {
         let TabCur = e.currentTarget.dataset.id;
         this.setData({TabCur: TabCur});
         let status = "agreed"
+        let uid = wx.getStorageSync('uid')
         if (TabCur === 0) {
           // api.getProjectDetailByUidAndStatus(2, "").then(res=>{
           //   console.log(res.data),
@@ -29,24 +36,34 @@ Page({
         } else if (TabCur === 1) {
 
         } else if (TabCur === 2) {
-          // 获取用户 2 正在进行中的项目
-          api.getIngProjectList(2).then(res=>{
+          // 获取用户 uid 正在进行中的项目
+          api.getIngProjectListByUidAndStatus(uid, this.data.Status["ONGOING"]).then(res=>{
             console.log(res.data),
             this.setData({
               IngProjectLists: res.data.data,
             })
+            console.log("IngProjectLists: " + this.data.IngProjectLists)
           }
           )
         }else if (TabCur === 3) {
-
+          api.getIngProjectListByUidAndStatus(uid, this.data.Status["FINISHED"]).then(res=>{
+            console.log(res.data),
+            this.setData({
+              IngProjectLists: res.data.data,
+            })
+            console.log("IngProjectLists: " + this.data.IngProjectLists)
+          }
+          )
         }
-
-        // this.IngProjectLists = res.data.data;
     },
     fillProjectList(e) {
-      onclick
-      console.log(e.data.data.id)
-
+      console.log("fillProjectList: e" + e)
+      let item = e.currentTarget.dataset.item
+      console.log("fillProjectList item: " + item)
+      item = JSON.stringify(item)
+      wx.navigateTo({
+        url: './project_detail/project_detail?item=' + item,
+      })
     },
     onLoad(options) {
         let {p, title} = options;

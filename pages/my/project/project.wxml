@@ -6,8 +6,8 @@
     </view>
     <!-- 这里是 正在进行中 的代码 -->
     <view class="results">
-      <view class="cu-item flex-sub {{index==TabCur?'text-blue cur':''}}" wx:for="{{IngProjectLists}}" wx:key bindtap="fillProjectList" data-id="{{index}}">
-        <view class="result-item">
+      <view class="cu-item flex-sub {{index==TabCur?'text-blue cur':''}}" wx:for="{{IngProjectLists}}">
+        <view class="result-item" bindtap="fillProjectList" data-item="{{item}}">
             <view class="result-title">{{item.projectName}}</view>
             <view class="result-content">
                 <view>{{item.teamName}}</view>

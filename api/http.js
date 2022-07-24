@@ -6,7 +6,8 @@ const getToken=()=>{
   return token
 }
 const getHeader=(extraHeaders)=>{
-    let h={"Token":getToken()}
+  // 这里注意一下是 Authorization
+    let h={"Authorization":getToken()}
     for(let item in extraHeaders){
       h[item]=extraHeaders[item]
     }
@@ -18,7 +19,7 @@ function get(url, header={}) {
         wx.request({
             url,
             method:'get',
-            headers:getHeader(header),
+            header:getHeader(header),
             success: (res) => {
                 resolve(res)
             },
@@ -46,6 +47,24 @@ function post(url,data,header={}) {
       })
   })
 }
+
+function put(url,data,header={}) {
+  console.log(getHeader(header))
+  return new Promise((resolve, reject) => {
+      wx.request({
+          url,
+          method:'put',
+          header:getHeader(header),
+          data,
+          success: (res) => {
+              resolve(res)
+          },
+          fail: (res) => {
+              reject(res)
+          }
+      })
+  })
+}
 module.exports={
-  get,post
+  get,post,put
 }
