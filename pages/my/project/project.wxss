@@ -1,6 +1,5 @@
 /* pages/my/project/project.wxss */
 
-
 .filter {
   display: flex;
   flex-direction: row;

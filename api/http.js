@@ -13,12 +13,16 @@ const getHeader=(extraHeaders)=>{
     return h
 }
 
+const token = "Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVzSW4iOjE2NTg2NDU5NzY2ODksInVpZCI6Miwicm9sZSI6InVzZXIiLCJhdXRob3JpdGllcyI6W3siYXV0aG9yaXR5IjoiUk9MRV91c2VyIn1dLCJlbmFibGVkIjp0cnVlLCJ1c2VybmFtZSI6IjE4MTM4MzIyMzg1In0.3IvcRYrsULVFitHCh9TOVEzwAOXXB5vasowH3F6lGZw";
+
 function get(url, headers={}) {
     return new Promise((resolve, reject) => {
         wx.request({
             url,
             method:'get',
-            headers:getHeader(headers),
+            header: {
+              "Authorization": token,
+            },
             success: (res) => {
                 resolve(res)
             },
