@@ -1,0 +1,19 @@
+.logo{
+
+}
+.logo image{
+  width: 100%;
+}
+.titlex{
+  font-size: 32rpx;
+}
+.title{
+
+ margin-right: 5px;
+}
+
+.fixed-bottom{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

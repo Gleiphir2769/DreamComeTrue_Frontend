@@ -59,9 +59,9 @@
             在线培训
         </view> -->
     </view>
-    <view class="tips">
-    </view>
-    <view class="projects">
+    <!-- <view class="tips">
+    </view> -->
+    <!-- <view class="projects">
         <view class="p-header">
             <view>志愿项目</view>
             <view class="more">更多 ></view>
@@ -121,5 +121,5 @@
                 北京憨福儿公益基金
             </view>
         </view>
-    </view>
+    </view> -->
 </view>

@@ -16,7 +16,10 @@
         "pages/my/project/project",
         "pages/my/profile/profile",
         "pages/rank/rank",
-        "pages/my/member/member"
+        "pages/my/team/member/member",
+        "pages/my/team/projectApplication/projectApplication",
+        "pages/my/team/myProject/myProject",
+        "pages/my/team/projectDetail/projectDetail"
     ],
     "window": {
         "backgroundTextStyle": "light",
@@ -39,7 +42,7 @@
                 "selectedIconPath": "images/icons/team2.png",
                 "iconPath": "images/icons/team.png",
                 "pagePath": "pages/team/team",
-                "text": "志愿团体"
+                "text": "志愿队伍"
             },
             {
                 "selectedIconPath": "images/icons/project2.png",

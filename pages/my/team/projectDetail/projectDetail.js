@@ -1,5 +1,3 @@
-// pages/my/member/member.js
-import {api} from '../../../api/my-api'
 Page({
 
     /**
@@ -13,8 +11,9 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        let item = JSON.parse(options.item)
         this.setData({
-            uid: wx.getStorageSync('uid'),
+            item,
         })
     },
 
@@ -29,24 +28,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        let that = this
-        let tid = that.data.uid
-        let status = 'agreed'
-        // 获取我的成员
-        api.getMember(tid, status).then(res=>{
-            console.log(res, '获取我的成员')
-            if(res.data.code === 20000) {
-                let memberList = []
-                for (let i = 0; i < res.data.data.length; i++) {
-                    let volunteer = res.data.data[i].volunteer
-                    volunteer.joinTime = res.data.data[i].updateTime.replace('T', ' ')
-                    memberList.push(volunteer)
-                }
-                that.setData({
-                    memberList,
-                })
-            }
-        })
+
     },
 
     /**

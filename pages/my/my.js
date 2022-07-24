@@ -29,7 +29,7 @@ Page({
       {
         title: '我的成员',
         role: '志愿队伍',
-        url:'/pages/my/member/member'
+        url:'/pages/my/team/member/member'
       },
       {
         title: '加入队伍审核',
@@ -42,9 +42,14 @@ Page({
         url:'/pages/my/project/project?p=4&title=成员审核'
       },
       {
+        title: '项目申请',
+        role: '志愿队伍',
+        url:'/pages/my/team/projectApplication/projectApplication'
+      },
+      {
         title: '我的项目',
         role: '志愿队伍',
-        url:'/pages/my/project/project?p=5&title=我的项目'
+        url:'/pages/my/team/myProject/myProject'
       },
       {
         title: '队伍审核',
