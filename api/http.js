@@ -6,8 +6,10 @@ const getToken=()=>{
   return token
 }
 const getHeader=(extraHeaders)=>{
-  // 这里注意一下是 Authorization
-    let h={"Authorization":getToken()}
+    const h={}
+    const token=getToken()
+    if(token)
+      h['Authorization']=token
     for(let item in extraHeaders){
       h[item]=extraHeaders[item]
     }
