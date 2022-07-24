@@ -31,9 +31,9 @@
       </view>
     </view>
     <view class="flex flex-sub flex-direction">
-      <view class="text-xxl text-green">{{timeCount}}</view>
+      <view class="text-xxl text-green">{{timeCount + '分钟'}}</view>
       <view class="margin-top-sm">
-        时长
+        总时长
       </view>
     </view>
   </view>

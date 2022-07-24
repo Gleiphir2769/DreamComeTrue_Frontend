@@ -1,8 +1,9 @@
+import {api} from '../../api/my-api'
 Page({
   data: {
     projectCount: 1,
     teamCount: 24,
-    timeCount: 1,
+    timeCount: 0,
     currentRole: 0,
     roles: ['志愿者', '志愿队伍', '志愿中心'],
     colors:['orange','olive','red'],
@@ -20,10 +21,11 @@ Page({
         role: '志愿者',
         url:'/pages/my/project/project?p=2&title=我的项目'
       },
-      {
-        title: '我的时长',
-        role: '志愿者'
-      },
+      // {
+      //   title: '排行榜',
+      //   role: '志愿者',
+      //   url:'/pages/my/time/time'
+      // },
       {
         title: '发布项目',
         role: '志愿队伍'
@@ -76,6 +78,9 @@ Page({
 
   onLoad: function (options) {
     this.loadMenu()
+    this.setData({
+      uid: wx.getStorageSync('uid'),
+    })
   },
 
 
@@ -85,7 +90,17 @@ Page({
 
 
   onShow: function () {
-
+    let that = this
+    let uid = Number(that.data.uid)
+    // 查看总时长记录
+    api.getTotalTime(uid).then(res=>{
+      console.log(res, '查看总时长记录')
+      if(res.data.code === 20000) {
+        that.setData({
+          timeCount: res.data.data.total_time
+        })
+      }
+    })
   },
 
   onHide: function () {

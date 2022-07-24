@@ -14,8 +14,8 @@
         "pages/team/teamDetail/teamDetail",
         "pages/project/projectDetail/projectDetail",
         "pages/my/project/project",
-        "pages/my/time/time",
-        "pages/my/profile/profile"
+        "pages/my/profile/profile",
+        "pages/rank/rank"
     ],
     "window": {
         "backgroundTextStyle": "light",

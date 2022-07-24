@@ -46,6 +46,24 @@ function post(url,data,header={}) {
       })
   })
 }
+
+function put(url,data,header={}) {
+  console.log(getHeader(header))
+  return new Promise((resolve, reject) => {
+      wx.request({
+          url,
+          method:'put',
+          header:getHeader(header),
+          data,
+          success: (res) => {
+              resolve(res)
+          },
+          fail: (res) => {
+              reject(res)
+          }
+      })
+  })
+}
 module.exports={
-  get,post
+  get,post,put
 }

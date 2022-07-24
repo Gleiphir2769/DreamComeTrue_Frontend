@@ -1,0 +1,73 @@
+<!--pages/my/project/project_detail/project_detail.wxml-->
+<view class="logo">
+  <image src="https://dummyimage.com/300/&text=logo"></image>
+</view>
+<view class="detail">
+
+  <view class="cu-list menu  margin-top">
+    <view class="cu-item">
+      <view class="content">
+        <text>{{item.projectName}}</text>
+      </view>
+    </view>
+    <view class="cu-item">
+      <view class="content">
+        <view>
+          <text class="title">联系人:</text>
+          <text class="text-grey">{{item.leaderName}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="cu-item">
+      <view class="content">
+        <view>
+          <text class="title">电话:</text>
+          <text class="text-grey">{{item.leaderTelephone}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="cu-item">
+      <view class="content">
+        <view>
+          <text class="title">邮箱:</text>
+          <text class="text-grey">{{item.leaderEmail}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="cu-item">
+      <view class="content">
+        <view>
+          <text class="title">项目开始时间:</text>
+          <text class="text-grey">{{item.serviceStartDate}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="cu-item">
+      <view class="content">
+        <view>
+          <text class="title">项目结束时间:</text>
+          <text class="text-grey">{{item.serviceEndDate}}</text>
+        </view>
+      </view>
+    </view>
+    <!-- <view class="cu-item">
+      <view class="content">
+        <view>
+          <text class="title">项目时长记录:</text>
+          <text class="text-grey">{{projectTime}}</text>
+        </view>
+      </view>
+    </view> -->
+  </view>
+</view>
+
+<view wx:if="{{page_status == 'ongoing'}}" class="cu-bar bg-white tabbar border shop">
+
+  <view class="action">
+    <view class="cuIcon-share">
+    </view>
+    分享
+  </view>
+  <view class="bg-blue submit margin_left_right" bindtouchend="signin">签到</view>
+  <view class="bg-blue submit margin_left_right" bindtouchend="signout">签出</view>
+</view>

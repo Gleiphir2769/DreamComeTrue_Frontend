@@ -38,7 +38,7 @@
             <image src="../../images/icons/join.png"/>
             加入队伍
         </view>
-        <view class="grid-item" bindtap="navigate" data-url="projectPublish">
+        <view class="grid-item" bindtap="navigate" data-url="projectRealease">
             <image src="../../images/icons/query.png"/>
             项目发布
         </view>
@@ -46,14 +46,18 @@
             <image src="../../images/icons/join_project.png"/>
             加入项目
         </view>
-        <view class="grid-item">
+        <!-- <view class="grid-item">
             <image src="../../images/icons/qiandao.png"/>
             签到服务
+        </view> -->
+        <view class="grid-item">
+            <image src="../../images/icons/qiandao.png" bindtap="navigate" data-url="rank"/>
+            排行榜
         </view>
-        <view class="grid-item" bindtap="navigate" data-url="training">
+        <!-- <view class="grid-item" bindtap="navigate" data-url="training">
             <image src="../../images/icons/peixun.png"/>
             在线培训
-        </view>
+        </view> -->
     </view>
     <view class="tips">
     </view>

@@ -21,6 +21,10 @@ const api = {
 
     apply(uid, pid) {
         return post(`${domain}/api/user/va/${uid}/application/${pid}`)
+    },
+
+    getRank(uid) {
+        return get(`${domain}/api/user/activity/get/${uid}/rank`)
     }
 }
 
