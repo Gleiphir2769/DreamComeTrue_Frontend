@@ -1,3 +1,10 @@
+/* pages/my/project/project_detail/project_detail.wxss */
+
+.margin_left_right {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 .logo{
 
 }

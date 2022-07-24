@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/login/login",
     "pages/userRegister/userRegister",
     "pages/groupRegister/groupRegister",
     "pages/logs/logs",
@@ -14,8 +15,8 @@
     "pages/project/projectDetail/projectDetail",
     "pages/my/project/project",
     "pages/my/time/time",
-    "pages/login/login",
-    "pages/my/profile/profile"
+    "pages/my/profile/profile",
+    "pages/my/project/project_detail/project_detail"
   ],
   "window": {
     "backgroundTextStyle": "light",
