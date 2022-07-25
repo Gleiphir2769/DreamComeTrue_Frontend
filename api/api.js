@@ -33,6 +33,9 @@ const api = {
   },
   getProjectApplicationList(uid,status){
     return get(`${domain}/api/user/va/${uid}/vapplications?status=${status}`)
+  },
+  getTeamList(uid,status){
+    return get(`${domain}/api/public/teams?uid=${uid}&status=${status}`)
   }
 }
 
