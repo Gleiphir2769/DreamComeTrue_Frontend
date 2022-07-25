@@ -29,13 +29,20 @@ const api = {
     return put(`${domain}/api/${role}/${uid}`,data)
   },
   getProjectList(uid,status){
-    return get(`${domain}/api/user/${uid}/va?status=${status}`)
+    let query=status?`?status=${status}`:''
+    return get(`${domain}/api/user/${uid}/va${query}`)
   },
   getProjectApplicationList(uid,status){
     return get(`${domain}/api/user/va/${uid}/vapplications?status=${status}`)
   },
   getTeamList(uid,status){
-    return get(`${domain}/api/teams?uid=${uid}&status=${status}`)
+    return get(`${domain}/api/teams/filter/${uid}?&status=${status}`)
+  },
+  signIn(uid,pid,inTime){
+    return post(`${domain}/api/user/activity/${uid}/in/${pid}?inTime=${inTime}`)
+  },
+  signOut(uid,pid,outTime){
+    return put(`${domain}/api/user/activity/${uid}/out/${pid}?outTime=${outTime}`)
   }
 }
 

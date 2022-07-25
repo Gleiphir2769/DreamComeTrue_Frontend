@@ -1,22 +1,29 @@
-
 // pages/project/project.js
 import {
   api
 } from '../../../../api/api'
 Page({
+
   data: {
-    Tabs : ['unverified', 'agreed', 'disagreed'],
-    TabCur:0,
-    status:['unverified','agreed','disagreed']
+    Tabs: ['agreed', 'unverified', 'disagreed'],
+    TabCur: 0,
+    status: ['agreed', 'unverified', 'disagreed']
   },
   tabSelect(e) {
     let TabCur = e.currentTarget.dataset.id;
     this.setData({
       TabCur: TabCur
     })
-    this.loadTeams();
+    this.loadProjects();
   },
-  loadTeams() {
+
+  onLoad(options) {
+    this.setData({
+      uid: wx.getStorageSync('uid')
+    })
+  },
+
+  loadProjects() {
     wx.showLoading({
       title: '加载中',
     })
@@ -25,26 +32,25 @@ Page({
       status,
       TabCur
     } = this.data;
-    let uid=wx.getStorageSync('uid')
-    api.getTeamList( uid,status[TabCur]).then(res => {
+    let uid = that.data.uid;
+    api.getProjectApplicationList(uid, status[TabCur]).then(res => {
       wx.hideLoading()
       if (res.data.code === 20000) {
         that.setData({
-          teamLists: res.data.data
+          projectLists: res.data.data
         })
       }
     })
   },
 
-  onLoad(options) {
-      this.loadTeams()
+  onShow() {
+    this.loadProjects()
   },
   detail(e) {
     let item = e.currentTarget.dataset.item
     item = JSON.stringify(item)
     wx.navigateTo({
-      url: '../../../team/teamDetail/teamDetail?item=' + item,
+      url: '../../../project/projectDetail/projectDetail?item=' + item,
     })
   }
-
 })

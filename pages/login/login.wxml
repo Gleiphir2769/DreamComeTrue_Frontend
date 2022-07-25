@@ -1,11 +1,11 @@
 <view class="my-container">
     <form class="form" bindsubmit="onLogin">
         <view class="logo">
-            <image src="https://dummyimage.com/250/ffffff/000000"></image>
+          <image src="../../images/logo.jpg"></image>
         </view>
         <view class="form-item">
             <text class="cuIcon-people lg text-gray"></text>
-            <input name="username" placeholder="请输入用户名" />
+            <input name="username" placeholder="请输入手机号" />
         </view>
         <view class="form-item">
             <text class="cuIcon-lock lg text-gray"></text>

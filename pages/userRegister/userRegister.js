@@ -1,4 +1,6 @@
-import {api} from "../../api/api"
+import {
+  api
+} from "../../api/api"
 let timer;
 Page({
 
@@ -9,32 +11,62 @@ Page({
     alertVisible: false,
     alertContent: ''
   },
+  checkPhone(value) {
+    const regex = /^1[3456789]\d{9}$/;
+    return regex.test(value)
+  },
   showAlert(alertContent) {
     let self = this;
     this.setData({
-        alertVisible: true,
-        alertContent
+      alertVisible: true,
+      alertContent
     })
     timer = setInterval(function () {
-        self.setData({
-            alertVisible: false,
-        })
-        clearInterval(timer)
-    }, 1000)
-},
+      self.setData({
+        alertVisible: false,
+      })
+      clearInterval(timer)
+    }, 1500)
+  },
   onRegister(e) {
-    let self=this;
-    api.userRegister(e.detail.value).then(data=>{
-      data=data.data
-      if(data.code===20000){
-          api.login(e.detail.value).then(data2=>{
-            console.log(data2.data.data)
-            wx.setStorageSync('token', data2.data.data.token)
-            wx.setStorageSync('role', data2.data.data.role)
-            wx.setStorageSync('uid', data2.data.data.uid)
-            self.showModal()
+    wx.showLoading({
+      title: '加载中',
+    })
+    let self = this;
+    if (!this.checkPhone(e.detail.value.username)) {
+      self.showAlert("手机格式不对～")
+      return
+    }
+    if (e.detail.value.password.length < 6) {
+      self.showAlert("密码至少为6位")
+      return
+    }
+    api.userRegister(e.detail.value).then(data => {
+      data = data.data
+      wx.hideLoading();
+      if (data.code === 20000) {
+        api.login(e.detail.value).then(data2 => {
+          wx.setStorage({
+            key: 'token',
+            data: data2.data.data.token,
+            success: function (res) {
+              wx.setStorage({
+                key: 'uid',
+                data: data2.data.data.uid,
+                success: function (res) {
+                  wx.setStorage({
+                    key: 'role',
+                    data: data2.data.data.role,
+                    success: function (res) {
+                      self.showModal()
+                    },
+                  })
+                },
+              })
+            },
           })
-      }else{
+        })
+      } else {
         self.showAlert(data.message)
       }
     })

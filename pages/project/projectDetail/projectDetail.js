@@ -82,10 +82,13 @@ Page({
                     title: '报名成功',
                     icon: 'success',
                     duration: 2000,
-                    success() {
-                        wx.navigateBack()
-                    }
                 })
+            }else{
+              wx.showToast({
+                title: '不能重复加入',
+                image: '../../../images/icons/wrong.png',
+                duration: 2000
+            })
             }
         })
     }

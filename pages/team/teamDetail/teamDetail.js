@@ -114,6 +114,12 @@ Page({
                 icon: 'success',
                 duration: 2000
             })
+          }else{
+            wx.showToast({
+              title: '不能重复加入',
+              image: '../../../images/icons/wrong.png',
+              duration: 2000
+          })
           }
         })
     },

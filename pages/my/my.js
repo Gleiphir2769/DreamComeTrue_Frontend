@@ -29,10 +29,16 @@ Page({
         url:'/pages/my/volunteer/team/team'
       },
       {
+        title: '项目申请',
+        role: 'user',
+        url:'/pages/my/volunteer/application/application'
+      },
+      {
         title: '我的项目',
         role: 'user',
         url:'/pages/my/volunteer/project/project'
       },
+  
       // {
       //   title: '排行榜',
       //   role: 'user',
@@ -46,12 +52,12 @@ Page({
       {
         title: '加入队伍审核',
         role: 'master',
-        url:'/pages/my/project/project?p=3&title=成员审核'
+        url:'/pages/my/teamReview/teamReview?p=3&title=成员审核'
       },
       {
         title: '加入项目审核',
         role: 'master',
-        url:'/pages/my/project/project?p=4&title=成员审核'
+        url:'/pages/my/projectReview/projectReview?p=4&title=成员审核'
       },
       {
         title: '项目申请',
@@ -104,6 +110,8 @@ Page({
     this.setData({
       uid: wx.getStorageSync('uid')
     })
+    this.getProjectNumber()
+    this.getTeamNumber()
     
   },
   logout() {
@@ -113,7 +121,7 @@ Page({
 
   onShow: function () {
     let that = this
-    console.log(wx.getStorageSync('uid'))
+    this.getProjectNumber()
     this.getUserInfo()
     let uid = that.data.uid
     // 查看总时长记录
@@ -124,6 +132,25 @@ Page({
           timeCount: res.data.data.total_time
         })
       }
+    })
+   
+  },
+  getTeamNumber(){
+    let self=this;
+    let uid=wx.getStorageSync('uid')
+    api.getTeamList(uid,'agreed').then(res => {
+      self.setData({
+        teamCount:res.data.data.length
+      })
+    })
+  },
+  getProjectNumber(){
+    let self=this;
+    let uid = wx.getStorageSync('uid')
+    api.getProjectList(uid,'pending').then(res => {
+      self.setData({
+        projectCount:res.data.data.length
+      })
     })
   },
   getUserInfo() {

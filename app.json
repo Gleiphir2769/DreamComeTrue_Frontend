@@ -21,13 +21,18 @@
     "pages/my/team/myProject/myProject",
     "pages/my/team/projectDetail/projectDetail",
     "pages/my/volunteer/project/project",
-    "pages/my/volunteer/team/team"
+    "pages/my/volunteer/team/team",
+    "pages/my/volunteer/application/application",
+    "pages/my/time/time",
+    "pages/my/teamReview/teamReview",
+    "pages/my/projectReview/projectReview"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#6db2f2",
-    "navigationBarTitleText": "志愿小程序",
+    "navigationBarTitleText": "首页",
     "navigationBarTextStyle": "white"
+    
   },
   "tabBar": {
     "color": "#515a6e",
