@@ -36,6 +36,12 @@ Page({
   onLoad(options) {
       this.loadTeams()
   },
-
+  detail(e) {
+    let item = e.currentTarget.dataset.item
+    item = JSON.stringify(item)
+    wx.navigateTo({
+      url: '../../../team/teamDetail/teamDetail?item=' + item,
+    })
+  }
 
 })
