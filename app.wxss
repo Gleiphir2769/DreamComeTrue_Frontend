@@ -75,3 +75,10 @@
   flex-direction: row;
   align-items: center;
 }
+.item-blank{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 400rpx;
+}
