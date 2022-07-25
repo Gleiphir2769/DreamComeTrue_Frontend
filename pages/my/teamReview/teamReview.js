@@ -1,4 +1,6 @@
 // pages/my/teamReview/teamReview.js
+import {api} from '../../../api/teamreview-api'
+
 Page({
 
   /**
