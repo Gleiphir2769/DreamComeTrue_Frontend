@@ -1,5 +1,5 @@
 <view>
-    <view class="header">
+    <!-- <view class="header">
         <view class="search">
             <text class="cuIcon-search lg text-gray"></text>
             <input placeholder="搜索团体"/>
@@ -13,14 +13,14 @@
             <view class="filter-item">距离远近</view>
         </view>
         <view>筛选</view>
-    </view>
+    </view> -->
     <view class="results">
         <view class="result-item" bindtap="detail" wx:for="{{teamList}}"
-        data-item="{{item.id}}">
+        data-item="{{item}}">
             <view class="result-title">{{item.name}}</view>
             <view class="result-content">
                 <view>正式成员：{{item.headcount}}</view>
-                <view>服务时间：{{item.teamStatus}}</view>
+                <view>服务领域：{{item.serveField}}</view>
             </view>
             <view class="result-info">
                 <view>成立日期：{{item.createTime}}</view>

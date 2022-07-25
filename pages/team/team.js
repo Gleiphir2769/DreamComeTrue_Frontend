@@ -1,4 +1,5 @@
 // pages/team/team.js
+import {teamapi} from '../../api/team-api'
 Page({
 
   /**
@@ -86,40 +87,25 @@ Page({
    * 跳转到队伍详情
    */
   detail(e) {
-    let id = e.currentTarget.dataset.index;
-    console.log(id)
+    let item = e.currentTarget.dataset.item;
+    item = JSON.stringify(item)
     wx.navigateTo({
-      url: `../team/teamDetail/teamDetail?id=`+id,
+      url: '../team/teamDetail/teamDetail?item=' + item,
     })
   },
 
   // 获取队伍列表
   getTeamList(){
-    let that=this;
-    wx.request({
-      url: 'https://dream.cihss.net/api/teams',
-      method:"GET",
-     
-      success (res) {
-        if(res.statusCode == 200){
-          //获得队伍列表
-          //和后端目前还没有通
-          that.setData({
-            teamList: res.data
-          });
-          wx.showToast({
-            title: '获取队伍列表失败',
-            icon: 'none',
-            duration: 2000
-          });
-        }else{
-          //失败
-          // wx.showToast({
-          //   title: '获取队伍列表失败',
-          //   icon: 'none',
-          //   duration: 2000
-          // });
+    let that = this
+    teamapi.getTeamList().then(res=>{
+      console.log(res, '获取队伍列表')
+      if(res.data.code === 20000) {
+        for (let i = 0; i < res.data.data.length; i++) {
+          res.data.data[i].createTime = res.data.data[i].createTime.substring(0, 10);
         }
+        that.setData({
+          teamList: res.data.data
+        })
       }
     })
   },

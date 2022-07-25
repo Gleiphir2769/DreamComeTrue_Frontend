@@ -1,4 +1,5 @@
 // pages/team/teamDetail/teamDetail.js
+import {teamapi} from '../../../api/team-api'
 Page({
 
     /**
@@ -30,24 +31,27 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-      this.setData({
-        uid:options.uid,
-        tid:options.tid
-      })
+        let item = JSON.parse(options.item)
+        console.log(item)
+        this.setData({
+            item,
+            uid: wx.getStorageSync('uid'),
+            tid: item.id
+        })
     },
 
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function () {
-      this.getTeamDetail()
+
     },
 
     /**
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-      this.getTeamDetail()
+    //   this.getTeamDetail()
     },
 
     /**
@@ -87,56 +91,30 @@ Page({
 
       // 获取队伍详情
     getTeamDetail(){
-      let that=this;
-      let tid=that.data.tid;
-      wx.request({
-        url: `https://dream.cihss.net/api/teams/${tid}`, //仅为示例，并非真实的接口地址
-        method:"GET",
-      
-        success (res) {
-          if(res.statusCode == 200){
-            //成功
-            //和后端还没通
-            that.setData({
-              teamDetail : res.data
-            })
-          }else{
-            //失败
-            // wx.showToast({
-            //   title: '获取队伍详情失败',
-            //   icon: 'none',
-            //   duration: 2000
-            // })
-          }
-        }
-      })
+        let that = this
+        let id = that.data.tid
+        teamapi.getTeamDetail(id).then(res=>{
+          console.log(res, '获取队伍详情')
+        //   if(res.data.code === 20000) {
+
+        //   }
+        })
     },
+
     // 提交入队申请
-    joinTeam : function(){
-      let that=this;
-      let tid=that.data.tid;
-      let uid=that.data.uid;
-      wx.request({
-        url: `https://dream.cihss.net/api/teams/${tid}/applications/${uid}`, //仅为示例，并非真实的接口地址
-        method:"GET",
-        success (res) {
-          if(res.statusCode == 200){
-            //成功
-            //和后端还没通
+    joinTeam() {
+        let that = this
+        let tid = that.data.tid
+        let uid = that.data.uid
+        teamapi.joinTeam(tid, uid).then(res=>{
+          console.log(res, '提交入队申请')
+          if(res.data.code === 20000) {
             wx.showToast({
-              title: '申请加入队伍成功',
-              icon: 'none',
-              duration: 2000
+                title: '加入成功',
+                icon: 'success',
+                duration: 2000
             })
-          }else{
-            //失败
-            // wx.showToast({
-            //   title: '申请加入队伍失败',
-            //   icon: 'none',
-            //   duration: 2000
-            // })
           }
-        }
-      })
+        })
     },
 })
