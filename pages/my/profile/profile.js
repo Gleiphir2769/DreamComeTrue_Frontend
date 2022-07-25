@@ -91,15 +91,18 @@ Page({
     for (let i in data) {
       if (!data[i]) {
         this.showAlert(`${i} cannot be null`)
+        wx.hideLoading()
         return
       }
     }
     if (!this.checkEamil(data.email)) {
       this.showAlert("邮箱格式不正确")
+      wx.hideLoading()
       return
     }
     if (!this.checkPhone(data.telephone)) {
       this.showAlert("电话格式不正确")
+      wx.hideLoading()
       return
     }
     api.updateUserProfile(uid, data).then(res => {
