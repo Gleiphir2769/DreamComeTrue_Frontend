@@ -1,11 +1,11 @@
 <view class="container">
-    <view class="header">
+    <!-- <view class="header">
         <view class="search">
             <text class="cuIcon-search lg text-gray"></text>
             <input placeholder="搜索项目，团体，文章"/>
             <text class="cuIcon-scan lg text-gray"></text>
         </view>
-    </view>
+    </view> -->
     <view class="header">
         <image style="width: 100%;" src="{{src}}" mode="scaleToFill"></image>
     </view>         

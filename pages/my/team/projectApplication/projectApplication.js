@@ -1,5 +1,5 @@
 // pages/my/team/team.js
-import {api} from '../../../../api/my-api'
+import {myapi} from '../../../../api/my-api'
 Page({
 
     /**
@@ -79,7 +79,7 @@ Page({
     // 查看项目申请
     getProjectApplication(uid, status) {
         let that = this
-        api.getProjectApplication(uid, status).then(res=>{
+        myapi.getProjectApplication(uid, status).then(res=>{
             console.log(res, '查看项目申请 ' + status)
             if(res.data.code === 20000) {
                 if (status == 'unverified') {

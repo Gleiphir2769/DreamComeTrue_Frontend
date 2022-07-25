@@ -5,7 +5,7 @@
         </view>
         <view class="form-item">
             <text class="cuIcon-people lg text-gray"></text>
-            <input name="username" placeholder="用户名" />
+            <input name="username" placeholder="请输入用户名" />
         </view>
         <view class="form-item">
             <text class="cuIcon-lock lg text-gray"></text>

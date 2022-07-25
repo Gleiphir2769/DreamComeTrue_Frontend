@@ -38,7 +38,7 @@ Page({
                 wx.setStorageSync('role', data.data.role)
                 wx.setStorageSync('uid', data.data.uid)
                 wx.switchTab({
-                  url: '../../pages/index/index',
+                  url: '../../pages/my/my',
                 })
             }
             // login failed

@@ -10,6 +10,10 @@ const api = {
     },
     reigster(){
       return post(`${domain}/register`, {})
+    },
+    getUserInfo(uid){
+      let role=wx.getStorageSync('role')
+      return get(`${domain}/api/${role}/${uid}`)
     }
 }
 

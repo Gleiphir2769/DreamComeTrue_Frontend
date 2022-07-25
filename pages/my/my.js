@@ -1,4 +1,7 @@
-import {api} from '../../api/my-api'
+import {myapi} from '../../api/my-api'
+import {
+  api
+} from "../../api/api"
 Page({
   data: {
     projectCount: 1,
@@ -66,16 +69,21 @@ Page({
   },
   loadMenu() {
     let {
-      menus,menuData,roles,currentRole
+      menus,
+      menuData,
+      role,
     } = this.data
-    menus = menuData.filter(item => item.role === roles[currentRole])
+    console.log(role)
+    menus = menuData.filter(item => item.role === role)
     this.setData({
       menus
     })
   },
   switchRole() {
-    let { currentRole } = this.data
-    currentRole=(currentRole+1)%3
+    let {
+      currentRole
+    } = this.data
+    currentRole = (currentRole + 1) % 3
     this.setData({
       currentRole
     })
@@ -85,13 +93,12 @@ Page({
   onLoad: function (options) {
     this.loadMenu()
     this.setData({
-      uid: wx.getStorageSync('uid'),
+      uid: wx.getStorageSync('uid')
     })
+    
   },
-
-
-  onReady: function () {
-
+  logout() {
+    wx.clearStorageSync()
   },
 
 
@@ -99,7 +106,7 @@ Page({
     let that = this
     let uid = Number(that.data.uid)
     // 查看总时长记录
-    api.getTotalTime(uid).then(res=>{
+    myapi.getTotalTime(uid).then(res=>{
       console.log(res, '查看总时长记录')
       if(res.data.code === 20000) {
         that.setData({
@@ -108,31 +115,29 @@ Page({
       }
     })
   },
-
-  onHide: function () {
-
+  getUserInfo() {
+    let uid = wx.getStorageSync('uid');
+    let self=this;
+    if (uid) {
+      let role=wx.getStorageSync('role')
+      api.getUserInfo(uid).then(data => {
+        data=data.data.data
+        self.setData({
+          userInfo:data,
+          role
+        })
+        self.loadMenu()
+    
+      })
+    }else{
+      wx.navigateTo({
+        url: '../../pages/login/login',
+      })
+    }
   },
-
- 
-  onUnload: function () {
-
-  },
-
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  isLogin() {
+    return wx.getStorageSync('uid')
   }
+
+
 })

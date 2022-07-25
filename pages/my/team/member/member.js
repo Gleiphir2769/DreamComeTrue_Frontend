@@ -1,5 +1,5 @@
 // pages/my/member/member.js
-import {api} from '../../../../api/my-api'
+import {myapi} from '../../../../api/my-api'
 Page({
 
     /**
@@ -33,7 +33,7 @@ Page({
         let tid = that.data.uid
         let status = 'agreed'
         // 获取我的成员
-        api.getMember(tid, status).then(res=>{
+        myapi.getMember(tid, status).then(res=>{
             console.log(res, '获取我的成员')
             if(res.data.code === 20000) {
                 let memberList = []

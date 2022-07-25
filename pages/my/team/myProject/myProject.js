@@ -1,5 +1,5 @@
 // pages/my/team/team.js
-import {api} from '../../../../api/my-api'
+import {myapi} from '../../../../api/my-api'
 Page({
 
     /**
@@ -79,7 +79,7 @@ Page({
     // 查看我的项目
     getMyProject(uid, status) {
         let that = this
-        api.getMyProject(uid, status).then(res=>{
+        myapi.getMyProject(uid, status).then(res=>{
             console.log(res, '查看我的项目 ' + status)
             if(res.data.code === 20000) {
                 if (status == 'pending') {
