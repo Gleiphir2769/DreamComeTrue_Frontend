@@ -22,7 +22,10 @@
     "pages/my/team/projectDetail/projectDetail",
     "pages/my/volunteer/project/project",
     "pages/my/volunteer/team/team",
-    "pages/my/volunteer/application/application"
+    "pages/my/volunteer/application/application",
+    "pages/my/time/time",
+    "pages/my/teamReview/teamReview",
+    "pages/my/projectReview/projectReview"
   ],
   "window": {
     "backgroundTextStyle": "light",
