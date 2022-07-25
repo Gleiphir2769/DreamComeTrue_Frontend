@@ -123,7 +123,7 @@ Page({
     let that = this
     this.getProjectNumber()
     this.getUserInfo()
-    let uid = Number(that.data.uid)
+    let uid = that.data.uid
     // 查看总时长记录
     myapi.getTotalTime(uid).then(res=>{
       console.log(res, '查看总时长记录')

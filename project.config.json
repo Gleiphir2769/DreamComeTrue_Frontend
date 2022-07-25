@@ -5,7 +5,7 @@
     "include": []
   },
   "setting": {
-    "urlCheck": false,
+    "urlCheck": true,
     "es6": true,
     "enhance": true,
     "postcss": true,
@@ -23,9 +23,9 @@
     "uploadWithSourceMap": true,
     "compileHotReLoad": false,
     "lazyloadPlaceholderEnable": false,
-    "useMultiFrameRuntime": true,
-    "useApiHook": true,
-    "useApiHostProcess": true,
+    "useMultiFrameRuntime": false,
+    "useApiHook": false,
+    "useApiHostProcess": false,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
@@ -37,11 +37,11 @@
     "packNpmManually": false,
     "packNpmRelationList": [],
     "minifyWXSS": true,
-    "showES6CompileOption": false,
-    "useStaticServer": true,
     "disableUseStrict": false,
+    "minifyWXML": true,
+    "showES6CompileOption": false,
     "useCompilerPlugins": false,
-    "minifyWXML": true
+    "useStaticServer": true
   },
   "compileType": "miniprogram",
   "libVersion": "2.19.4",

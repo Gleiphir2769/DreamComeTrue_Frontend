@@ -15,8 +15,8 @@ const api = {
         return post(`${domain}/api/master/project/apply/${uid}`, data)
     },
 
-    getProjects(id) {
-        return get(`${domain}/api/user/${id}/pros`)
+    getProjects(uid) {
+        return get(`${domain}/api/user/all/filter/${uid}`)
     },
 
     apply(uid, pid) {
