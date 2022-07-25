@@ -20,7 +20,7 @@
 		</picker>
 	</view>
     <view class="cu-form-group">
-		<view class="title">所属志愿中心</view>
+		<view class="title">所属单位</view>
 		<picker name="centerName" bindchange="centerChange" value="{{centerIndex?center[centerIndex]:'请选择'}}" range="{{center}}">
 			<view class="picker">
 				{{centerIndex?center[centerIndex]:'请选择'}}

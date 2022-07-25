@@ -260,14 +260,28 @@ Page({
   onPublish(e) {
     let that = this
     let uid = that.data.uid
-    api.publishProject(uid, e.detail.value).then(res => {
-      if (res.data.code === 20000) {
-        wx.showToast({
-          title: '发布成功',
-          icon: 'success',
-          duration: 2000
-        })
-      }
-    })
+    let value = e.detail.value
+    console.log(value)
+    if (value.leaderName == '' || value.leaderTelephone == '' || value.leaderEmail == '' || 
+        value.teamName == '' || value.centerName == '请选择' || value.projectName == '' || 
+        value.projectLocation == '' || value.serviceArea == '' || value.serviceTarget == ''
+        || value.serviceStartDate == '请选择' || value.serviceEndDate == '请选择') {
+          wx.showModal({
+            title: '提示',
+            content: '请将数据填写完整',
+            showCancel: false
+          })
+        }
+    else {
+      api.publishProject(uid, e.detail.value).then(res => {
+        if (res.data.code === 20000) {
+          wx.showToast({
+            title: '发布成功',
+            icon: 'success',
+            duration: 2000
+          })
+        }
+      })
+    }
   }
 })
