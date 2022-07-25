@@ -60,19 +60,19 @@ Page({
     let inTime = this.getDateTime()
     let that=this;
     wx.showModal({
-      title: '签出',
-      content: '是否要签出？',
+      title: '签入',
+      content: '是否要签入？',
       success:res=>{
        if (res.confirm) {
         api.signIn(uid, pid, inTime).then(res => {
           if(res.data.code==20000){
-            that.showAlert("签到成功～")
+            that.showAlert("签入成功～")
           }else if(res.data.code==50006){
-            that.showAlert("项目已经签到过了～")
+            that.showAlert("项目已经签入过了～")
           }else if(res.data.data==50000){
-            that.showAlert("项目签到失败～")
+            that.showAlert("项目签入失败～")
           }else{
-            that.showAlert("项目签到失败～")
+            that.showAlert("项目签入失败～")
           }
         })
        } else if (res.cancel) {
