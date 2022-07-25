@@ -1,11 +1,11 @@
 <form bindsubmit="onRegister">
   <view class="cu-form-group margin-top">
-    <view class="title">用户名</view>
-    <input name="username" placeholder="以字母开头，由数字和字母组成"></input>
+    <view class="title">手机号</view>
+    <input name="username" placeholder="请输入手机号"></input>
   </view>
   <view class="cu-form-group">
     <view class="title">密码</view>
-    <input name="password" type="password" placeholder="必须包含大小写字母和数字"></input>
+    <input name="password" type="password" placeholder="请输入密码"></input>
   </view>
   <view class="padding-xl">
     <button form-type="submit" class="cu-btn block bg-blue lg">申请</button>

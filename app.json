@@ -21,7 +21,8 @@
     "pages/my/team/myProject/myProject",
     "pages/my/team/projectDetail/projectDetail",
     "pages/my/volunteer/project/project",
-    "pages/my/volunteer/team/team"
+    "pages/my/volunteer/team/team",
+    "pages/my/volunteer/application/application"
   ],
   "window": {
     "backgroundTextStyle": "light",

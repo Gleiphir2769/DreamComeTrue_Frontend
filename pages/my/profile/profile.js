@@ -10,11 +10,15 @@ Page({
   data: {
     alertVisible: false,
     alertContent: "",
+    alertVisible: false,
+    alertContent: '',
     sexPicker: ['男', '女'],
+    sexIndex:0,
     date: '2022-07-25',
-    userInfo:{},
+    userInfo: {},
     modalVisible: false,
-    educationPicker: ['本科', '硕士', '博士', '其他']
+    educationPicker: ['本科', '硕士', '博士', '其他'],
+    educationIndex:3,
   },
   showAlert(alertContent) {
     let self = this;
@@ -27,15 +31,19 @@ Page({
         alertVisible: false,
       })
       clearInterval(timer)
-    }, 2000)
+    }, 1000)
   },
   getUserInfo() {
     let uid = wx.getStorageSync('uid');
     let self = this;
+    let {educationPicker}=this.data;
     if (uid) {
       api.getUserInfo(uid).then(data => {
         self.setData({
-          userInfo:data.data.data
+          userInfo: data.data.data,
+          sexIndex: data.data.data.sex==='男'?0:1,
+          educationIndex:educationPicker.indexOf(data.data.data.education)===-1?3:educationPicker.indexOf(data.data.data.education),
+          date:data.data.data.birthDate
         })
 
       })
@@ -50,31 +58,47 @@ Page({
     let data = e.detail.value;
     let {
       sexPicker,
+      sexIndex,
+      educationIndex,
       educationPicker
     } = this.data
-    if (data.sex) {
-      data.sex = sexPicker[data.sex]
-    } else {
-      data.sex = sexPicker[0]
-    }
-    if (data.edcation) {
-      data.education = educationPicker[data.education]
-    } else {
-      data.edcation = educationPicker[0]
-    }
-    for(let i in data){
-      if(!data[i]){
+    data.sex=sexPicker[sexIndex]
+    data.education=educationPicker[educationIndex]
+   
+    let self = this;
+    for (let i in data) {
+      if (!data[i]) {
         this.showAlert(`${i} cannot be null`)
         return
       }
     }
-    api.updateUserProfile(uid,data).then(res=>{
-      console.log(res)
+    api.updateUserProfile(uid, data).then(res => {
+      if (res.data.code !== 20000) {
+        self.showAlert(res.data.message)
+      } else {
+        self.showAlert(`资料更新成功`)
+      }
     })
 
   },
+  sexPickerChange(e){
+    this.setData({
+      sexIndex:e.detail.value
+    })
+  },
+  eduPickerChange(e){
+    this.setData({
+      educationIndex:e.detail.value
+    })
+  },
+  datePickerChange(e){
+    console.log(e.detail.value)
+    this.setData({
+      date:e.detail.value
+    })
+  },
   onLoad(options) {
-    
+
     this.getUserInfo()
   },
 

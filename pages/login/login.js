@@ -25,9 +25,22 @@ Page({
             clearInterval(timer)
         }, 1000)
     },
+    checkPhone(value){
+      const regex = /^1[3456789]\d{9}$/;
+      return regex.test(value)
+    },
+    checkPassword(){},
 
     onLogin(e) {
         let self = this;
+        if(!this.checkPhone(e.detail.value.username)){
+          self.showAlert("手机格式不对")
+          return 
+        }
+        if(!e.detail.value.password){
+          self.showAlert("密码不能为空")
+          return 
+        }
         api.login(e.detail.value).then(data => {
             console.log(data)
             data = data.data
@@ -43,7 +56,7 @@ Page({
             }
             // login failed
             else {
-                self.showAlert(data.message)
+                self.showAlert("账号或者密码错误")
             }
         })
     }
