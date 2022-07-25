@@ -2,11 +2,11 @@
 
   <view class="UCenter-bg">
     <view class="avatar">
-      <image src="https://img2.baidu.com/it/u=222577945,1335509040&fm=253&fmt=auto&app=138&f=JPEG?w=817&h=500"></image>
+      <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.cjyun.org%2Fa%2F10107%2F202005%2F2d52a81649d894be3291200d951689c0.png&refer=http%3A%2F%2Fimg.cjyun.org&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1661308662&t=0eaac15a04854e60045c40b071fe3f7f"></image>
     </view>
     <view class="info">
       <view class="name">
-        <view style="margin-right: 10px;">{{userInfo.name}}</view>
+        <view style="margin-right: 10px;">{{userInfo.name?userInfo.name:'NULL'}}</view>
         <view class="cu-tag bg-{{colors[role]}} light">{{rolesDict[role]}}</view>
       </view>
       <view class="desc">

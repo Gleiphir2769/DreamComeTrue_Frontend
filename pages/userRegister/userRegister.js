@@ -1,15 +1,45 @@
+import {api} from "../../api/api"
+let timer;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    sexPicker:['男','女'],
-    date: '2022-07-25',
-    modalVisible:false,
-    educationPicker:['本科','硕士','博士','其他']
+    alertVisible: false,
+    alertContent: ''
   },
-  hideModal(){
+  showAlert(alertContent) {
+    let self = this;
+    this.setData({
+        alertVisible: true,
+        alertContent
+    })
+    timer = setInterval(function () {
+        self.setData({
+            alertVisible: false,
+        })
+        clearInterval(timer)
+    }, 1000)
+},
+  onRegister(e) {
+    let self=this;
+    api.userRegister(e.detail.value).then(data=>{
+      data=data.data
+      if(data.code===20000){
+          api.login(e.detail.value).then(data2=>{
+            console.log(data2.data.data)
+            wx.setStorageSync('token', data2.data.data.token)
+            wx.setStorageSync('role', data2.data.data.role)
+            wx.setStorageSync('uid', data2.data.data.uid)
+            self.showModal()
+          })
+      }else{
+        self.showAlert(data.message)
+      }
+    })
+  },
+  hideModal() {
     this.setData({
       modalVisible: false
     })
@@ -19,59 +49,5 @@ Page({
       modalVisible: true
     })
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    
-  },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-    
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-    
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-    
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-    
-  }
 })
