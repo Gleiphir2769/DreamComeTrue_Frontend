@@ -96,6 +96,5 @@
 </view>
 <view style="height:100px"></view>
 <view class="cu-bar bg-white tabbar border shop fixed-bottom">
-
-  <view class="bg-blue submit" bindtap="apply">我要报名</view>
+  <view wx:if="{{status!='ongoing'}}" class="bg-blue submit" bindtap="apply">我要报名</view>
 </view>

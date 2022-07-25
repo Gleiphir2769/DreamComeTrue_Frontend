@@ -6,19 +6,27 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+      item: {},
+      uid: null,
+      pid: null,
+      status: null,
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        let item = JSON.parse(options.item)
-        this.setData({
-            item,
-            uid: wx.getStorageSync('uid'),
-            pid: item.id
-        })
+      let item = options.item
+      let p = JSON.parse(item)
+      console.log("options.item:" + p)
+      let status = options.status
+      console.log("options.status:" + status)
+      this.setData({
+          item: p,
+          uid: wx.getStorageSync('uid'),
+          pid: item.id,
+          status: status
+      })
     },
 
     /**
