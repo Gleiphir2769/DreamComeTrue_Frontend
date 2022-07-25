@@ -1,4 +1,5 @@
-/* pages/my/teamReview/teamReview.wxss */
+/* pages/my/projectReview/projectReview.wxss */
+
 .hidden{
   display: none;
 }

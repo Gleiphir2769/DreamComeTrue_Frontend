@@ -1,5 +1,4 @@
-<!--pages/my/teamReview/teamReview.wxml-->
-<!-- <text>pages/my/teamReview/teamReview.wxml</text> -->
+<!--pages/my/projectReview/projectReview.wxml-->
 
 <scroll-view scroll-x class="bg-white nav">
     <view class="flex text-center">
@@ -8,7 +7,6 @@
         </view>
     </view>
 
-    
     <view class="" wx:for="{{result}}">
       <view class="list-item">
       <view class="item-content">
@@ -22,6 +20,18 @@
           手机号：{{item.volunteer.telephone}}
         </view>
       </view>
+
+      <view class="item-content">
+        <view>
+          项目：{{item.project.projectName}}
+        </view>
+        <view>
+          地点：{{item.project.projectLocation}}
+        </view>
+        <view>
+          领域：{{item.project.serviceTarget}}
+        </view>
+      </view>
       
         <view class="item-result">
 
@@ -29,9 +39,10 @@
             <text class="cuIcon-check text-blue"></text>
             <text 
               class="text-blue result-yes" 
-              data-applicationId="{{item.id}}" 
+              data-applicationUid="{{item.uid}}"
+              data-applicationPid="{{item.pid}}"
               data-action="agree" 
-              bindtap="verifyTeamApplication"
+              bindtap="verifyProjectApplication"
               >通过</text>
           </view>
      
@@ -40,9 +51,10 @@
             <text class="cuIcon-close text-red"></text>
             <text 
               class="text-red result-no" 
-              data-applicationId="{{item.id}}" 
+              data-applicationUid="{{item.uid}}"
+              data-applicationPid="{{item.pid}}"
               data-action="disagree" 
-              bindtap="verifyTeamApplication"
+              bindtap="verifyProjectApplication"
               >拒绝</text>
           </view>
 
@@ -51,8 +63,3 @@
       </view>
     </view>
 </scroll-view>
-
-
-
-
-  

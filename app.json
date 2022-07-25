@@ -24,7 +24,8 @@
     "pages/my/volunteer/team/team",
     "pages/my/volunteer/application/application",
     "pages/my/time/time",
-    "pages/my/teamReview/teamReview"
+    "pages/my/teamReview/teamReview",
+    "pages/my/projectReview/projectReview"
   ],
   "window": {
     "backgroundTextStyle": "light",
