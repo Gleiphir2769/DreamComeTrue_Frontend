@@ -3,6 +3,10 @@
         <view class="title">真实姓名</view>
         <input value="{{userInfo.name||''}}" name="name" placeholder="请输入真实姓名"></input>
     </view>
+    <view class="cu-form-group ">
+        <view class="title">邮箱</view>
+        <input value="{{userInfo.email||''}}" name="email" type="email" placeholder="请输入邮箱"></input>
+    </view>
 
 
     <view class="cu-form-group">
@@ -13,11 +17,12 @@
             </view>
         </picker>
     </view>
+    
     <view class="cu-form-group">
         <view class="title">出生日期</view>
         <picker  name="birthDate" mode="date" value="{{date}}" start="1960-09-01" end="2030-09-01" bindchange="datePickerChange">
             <view class="picker">
-                {{date}}
+                {{date||'2022-07-20'}}
             </view>
         </picker>
     </view>

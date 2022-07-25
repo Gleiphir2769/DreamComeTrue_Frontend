@@ -29,6 +29,9 @@ Page({
     }, 1500)
   },
   onRegister(e) {
+    wx.showLoading({
+      title: '加载中',
+    })
     let self = this;
     if (!this.checkPhone(e.detail.value.username)) {
       self.showAlert("手机格式不对～")
@@ -42,6 +45,7 @@ Page({
       data = data.data
       if (data.code === 20000) {
         api.login(e.detail.value).then(data2 => {
+          wx.hideLoading();
           wx.setStorage({
             key: 'token',
             data: data2.data.data.token,

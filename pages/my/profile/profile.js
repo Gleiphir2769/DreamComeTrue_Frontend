@@ -13,12 +13,12 @@ Page({
     alertVisible: false,
     alertContent: '',
     sexPicker: ['男', '女'],
-    sexIndex:0,
+    sexIndex: 0,
     date: '2022-07-25',
     userInfo: {},
     modalVisible: false,
     educationPicker: ['本科', '硕士', '博士', '其他'],
-    educationIndex:3,
+    educationIndex: 3,
   },
   showAlert(alertContent) {
     let self = this;
@@ -36,14 +36,16 @@ Page({
   getUserInfo() {
     let uid = wx.getStorageSync('uid');
     let self = this;
-    let {educationPicker}=this.data;
+    let {
+      educationPicker
+    } = this.data;
     if (uid) {
       api.getUserInfo(uid).then(data => {
         self.setData({
           userInfo: data.data.data,
-          sexIndex: data.data.data.sex==='男'?0:1,
-          educationIndex:educationPicker.indexOf(data.data.data.education)===-1?3:educationPicker.indexOf(data.data.data.education),
-          date:data.data.data.birthDate
+          sexIndex: data.data.data.sex === '男' ? 0 : 1,
+          educationIndex: educationPicker.indexOf(data.data.data.education) === -1 ? 3 : educationPicker.indexOf(data.data.data.education),
+          date: data.data.data.birthDate
         })
 
       })
@@ -52,6 +54,20 @@ Page({
         url: '../../pages/login/login',
       })
     }
+  },
+
+  checkEamil(val) {
+    const reg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+    return reg.test(val)
+  },
+  // onUnload(){
+  //   wx.navigateTo({
+  //     url: '../../my/my',
+  //   })
+  // },
+  checkPhone(value) {
+    const regex = /^1[3456789]\d{9}$/;
+    return regex.test(value)
   },
   onUpdate(e) {
     let uid = wx.getStorageSync('uid');
@@ -62,15 +78,22 @@ Page({
       educationIndex,
       educationPicker
     } = this.data
-    data.sex=sexPicker[sexIndex]
-    data.education=educationPicker[educationIndex]
-   
+    data.sex = sexPicker[sexIndex]
+    data.education = educationPicker[educationIndex]
     let self = this;
     for (let i in data) {
       if (!data[i]) {
         this.showAlert(`${i} cannot be null`)
         return
       }
+    }
+    if (!this.checkEamil(data.email)) {
+      this.showAlert("邮箱格式不正确")
+      return
+    }
+    if (!this.checkPhone(data.telephone)) {
+      this.showAlert("电话格式不正确")
+      return
     }
     api.updateUserProfile(uid, data).then(res => {
       if (res.data.code !== 20000) {
@@ -81,20 +104,20 @@ Page({
     })
 
   },
-  sexPickerChange(e){
+  sexPickerChange(e) {
     this.setData({
-      sexIndex:e.detail.value
+      sexIndex: e.detail.value
     })
   },
-  eduPickerChange(e){
+  eduPickerChange(e) {
     this.setData({
-      educationIndex:e.detail.value
+      educationIndex: e.detail.value
     })
   },
-  datePickerChange(e){
+  datePickerChange(e) {
     console.log(e.detail.value)
     this.setData({
-      date:e.detail.value
+      date: e.detail.value
     })
   },
   onLoad(options) {

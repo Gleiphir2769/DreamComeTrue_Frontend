@@ -137,7 +137,7 @@ Page({
   },
   getTeamNumber(){
     let self=this;
-    let uid = wx.getStorageSync('uid')
+    let uid=wx.getStorageSync('uid')
     api.getTeamList(uid,'agreed').then(res => {
       self.setData({
         teamCount:res.data.data.length

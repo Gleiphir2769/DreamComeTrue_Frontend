@@ -5,7 +5,7 @@ import {
 } from '../../../../api/api'
 Page({
   data: {
-    Tabs : ['已报名', '申请中', '被拒绝'],
+    Tabs : ['unverified', 'agreed', 'disagreed'],
     TabCur:0,
     status:['unverified','agreed','disagreed']
   },
@@ -22,8 +22,8 @@ Page({
       status,
       TabCur
     } = this.data;
-    let uid = wx.getStorageSync('uid');
-    api.getTeamList(uid, status[TabCur]).then(res => {
+    let uid=wx.getStorageSync('uid')
+    api.getTeamList( uid,status[TabCur]).then(res => {
       console.log(res, '获取能够参加的队伍')
       if (res.data.code === 20000) {
         that.setData({
