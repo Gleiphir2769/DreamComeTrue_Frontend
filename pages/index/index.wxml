@@ -1,11 +1,11 @@
 <view class="container">
-    <view class="header">
+    <!-- <view class="header">
         <view class="search">
             <text class="cuIcon-search lg text-gray"></text>
             <input placeholder="搜索项目，团体，文章"/>
             <text class="cuIcon-scan lg text-gray"></text>
         </view>
-    </view>
+    </view> -->
     <view class="header">
         <image style="width: 100%;" src="{{src}}" mode="scaleToFill"></image>
     </view>         
@@ -26,7 +26,7 @@
             <image src="../../images/icons/trends.png"/>
             活动动态
         </view>
-        <view class="grid-item" bindtap="navigate" data-url="userRegister">
+        <!-- <view class="grid-item" bindtap="navigate" data-url="userRegister">
             <image src="../../images/icons/baoming.png"/>
             报名注册
         </view>
@@ -37,27 +37,31 @@
         <view class="grid-item" bindtap="switchTab" data-url="team">
             <image src="../../images/icons/join.png"/>
             加入队伍
-        </view>
-        <view class="grid-item" bindtap="navigate" data-url="projectRealease">
+        </view> -->
+        <view class="grid-item" bindtap="navigate" data-url="projectPublish">
             <image src="../../images/icons/query.png"/>
             项目发布
         </view>
-        <view class="grid-item" bindtap="switchTab" data-url="project">
+        <!-- <view class="grid-item" bindtap="switchTab" data-url="project">
             <image src="../../images/icons/join_project.png"/>
             加入项目
-        </view>
-        <view class="grid-item">
+        </view> -->
+        <!-- <view class="grid-item">
             <image src="../../images/icons/qiandao.png"/>
             签到服务
+        </view> -->
+        <view class="grid-item">
+            <image src="../../images/icons/qiandao.png" bindtap="navigate" data-url="rank"/>
+            排行榜
         </view>
-        <view class="grid-item" bindtap="navigate" data-url="training">
+        <!-- <view class="grid-item" bindtap="navigate" data-url="training">
             <image src="../../images/icons/peixun.png"/>
             在线培训
-        </view>
+        </view> -->
     </view>
-    <view class="tips">
-    </view>
-    <view class="projects">
+    <!-- <view class="tips">
+    </view> -->
+    <!-- <view class="projects">
         <view class="p-header">
             <view>志愿项目</view>
             <view class="more">更多 ></view>
@@ -117,5 +121,5 @@
                 北京憨福儿公益基金
             </view>
         </view>
-    </view>
+    </view> -->
 </view>

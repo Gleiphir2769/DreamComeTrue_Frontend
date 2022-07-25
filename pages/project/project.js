@@ -1,18 +1,15 @@
 // pages/project/project.js
+import {api} from '../../api/project-api'
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
 
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad(options) {
-
+    this.setData({
+      uid: wx.getStorageSync('uid')
+    })
   },
 
   /**
@@ -26,7 +23,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    let that = this
+    let uid = that.data.uid
+    // 获取能够参加的项目
+    api.getProjects(uid).then(res=>{
+      console.log(res, '获取能够参加的项目')
+      if(res.data.code === 20000) {
+        that.setData({
+          projectLists: res.data.data
+        })
+      }
+    })
   },
 
   /**
@@ -66,9 +73,11 @@ Page({
     /**
    * 跳转到项目详情
    */
-  detail() {
+  detail(e) {
+    let item = e.currentTarget.dataset.item
+    item = JSON.stringify(item)
     wx.navigateTo({
-      url: '../project/projectDetail/projectDetail',
+      url: '../project/projectDetail/projectDetail?item=' + item,
     })
   }
 })

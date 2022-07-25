@@ -1,0 +1,86 @@
+<form class="form" bindsubmit="onPublish">
+    <view class="cu-form-group margin-top text-right">
+		<view class="title">负责人姓名</view>
+		<input name="leaderName" placeholder="请输入负责人姓名"></input>
+	</view>
+	<view class="cu-form-group text-right">
+		<view class="title">负责人电话</view>
+		<input name="leaderTelephone" type="number" placeholder="请输入负责人电话"></input>
+	</view>
+    <view class="cu-form-group text-right">
+		<view class="title">负责人邮箱</view>
+		<input name="leaderEmail" placeholder="请输入负责人邮箱"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">队伍名称</view>
+		<picker name="teamName" bindchange="teamChange" value="{{teamIndex?team[teamIndex]:'请选择'}}" range="{{team}}">
+			<view class="picker">
+				{{teamIndex?team[teamIndex]:'请选择'}}
+			</view>
+		</picker>
+	</view>
+    <view class="cu-form-group">
+		<view class="title">所属志愿中心</view>
+		<picker name="centerName" bindchange="centerChange" value="{{centerIndex?center[centerIndex]:'请选择'}}" range="{{center}}">
+			<view class="picker">
+				{{centerIndex?center[centerIndex]:'请选择'}}
+			</view>
+		</picker>
+	</view>
+    <view class="cu-form-group text-right">
+		<view class="title">项目名称</view>
+		<input name="projectName" placeholder="请输入项目名称"></input>
+	</view>
+    <!-- <view class="cu-bar bg-white margin-top">
+		<view class="action">
+			项目logo上传
+		</view>
+		<view class="action">
+			{{imgList.length}}/1
+		</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="grid col-4 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+				<image src='{{imgList[index]}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<4}}">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+		</view>
+	</view> -->
+	<view class="cu-form-group text-right">
+		<view class="title">服务地点</view>
+		<input name="projectLocation" placeholder="请输入服务地点"></input>
+	</view>
+	<view class="cu-form-group text-right">
+		<view class="title">服务领域</view>
+		<input name="serviceArea" placeholder="请输入服务领域"></input>
+	</view>
+    <view class="cu-form-group text-right">
+		<view class="title">服务对象</view>
+		<input name="serviceTarget" placeholder="请输入服务对象"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">项目开始日期</view>
+		<picker name="serviceStartDate" mode="date" value="{{startdate}}" bindchange="startdateChange">
+			<view class="picker">
+				{{startdate}}
+			</view>
+		</picker>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">项目结束日期</view>
+		<picker name="serviceEndDate" mode="date" value="{{enddate}}" start="{{startdate}}" bindchange="enddateChange">
+			<view class="picker">
+				{{enddate}}
+			</view>
+		</picker>
+	</view>
+	<view class="padding-xl">
+		<button form-type="submit" class="cu-btn block bg-blue lg">发布</button>
+	</view>
+</form>

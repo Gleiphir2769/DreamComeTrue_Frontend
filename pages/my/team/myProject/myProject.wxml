@@ -1,0 +1,44 @@
+<scroll-view scroll-x class="bg-white nav">
+    <view class="flex text-center">
+        <view class="cu-item flex-sub {{index==TabCur?'text-blue cur':''}}" wx:for="{{Tabs}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+            {{item}}
+        </view>
+    </view>
+    <!-- 这里是 正在进行中 的代码 -->
+    <view class="results" wx:if="{{TabCur == 0}}" wx:for="{{pendingList}}">
+        <view class="result-item" bindtap="detail" data-item="{{item}}">
+            <view class="result-title">{{item.projectName}}</view>
+            <view class="result-content">
+                <view>{{item.teamName}}</view>
+                <view>{{item.serviceStartDate}}</view>
+            </view>
+            <view class="result-info">
+                <view style="margin-right:20rpx">{{item.centerName}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="results" wx:if="{{TabCur == 1}}" wx:for="{{ongoingList}}">
+        <view class="result-item" bindtap="detail" data-item="{{item}}">
+            <view class="result-title">{{item.projectName}}</view>
+            <view class="result-content">
+                <view>{{item.teamName}}</view>
+                <view>{{item.serviceStartDate}}</view>
+            </view>
+            <view class="result-info">
+                <view style="margin-right:20rpx">{{item.centerName}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="results" wx:if="{{TabCur == 2}}" wx:for="{{finishedList}}">
+        <view class="result-item" bindtap="detail" data-item="{{item}}">
+            <view class="result-title">{{item.projectName}}</view>
+            <view class="result-content">
+                <view>{{item.teamName}}</view>
+                <view>{{item.serviceStartDate}}</view>
+            </view>
+            <view class="result-info">
+                <view style="margin-right:20rpx">{{item.centerName}}</view>
+            </view>
+        </view>
+    </view>
+</scroll-view>

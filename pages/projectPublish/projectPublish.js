@@ -1,10 +1,14 @@
 const app = getApp();
+import {api} from '../../api/project-api'
+var util = require('../../utils/util.js')
 Page({
   data: {
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
-    index: null,
-    picker: ['喵喵喵', '汪汪汪', '哼唧哼唧'],
+    teamIndex: null,
+    centerIndex: null,
+    team: [],
+    center: [],
     multiArray: [
       ['无脊柱动物', '脊柱动物'],
       ['扁性动物', '线形动物', '环节动物', '软体动物', '节肢动物'],
@@ -53,19 +57,29 @@ Page({
     ],
     multiIndex: [0, 0, 0],
     time: '12:01',
-    date: '2018-12-25',
+    startdate: '请选择',
+    enddate: '请选择',
     region: ['广东省', '广州市', '海珠区'],
     imgList: [],
     modalName: null,
     textareaAValue: '',
     textareaBValue: ''
   },
-  PickerChange(e) {
-    console.log(e);
+
+  teamChange(e) {
+    console.log(e)
     this.setData({
-      index: e.detail.value
+      teamIndex: e.detail.value
     })
   },
+
+  centerChange(e) {
+    console.log(e)
+    this.setData({
+      centerIndex: e.detail.value
+    })
+  },
+
   MultiChange(e) {
     this.setData({
       multiIndex: e.detail.value
@@ -137,9 +151,14 @@ Page({
       time: e.detail.value
     })
   },
-  DateChange(e) {
+  startdateChange(e) {
     this.setData({
-      date: e.detail.value
+      startdate: e.detail.value
+    })
+  },
+  enddateChange(e) {
+    this.setData({
+      enddate: e.detail.value
     })
   },
   RegionChange: function(e) {
@@ -198,18 +217,57 @@ Page({
     })
   },
 
-  // 查询所有志愿中心
-  findAllCenter() {
-    wx.request({
-      url: app.globalData.host + '/master/project/admins/3',
-      method: 'GET',
-      success (res) {
-        console.log(res, '查询所有志愿中心')
-      }
+  onLoad() {
+    this.setData({
+      uid: wx.getStorageSync('uid'),
+      // startdate: util.formatDate(new Date()),
+      // enddate: util.formatDate(new Date())
     })
   },
 
   onShow: function () {
-    this.findAllCenter()
+    let that = this
+    let uid = that.data.uid
+    let status = 'agreed'
+    // 获取所有队伍
+    api.getAllTeams(uid, status).then(res=>{
+      console.log(res, '获取所有队伍')
+      if(res.data.code === 20000) {
+        let team = []
+        for (let i = 0; i < res.data.data.length; i++) {
+          team.push(res.data.data[i].name)
+        }
+        that.setData({
+          team
+        })
+      }
+    })
+    // 获取所有志愿中心
+    api.getAllCenters(uid).then(res=>{
+      console.log(res, '获取所有志愿中心')
+      if(res.data.code === 20000) {
+        let center = []
+        for (let i = 0; i < res.data.data.length; i++) {
+          center.push(res.data.data[i].name)
+        }
+        that.setData({
+          center
+        })
+      }
+    })
   },
+
+  onPublish(e) {
+    let that = this
+    let uid = that.data.uid
+    api.publishProject(uid, e.detail.value).then(res => {
+      if (res.data.code === 20000) {
+        wx.showToast({
+          title: '发布成功',
+          icon: 'success',
+          duration: 2000
+        })
+      }
+    })
+  }
 })

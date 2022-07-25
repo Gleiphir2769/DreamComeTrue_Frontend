@@ -1,18 +1,17 @@
-<form>
-    <view class="cu-form-group margin-top">
-        <view class="title">用户名</view>
-        <input placeholder="以字母开头，由数字和字母组成"></input>
-    </view>
-    <view class="cu-form-group">
-        <view class="title">密码</view>
-        <input placeholder="必须包含大小写字母和数字"></input>
-    </view>
-
-
+<form bindsubmit="onRegister">
+  <view class="cu-form-group margin-top">
+    <view class="title">手机号</view>
+    <input name="username" placeholder="请输入手机号"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">密码</view>
+    <input name="password" type="password" placeholder="请输入密码"></input>
+  </view>
+  <view class="padding-xl">
+    <button form-type="submit" class="cu-btn block bg-blue lg">申请</button>
+  </view>
 </form>
-<view class="padding-xl">
-    <button bindtap="showModal" class="cu-btn block bg-blue lg">申请</button>
-</view>
+
 <view class="cu-modal {{modalVisible?'show':''}}">
   <view class="cu-dialog">
     <view class="cu-bar bg-white justify-end">
@@ -22,13 +21,16 @@
       </view>
     </view>
     <view class="padding-xl">
-     是否现在更新个人信息
+      是否现在完善个人信息
     </view>
     <view class="cu-bar bg-white justify-end">
       <view class="action">
-        <button class="cu-btn line-red text-red" bindtap="hideModal">取消</button>
+        <navigator url="/pages/index/index"><button class="cu-btn line-red text-red" bindtap="hideModal">取消</button></navigator>
         <navigator url="/pages/my/profile/profile"><button class="cu-btn bg-blue margin-left" bindtap="hideModal">确定</button></navigator>
       </view>
     </view>
   </view>
+</view>
+<view class="alert" wx:if="{{alertVisible}}">
+  <view class="alert-content">{{alertContent}}</view>
 </view>

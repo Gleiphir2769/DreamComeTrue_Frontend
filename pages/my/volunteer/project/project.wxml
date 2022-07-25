@@ -1,0 +1,31 @@
+<scroll-view scroll-x class="bg-white nav">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{index==TabCur?'text-blue cur':''}}" wx:for="{{Tabs}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+      {{item}}
+    </view>
+  </view>
+  <block wx:if="{{projectLists.length>0}}">
+    <view class="results" wx:for="{{projectLists}}">
+      <view class="result-item"  data-item="{{item}}">
+        <view bindtap="detail" class="result-title">{{item.projectName}}</view>
+        <view class="result-content">
+          <view>{{item.teamName}}</view>
+          <view>{{item.serviceStartDate}}</view>
+        </view>
+        <view class="result-info">
+          <view style="margin-right:20rpx">{{item.centerName}}</view>
+        </view>
+        <view wx:if="{{TabCur===1}}" style="margin-top:10px">
+          <button bindtap="onSignIn" class="cu-btn round bg-blue" style="margin-right: 10px;" data-pid="{{item.id}}">签入</button>
+          <button bindtap="onSignOut" class="cu-btn round bg-cyan" data-pid="{{item.id}}">签出</button>
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="item-blank"> 暂无</view>
+  </block>
+</scroll-view>
+<view class="alert" wx:if="{{alertVisible}}">
+<view class="alert-content">{{alertContent}}</view>
+</view>

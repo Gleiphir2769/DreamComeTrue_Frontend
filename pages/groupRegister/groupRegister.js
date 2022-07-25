@@ -1,6 +1,8 @@
 const app = getApp();
 Page({
   data: {
+    username: '',
+    password: '',
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
     index: null,
@@ -196,5 +198,59 @@ Page({
     this.setData({
       textareaBValue: e.detail.value
     })
-  }
+  },
+  
+  // 获取输入账号 
+  username: function (e) {
+    let username = e.detail.value;
+    this.setData({
+      username: e.detail.value
+    })
+  },
+  
+  // 获取输入密码
+  password: function (e) {
+    let password = e.detail.value;
+    this.setData({
+      password: e.detail.value
+    })
+  },
+
+  //根据用户名和密码注册队伍负责人
+  registLeader:function(){
+    let that=this;
+    console.log(username)
+    console.log(password)
+    wx.request({
+      url: 'https://www.baidu.com', //仅为示例，并非真实的接口地址
+      data: {
+         username: that.data.username,
+         password: that.data.password
+      },
+      method:"POST",
+     
+      success (res) {
+        if(res.statusCode == 200){
+          //提示注册成功
+          wx.showToast({
+            title: '注册成功',
+            icon: 'none',
+            duration: 2000
+          })
+        }else{
+          //提示注册失败
+          wx.showToast({
+            title: '注册失败',
+            icon: 'none',
+            duration: 2000
+          })
+        }
+      }
+
+
+      
+    })
+  },
+
+
 })

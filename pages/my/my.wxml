@@ -1,39 +1,39 @@
-<scroll-view scroll-y class="scrollPage" >
+<scroll-view scroll-y class="scrollPage">
 
   <view class="UCenter-bg">
     <view class="avatar">
-      <image src="https://img2.baidu.com/it/u=222577945,1335509040&fm=253&fmt=auto&app=138&f=JPEG?w=817&h=500"></image>
+      <image src="../../images/logo.jpg"></image>
     </view>
     <view class="info">
       <view class="name">
-        <view style="margin-right: 10px;">小明</view>
-        <view class="cu-tag bg-{{colors[currentRole]}} light">{{roles[currentRole]}}</view>
+        <view style="margin-right: 10px;">{{userInfo.name?userInfo.name:'NULL'}}</view>
+        <view class="cu-tag bg-{{colors[role]}} light">{{rolesDict[role]}}</view>
       </view>
-      <view class="desc">
+      <!-- <view class="desc">
         <text>志愿者编号：12345678121213</text>
         <text class="cuIcon-qrcode"></text>
-      </view>
+      </view> -->
     </view>
 
   </view>
 
-  <view wx:if="{{currentRole===0}}" class="padding flex text-center text-grey bg-white ">
-    <view class="flex flex-sub flex-direction solid-right">
+  <view wx:if="{{role==='user'}}" class="padding flex text-center text-grey bg-white ">
+    <navigator url='/pages/my/volunteer/project/project' class="flex flex-sub flex-direction solid-right">
       <view class="text-xxl text-orange">{{projectCount}}</view>
       <view class="margin-top-sm">
         项目
       </view>
-    </view>
-    <view class="flex flex-sub flex-direction solid-right">
+    </navigator>
+    <navigator url='/pages/my/volunteer/team/team' class="flex flex-sub flex-direction solid-right">
       <view class="text-xxl text-blue">{{teamCount}}</view>
       <view class="margin-top-sm">
-         团体
+         队伍
       </view>
-    </view>
+    </navigator>
     <view class="flex flex-sub flex-direction">
-      <view class="text-xxl text-green">{{timeCount}}</view>
+      <view class="text-xxl text-green">{{timeCount + '分钟'}}</view>
       <view class="margin-top-sm">
-        时长
+        总时长
       </view>
     </view>
   </view>
@@ -48,7 +48,7 @@
 
   </view>
   <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
-    <navigator class="cu-item " url="/pages/login/login">
+    <navigator bindtap="logout" class="cu-item " url="/pages/login/login">
       <view class="content">
         <text class="text-red">退出登录</text>
       </view>
@@ -61,6 +61,3 @@
 
 
 
-<view class="padding-xl">
-  <button class="cu-btn block bg-{{colors[currentRole]}} lg" bindtap="switchRole">切换角色（测试）</button>
-</view>

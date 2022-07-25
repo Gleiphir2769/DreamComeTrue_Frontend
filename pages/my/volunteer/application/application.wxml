@@ -1,0 +1,24 @@
+<scroll-view scroll-x class="bg-white nav">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{index==TabCur?'text-blue cur':''}}" wx:for="{{Tabs}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+      {{item}}
+    </view>
+  </view>
+  <block wx:if="{{projectLists.length>0}}">
+    <view class="results" wx:for="{{projectLists}}">
+      <view class="result-item" bindtap="detail" data-item="{{item}}">
+        <view class="result-title">{{item.projectName}}</view>
+        <view class="result-content">
+          <view>{{item.teamName}}</view>
+          <view>{{item.serviceStartDate}}</view>
+        </view>
+        <view class="result-info">
+          <view style="margin-right:20rpx">{{item.centerName}}</view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="item-blank"> 暂无</view>
+  </block>
+</scroll-view>

@@ -1,0 +1,6 @@
+<view class="padding-tb">
+    <view class="cu-form-group" wx:for="{{rankList}}">
+        <view class="title">{{index + 1}} {{item.name}}</view>
+        <view class="text-right">{{item.activate_time + '分钟'}}</view>
+    </view>
+</view>

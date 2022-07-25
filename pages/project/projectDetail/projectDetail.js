@@ -1,4 +1,5 @@
 // pages/project/projectDetail/projectDetail.js
+import {api} from '../../../api/project-api'
 Page({
 
     /**
@@ -12,7 +13,12 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        let item = JSON.parse(options.item)
+        this.setData({
+            item,
+            uid: wx.getStorageSync('uid'),
+            pid: item.id
+        })
     },
 
     /**
@@ -62,5 +68,28 @@ Page({
      */
     onShareAppMessage: function () {
 
+    },
+    
+    // 报名
+    apply() {
+        let that = this
+        let uid = that.data.uid
+        let pid = that.data.pid
+        api.apply(uid, pid).then(res=>{
+            console.log(res, '报名')
+            if(res.data.code === 20000) {
+                wx.showToast({
+                    title: '报名成功',
+                    icon: 'success',
+                    duration: 2000,
+                })
+            }else{
+              wx.showToast({
+                title: '不能重复加入',
+                image: '../../../images/icons/wrong.png',
+                duration: 2000
+            })
+            }
+        })
     }
 })
