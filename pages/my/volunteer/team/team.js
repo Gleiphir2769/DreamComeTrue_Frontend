@@ -17,6 +17,9 @@ Page({
     this.loadTeams();
   },
   loadTeams() {
+    wx.showLoading({
+      title: '加载中',
+    })
     let that = this
     let {
       status,
@@ -24,7 +27,7 @@ Page({
     } = this.data;
     let uid=wx.getStorageSync('uid')
     api.getTeamList( uid,status[TabCur]).then(res => {
-      console.log(res, '获取能够参加的队伍')
+      wx.hideLoading()
       if (res.data.code === 20000) {
         that.setData({
           teamLists: res.data.data

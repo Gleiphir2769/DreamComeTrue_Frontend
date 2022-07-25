@@ -81,6 +81,9 @@ Page({
   },
 
   loadProjects() {
+    wx.showLoading({
+      title: '加载中',
+    })
     let that = this
     let {
       status,
@@ -88,7 +91,7 @@ Page({
     } = this.data;
     let uid = that.data.uid;
     api.getProjectList(uid, status[TabCur]).then(res => {
-      console.log(res, '获取能够参加的项目')
+      wx.hideLoading()
       if (res.data.code === 20000) {
         that.setData({
           projectLists: res.data.data

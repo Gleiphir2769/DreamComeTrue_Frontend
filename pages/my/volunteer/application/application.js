@@ -24,6 +24,9 @@ Page({
   },
 
   loadProjects() {
+    wx.showLoading({
+      title: '加载中',
+    })
     let that = this
     let {
       status,
@@ -31,7 +34,7 @@ Page({
     } = this.data;
     let uid = that.data.uid;
     api.getProjectApplicationList(uid, status[TabCur]).then(res => {
-      console.log(1234,res.data.data)
+      wx.hideLoading()
       if (res.data.code === 20000) {
         that.setData({
           projectLists: res.data.data

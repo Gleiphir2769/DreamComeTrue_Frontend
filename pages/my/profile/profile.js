@@ -34,6 +34,9 @@ Page({
     }, 1000)
   },
   getUserInfo() {
+    wx.showLoading({
+      title: '加载中',
+    })
     let uid = wx.getStorageSync('uid');
     let self = this;
     let {
@@ -41,6 +44,7 @@ Page({
     } = this.data;
     if (uid) {
       api.getUserInfo(uid).then(data => {
+        wx.hideLoading()
         self.setData({
           userInfo: data.data.data,
           sexIndex: data.data.data.sex === '男' ? 0 : 1,
@@ -70,6 +74,9 @@ Page({
     return regex.test(value)
   },
   onUpdate(e) {
+    wx.showLoading({
+      title: '更新中',
+    })
     let uid = wx.getStorageSync('uid');
     let data = e.detail.value;
     let {
@@ -96,6 +103,7 @@ Page({
       return
     }
     api.updateUserProfile(uid, data).then(res => {
+      wx.hideLoading()
       if (res.data.code !== 20000) {
         self.showAlert(res.data.message)
       } else {
