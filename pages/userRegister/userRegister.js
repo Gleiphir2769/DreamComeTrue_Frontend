@@ -43,9 +43,9 @@ Page({
     }
     api.userRegister(e.detail.value).then(data => {
       data = data.data
+      wx.hideLoading();
       if (data.code === 20000) {
         api.login(e.detail.value).then(data2 => {
-          wx.hideLoading();
           wx.setStorage({
             key: 'token',
             data: data2.data.data.token,
