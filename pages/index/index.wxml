@@ -26,7 +26,7 @@
             <image src="../../images/icons/trends.png"/>
             活动动态
         </view>
-        <view class="grid-item" bindtap="navigate" data-url="userRegister">
+        <!-- <view class="grid-item" bindtap="navigate" data-url="userRegister">
             <image src="../../images/icons/baoming.png"/>
             报名注册
         </view>
@@ -37,15 +37,15 @@
         <view class="grid-item" bindtap="switchTab" data-url="team">
             <image src="../../images/icons/join.png"/>
             加入队伍
-        </view>
+        </view> -->
         <view class="grid-item" bindtap="navigate" data-url="projectPublish">
             <image src="../../images/icons/query.png"/>
             项目发布
         </view>
-        <view class="grid-item" bindtap="switchTab" data-url="project">
+        <!-- <view class="grid-item" bindtap="switchTab" data-url="project">
             <image src="../../images/icons/join_project.png"/>
             加入项目
-        </view>
+        </view> -->
         <!-- <view class="grid-item">
             <image src="../../images/icons/qiandao.png"/>
             签到服务

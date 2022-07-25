@@ -1,7 +1,7 @@
 <view class="my-container">
     <form class="form" bindsubmit="onLogin">
         <view class="logo">
-            <image src="https://dummyimage.com/250/ffffff/000000"></image>
+          <image src="../../images/logo.jpg"></image>
         </view>
         <view class="form-item">
             <text class="cuIcon-people lg text-gray"></text>

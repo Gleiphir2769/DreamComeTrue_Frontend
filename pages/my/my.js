@@ -29,10 +29,16 @@ Page({
         url:'/pages/my/volunteer/team/team'
       },
       {
+        title: '项目申请',
+        role: 'user',
+        url:'/pages/my/volunteer/project/project'
+      },
+      {
         title: '我的项目',
         role: 'user',
         url:'/pages/my/volunteer/project/project'
       },
+  
       // {
       //   title: '排行榜',
       //   role: 'user',

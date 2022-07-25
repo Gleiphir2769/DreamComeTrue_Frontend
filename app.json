@@ -26,7 +26,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#6db2f2",
-    "navigationBarTitleText": "志愿小程序",
+    "navigationBarTitleText": "首页",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {

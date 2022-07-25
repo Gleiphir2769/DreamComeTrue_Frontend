@@ -5,7 +5,7 @@ import {
 Page({
 
   data: {
-    Tabs: ['审核中', '进行中', '已结束','已通过','未通过'],
+    Tabs: ['审核中', '进行中', '已结束','未开始','未通过'],
     TabCur: 0,
     status: ['pending', 'ongoing', 'finished','agreed','disagreed']
   },
