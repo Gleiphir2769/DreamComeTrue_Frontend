@@ -83,11 +83,13 @@ Page({
       sexPicker,
       sexIndex,
       educationIndex,
-      educationPicker
+      educationPicker,
+      date
     } = this.data
     data.sex = sexPicker[sexIndex]
     data.education = educationPicker[educationIndex]
     let self = this;
+    data.birthDate=date;
     for (let i in data) {
       if (!data[i]) {
         this.showAlert(`${i} cannot be null`)
@@ -111,6 +113,9 @@ Page({
         self.showAlert(res.data.message)
       } else {
         self.showAlert(`资料更新成功`)
+        wx.navigateTo({
+          url: '../../my/my',
+        })
       }
     })
 
