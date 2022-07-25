@@ -17,7 +17,7 @@
 
   </view>
 
-  <view wx:if="{{currentRole===0}}" class="padding flex text-center text-grey bg-white ">
+  <view wx:if="{{role==='user'}}" class="padding flex text-center text-grey bg-white ">
     <view class="flex flex-sub flex-direction solid-right">
       <view class="text-xxl text-orange">{{projectCount}}</view>
       <view class="margin-top-sm">
