@@ -1,0 +1,49 @@
+<scroll-view scroll-x class="bg-white nav">
+    <view class="flex text-center">
+        <view class="cu-item flex-sub {{index==TabCur?'text-blue cur':''}}" wx:for="{{Tabs}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+            {{item}}
+        </view>
+    </view>
+    <!-- 这里是 正在进行中 的代码 -->
+    <view class="results">
+      <view class="cu-item flex-sub {{index==TabCur?'text-blue cur':''}}" wx:for="{{IngProjectLists}}">
+        <view class="result-item" bindtap="fillProjectList" data-item="{{item}}">
+            <view class="result-title">{{item.projectName}}</view>
+            <view class="result-content">
+                <text>{{item.teamName}}</text>
+                <view class="margin-right:20px">{{item.serviceStartDate}}</view>
+            </view>
+            <view class="result-info">
+                <view style="margin-right:20rpx">项目联系人:</view><view>{{item.leaderName}}</view>
+                <view style="margin-left:20px; margin-right:20rpx">服务类型:</view><view>{{item.serviceTarget}}</view>
+                <view style="margin-left:30rpx" class="cu-tag line-gray round">{{item.serviceArea}}</view>
+            </view>
+        </view>
+      </view>
+    </view>
+</scroll-view>
+
+<view>
+
+<view class="swiper">
+</view>
+<!-- <view class="filter">
+    <view class="filter-items">
+        <view class="filter-item">发布日期</view>
+        <view class="filter-item">距离远近</view>
+    </view>
+    <view>筛选</view>
+</view> -->
+<view class="results" wx:for="{{projectLists}}">
+    <view class="result-item" bindtap="detail" data-item="{{item}}">
+        <view class="result-title">{{item.projectName}}</view>
+        <view class="result-content">
+            <view>{{item.teamName}}</view>
+            <view>{{item.serviceStartDate}}</view>
+        </view>
+        <view class="result-info">
+            <view style="margin-right:20rpx">{{item.centerName}}</view>
+        </view>
+    </view>
+</view>
+</view>

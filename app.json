@@ -1,62 +1,64 @@
 {
-    "pages": [
-        "pages/index/index",
-        "pages/login/login",
-        "pages/userRegister/userRegister",
-        "pages/groupRegister/groupRegister",
-        "pages/logs/logs",
-        "pages/project/project",
-        "pages/team/team",
-        "pages/activity/activity",
-        "pages/my/my",
-        "pages/training/training",
-        "pages/projectPublish/projectPublish",
-        "pages/team/teamDetail/teamDetail",
-        "pages/project/projectDetail/projectDetail",
-        "pages/my/project/project",
-        "pages/my/profile/profile",
-        "pages/rank/rank",
-        "pages/my/team/member/member",
-        "pages/my/team/projectApplication/projectApplication",
-        "pages/my/team/myProject/myProject",
-        "pages/my/team/projectDetail/projectDetail"
-    ],
-    "window": {
-        "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#6db2f2",
-        "navigationBarTitleText": "志愿小程序",
-        "navigationBarTextStyle": "white"
-    },
-    "tabBar": {
-        "color": "#515a6e",
-        "selectedColor": "#6db2f2",
-        "borderStyle": "white",
-        "list": [
-            {
-                "selectedIconPath": "images/icons/home2.png",
-                "iconPath": "images/icons/home.png",
-                "pagePath": "pages/index/index",
-                "text": "首页"
-            },
-            {
-                "selectedIconPath": "images/icons/team2.png",
-                "iconPath": "images/icons/team.png",
-                "pagePath": "pages/team/team",
-                "text": "志愿队伍"
-            },
-            {
-                "selectedIconPath": "images/icons/project2.png",
-                "iconPath": "images/icons/project.png",
-                "pagePath": "pages/project/project",
-                "text": "志愿项目"
-            },
-            {
-                "selectedIconPath": "images/icons/me2.png",
-                "iconPath": "images/icons/me.png",
-                "pagePath": "pages/my/my",
-                "text": "我的"
-            }
-        ]
-    },
-    "sitemapLocation": "sitemap.json"
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/userRegister/userRegister",
+    "pages/groupRegister/groupRegister",
+    "pages/logs/logs",
+    "pages/project/project",
+    "pages/team/team",
+    "pages/activity/activity",
+    "pages/my/my",
+    "pages/training/training",
+    "pages/projectPublish/projectPublish",
+    "pages/team/teamDetail/teamDetail",
+    "pages/project/projectDetail/projectDetail",
+    "pages/my/project/project",
+    "pages/my/profile/profile",
+    "pages/rank/rank",
+    "pages/my/team/member/member",
+    "pages/my/team/projectApplication/projectApplication",
+    "pages/my/team/myProject/myProject",
+    "pages/my/team/projectDetail/projectDetail",
+    "pages/my/volunteer/project/project",
+    "pages/my/volunteer/team/team"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#6db2f2",
+    "navigationBarTitleText": "志愿小程序",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#515a6e",
+    "selectedColor": "#6db2f2",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "images/icons/home2.png",
+        "iconPath": "images/icons/home.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/icons/team2.png",
+        "iconPath": "images/icons/team.png",
+        "pagePath": "pages/team/team",
+        "text": "志愿队伍"
+      },
+      {
+        "selectedIconPath": "images/icons/project2.png",
+        "iconPath": "images/icons/project.png",
+        "pagePath": "pages/project/project",
+        "text": "志愿项目"
+      },
+      {
+        "selectedIconPath": "images/icons/me2.png",
+        "iconPath": "images/icons/me.png",
+        "pagePath": "pages/my/my",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
 }
