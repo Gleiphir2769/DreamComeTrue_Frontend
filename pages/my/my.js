@@ -21,7 +21,8 @@ Page({
     menus: [],
     menuData: [{
       title: '个人资料',
-      role: 'user'
+      role: 'user',
+      url:'/pages/my/profile/profile'
     },{
         title: '我的队伍',
         role: 'user',
