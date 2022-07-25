@@ -5,14 +5,32 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    //队伍列表是个json数组
+    teamList : [
+      {
+        name : '小小1',
+        headcount : 15,
+        teamStatus : 1,
+        createTime : 1,
+        area : '丰台',
+        tid : 10
+      },
+      {
+        name : '小小2',
+        headcount : 15,
+        teamStatus : 1,
+        createTime : 1,
+        area : '丰台',
+        tid : 15
+      },
+    ],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    this.getTeamList()
   },
 
   /**
@@ -26,7 +44,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    this.getTeamList()
   },
 
   /**
@@ -67,9 +85,45 @@ Page({
   /**
    * 跳转到队伍详情
    */
-  detail() {
+  detail(e) {
+    let id = e.currentTarget.dataset.index;
+    console.log(id)
     wx.navigateTo({
-      url: '../team/teamDetail/teamDetail',
+      url: `../team/teamDetail/teamDetail?id=`+id,
     })
-  }
+  },
+
+  // 获取队伍列表
+  getTeamList(){
+    let that=this;
+    wx.request({
+      url: 'https://dream.cihss.net/api/teams',
+      method:"GET",
+     
+      success (res) {
+        if(res.statusCode == 200){
+          //获得队伍列表
+          //和后端目前还没有通
+          that.setData({
+            teamList: res.data
+          });
+          wx.showToast({
+            title: '获取队伍列表失败',
+            icon: 'none',
+            duration: 2000
+          });
+        }else{
+          //失败
+          // wx.showToast({
+          //   title: '获取队伍列表失败',
+          //   icon: 'none',
+          //   duration: 2000
+          // });
+        }
+      }
+    })
+  },
+
+
+
 })
