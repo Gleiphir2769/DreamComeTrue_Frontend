@@ -1,47 +1,4 @@
 
-<!-- <form>
-  <view wx:for="{{teamDetail}}">
-    <view class="cu-form-group margin-top">
-      <view class="title">队伍名称：{{item.name}}</view>
-      </view>
-      <view class="cu-form-group">
-      <view class="title">负责人姓名：{{item.leader}}</view>
-      </view>
-    <view class="cu-form-group">
-      <view class="title">负责人电话：{{item.leaderTelephone}}</view>
-    </view>
-    <view class="cu-form-group">
-      <view class="title">负责人邮箱：{{item.contactEmail}}</view>
-    </view>
-    <view class="cu-form-group">
-      <view class="title">联系人姓名：{{item.contact}}</view>
-    </view>
-      <view class="cu-form-group">
-      <view class="title">联系人电话：{{item.contactTelephone}}</view>
-    </view>
-    <view class="cu-form-group">
-      <view class="title">主管单位：{{item.organizer}}</view>
-    </view>
-    <view class="cu-form-group">
-      <view class="title">人数：{{item.headcount}}</view>
-    </view>
-    <view class="cu-form-group">
-      <view class="title">服务领域：{{item.serveField}}</view>
-    </view>
-      <view class="cu-form-group">
-      <view class="title">队伍区域：{{item.area}}</view>
-    </view>
-      <view class="cu-form-group">
-      <view class="title">详细地址：{{item.address}}</view>
-    </view>
-  </view>
-
-</form>
-<form bindsubmit="joinTeam">
-  <view class="padding-xl">
-    <button class="cu-btn block bg-blue lg" form-type="submit">我要加入</button>
-  </view>
-</form> -->
 <view class="logo">
   <image src="https://dummyimage.com/300/&text=logo"></image>
 </view>

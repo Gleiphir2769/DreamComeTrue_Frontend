@@ -5,7 +5,7 @@ import {
 Page({
   data: {
     projectCount: 1,
-    teamCount: 24,
+    teamCount: 1,
     timeCount: 0,
     roles: ['user', 'master', 'admin'],
     rolesDict:{
@@ -26,12 +26,12 @@ Page({
     },{
         title: '我的队伍',
         role: 'user',
-        url:'/pages/my/project/project?p=1&title=我的队伍'
+        url:'/pages/my/volunteer/team/team'
       },
       {
         title: '我的项目',
         role: 'user',
-        url:'/pages/my/project/project?p=2&title=我的项目'
+        url:'/pages/my/volunteer/project/project'
       },
       // {
       //   title: '排行榜',

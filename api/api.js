@@ -27,6 +27,15 @@ const api = {
   updateUserProfile(uid,data) {
     let role = wx.getStorageSync('role')
     return put(`${domain}/api/${role}/${uid}`,data)
+  },
+  getProjectList(uid,status){
+    return get(`${domain}/api/user/${uid}/va?status=${status}`)
+  },
+  getProjectApplicationList(uid,status){
+    return get(`${domain}/api/user/va/${uid}/vapplications?status=${status}`)
+  },
+  getTeamList(uid,status){
+    return get(`${domain}/api/teams?uid=${uid}&status=${status}`)
   }
 }
 

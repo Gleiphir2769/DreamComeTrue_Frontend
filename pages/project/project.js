@@ -74,7 +74,6 @@ Page({
    * 跳转到项目详情
    */
   detail(e) {
-    console.log(e)
     let item = e.currentTarget.dataset.item
     item = JSON.stringify(item)
     wx.navigateTo({
