@@ -104,6 +104,8 @@ Page({
 
   onShow: function () {
     let that = this
+    console.log(wx.getStorageSync('uid'))
+    this.getUserInfo()
     let uid = Number(that.data.uid)
     // 查看总时长记录
     myapi.getTotalTime(uid).then(res=>{
