@@ -1,44 +1,26 @@
 <view>
 
-    <view class="swiper">
-    </view>
-    <!-- <view class="filter">
+  <view class="swiper">
+  </view>
+  <!-- <view class="filter">
         <view class="filter-items">
             <view class="filter-item">发布日期</view>
             <view class="filter-item">距离远近</view>
         </view>
         <view>筛选</view>
     </view> -->
-    <view class="results" wx:for="{{projectLists}}">
-        <view class="result-item" bindtap="detail" data-item="{{item}}">
-            <view class="result-title">{{item.projectName}}</view>
-            <view class="result-content">
-                <view>{{item.teamName}}</view>
-                <view>{{item.serviceStartDate}}</view>
-                <view wx:if="{{item.joinStatus == 'unrelated'&&role==='user'}}">
-                    <view class="padding-xs">
-                        <view class="cu-tag bg-red">可加入</view>
-                    </view>
-                </view>
-                <view wx:if="{{item.joinStatus == 'unverified'&&role==='user'}}">
-                    <view class="padding-xs">
-                        <view class="cu-tag bg-yellow">审核中</view>
-                    </view>
-                </view>
-                <view wx:if="{{item.joinStatus == 'agreed'&&role==='user'}}">
-                    <view class="padding-xs">
-                        <view class="cu-tag bg-green">已通过</view>
-                    </view>
-                </view>
-                <view wx:if="{{item.joinStatus == 'disagreed'&&role==='user'}}">
-                    <view class="padding-xs">
-                        <view class="cu-tag bg-blue">未通过</view>
-                    </view>
-                </view>
-            </view>
-            <view class="result-info">
-                <view style="margin-right:20rpx">{{item.centerName}}</view>
-            </view>
-        </view>
+  <view class="results">
+    <view class="result-item" bindtap="detail" wx:for="{{projectLists}}" data-item="{{item}}">
+      <view class="result-title">{{item.projectName}}</view>
+      <view class="result-content">
+        <view>队伍名称：{{item.teamName}}</view>
+        <view></view>
+      </view>
+      <view class="result-info">
+        <view>开始日期：{{item.serviceStartDate}}</view>
+        <view wx:if="{{role==='user'}}" style="margin-left:30rpx" class="cu-tag bg-{{statusDict[item.joinStatus].color}} round">{{statusDict[item.joinStatus].text}}</view>
+      </view>
     </view>
+  </view>
+
 </view>

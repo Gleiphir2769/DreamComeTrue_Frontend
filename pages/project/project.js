@@ -5,7 +5,21 @@ import {
 Page({
 
   data: {
-    role: 'user'
+    role: 'user',
+    statusDict:{
+      unrelated:{
+        "text":"可加入",
+        "color":"red"
+      },
+      unverified:{
+        "text":"审核中",
+        "color":"blue"
+      },
+      agreed:{
+        "text":"已通过",
+        "color":"green"
+      }
+    }
   },
 
   onLoad(options) {
