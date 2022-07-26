@@ -23,35 +23,53 @@ Page({
       })
     },
     onLoad: function (options) {
+<<<<<<< HEAD
+      let item = JSON.parse(options.item)
+||||||| merged common ancestors
       let item = options.item
       let p = JSON.parse(item)
       console.log("options.item:" + p)
       let status = options.status
+      console.log("options.status:" + status)
+=======
+      let item = options.item
+      let p = JSON.parse(item)
+      console.log("options.item:" + p)
+      let status = options.status
+>>>>>>> 0ff52c25fff8a2fe82a91f7710adb0d993fcd020
       this.setData({
-          item: p,
+          item,
           uid: wx.getStorageSync('uid'),
+<<<<<<< HEAD
+          pid: item.id
+||||||| merged common ancestors
+          pid: item.id,
+          status: status
+=======
           pid: p.id,
           status: status
+>>>>>>> 0ff52c25fff8a2fe82a91f7710adb0d993fcd020
       })
     },
     
-    // 报名
+    // 加入
     apply() {
         let that = this
         let uid = that.data.uid
         let pid = that.data.pid
         api.apply(uid, pid).then(res=>{
-            console.log(res, '报名')
+            console.log(res, '加入')
             if(res.data.code === 20000) {
                 wx.showToast({
-                    title: '报名成功',
+                    title: '加入成功',
                     icon: 'success',
                     duration: 2000,
                 })
-            }else{
+            }
+            else if (res.data.code === 50006) {
               wx.showToast({
                 title: '不能重复加入',
-                image: '../../../images/icons/wrong.png',
+                icon: 'error',
                 duration: 2000
             })
             }
