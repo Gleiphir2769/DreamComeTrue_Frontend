@@ -6,11 +6,12 @@ let timer;
 Page({
 
   data: {
-    Tabs: ['pending', 'ongoing', 'finished'],
+    Tabs: ['正在申请中', '正在进行中', '已结束'],
     TabCur: 0,
     status: ['pending', 'ongoing', 'finished'],
     alertVisible:false,
     alertContent:'',
+    projectLists:[],
   },
   showAlert(alertContent) {
     let self = this;
@@ -58,26 +59,54 @@ Page({
     let pid = e.target.dataset.pid
     let inTime = this.getDateTime()
     let that=this;
-    api.signIn(uid, pid, inTime).then(res => {
-      if(res.data.code!==20000){
-        that.showAlert("项目已经签到过了～")
-      }else{
-        that.showAlert("签到成功～")
+    wx.showModal({
+      title: '签入',
+      content: '是否要签入？',
+      success:res=>{
+       if (res.confirm) {
+        api.signIn(uid, pid, inTime).then(res => {
+          if(res.data.code==20000){
+            that.showAlert("签入成功～")
+          }else if(res.data.code==50006){
+            that.showAlert("项目已经签入过了～")
+          }else if(res.data.data==50000){
+            that.showAlert("项目签入失败～")
+          }else{
+            that.showAlert("项目签入失败～")
+          }
+        })
+       } else if (res.cancel) {
+        console.log('用户点击取消----')
+       }
       }
-    })
+     })
   },
   onSignOut(e) {
     let uid = this.data.uid;
     let pid = e.target.dataset.pid;
     let that=this;
     let outTime = this.getDateTime()
-    api.signOut(uid, pid, outTime).then(res => {
-      if(res.data.code!==20000){
-        that.showAlert("项目已经签出过了～")
-      }else{
-        that.showAlert("签出成功～")
+    wx.showModal({
+      title: '签出',
+      content: '是否要签出？',
+      success:res=>{
+       if (res.confirm) {
+        api.signOut(uid, pid, outTime).then(res => {
+          if(res.data.code==20000){
+            that.showAlert("签出成功～")
+          }else if(res.data.data==50006){
+            that.showAlert("项目已经签出过了～")
+          }else if(res.data.data==50000){
+            that.showAlert("项目签出失败～")
+          }else{
+            that.showAlert("项目签出失败～")
+          }
+        })
+       } else if (res.cancel) {
+        console.log('用户点击取消----')
+       }
       }
-    })
+     })
   },
 
   loadProjects() {
@@ -105,9 +134,12 @@ Page({
   },
   detail(e) {
     let item = e.currentTarget.dataset.item
+    console.log("detail item: " + item)
     item = JSON.stringify(item)
+    let status = this.data.status[this.data.TabCur]
+    console.log("status: "+ status)
     wx.navigateTo({
-      url: '../../../project/projectDetail/projectDetail?item=' + item,
+      url: '../../../project/projectDetail/projectDetail?item=' + item + '&status=' + status,
     })
   }
 })

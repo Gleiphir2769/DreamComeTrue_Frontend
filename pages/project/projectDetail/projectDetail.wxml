@@ -96,6 +96,5 @@
 </view>
 
 <view class="cu-bar bg-white tabbar border shop fixed-bottom" wx:if="{{item.joinStatus == 'unrelated'}}">
-
   <view class="bg-blue submit" bindtap="apply">我要加入</view>
 </view>
