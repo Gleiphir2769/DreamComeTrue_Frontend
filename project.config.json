@@ -5,7 +5,7 @@
     "include": []
   },
   "setting": {
-    "urlCheck": false,
+    "urlCheck": true,
     "es6": true,
     "enhance": true,
     "postcss": true,
@@ -37,15 +37,15 @@
     "packNpmManually": false,
     "packNpmRelationList": [],
     "minifyWXSS": true,
-    "showES6CompileOption": false,
-    "useStaticServer": true,
     "disableUseStrict": false,
+    "minifyWXML": true,
+    "showES6CompileOption": false,
     "useCompilerPlugins": false,
-    "minifyWXML": true
+    "useStaticServer": true
   },
   "compileType": "miniprogram",
   "libVersion": "2.19.4",
-  "appid": "wx6b9278f357eec5ba",
+  "appid": "wx8c871f015a3ac28f",
   "projectname": "DreamComeTrue_Frontend",
   "editorSetting": {
     "tabIndent": "insertSpaces",

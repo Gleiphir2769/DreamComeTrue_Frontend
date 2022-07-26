@@ -6,6 +6,7 @@ Page({
      * 页面的初始数据
      */
     data: {
+      role:'user',
       // 队伍详情应该是一个json数组,里面是字典
       teamDetail : [
         {
@@ -32,9 +33,10 @@ Page({
      */
     onLoad: function (options) {
         let item = JSON.parse(options.item)
-        console.log(item)
+        let role=wx.getStorageSync('role')
         this.setData({
             item,
+            role,
             uid: wx.getStorageSync('uid'),
             tid: item.id
         })

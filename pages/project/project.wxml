@@ -1,24 +1,49 @@
 <view>
 
-    <view class="swiper">
-    </view>
-    <!-- <view class="filter">
+  <view class="swiper">
+  </view>
+  <!-- <view class="filter">
         <view class="filter-items">
             <view class="filter-item">发布日期</view>
             <view class="filter-item">距离远近</view>
         </view>
         <view>筛选</view>
     </view> -->
-    <view class="results" wx:for="{{projectLists}}">
-        <view class="result-item" bindtap="detail" data-item="{{item}}">
-            <view class="result-title">{{item.projectName}}</view>
-            <view class="result-content">
-                <view>{{item.teamName}}</view>
-                <view>{{item.serviceStartDate}}</view>
-            </view>
-            <view class="result-info">
-                <view style="margin-right:20rpx">{{item.centerName}}</view>
+    <block wx:if="{{projectLists.length>0}}">
+        <view class="results" wx:for="{{projectLists}}">
+            <view class="result-item" bindtap="detail" data-item="{{item}}">
+                <view class="result-title">{{item.projectName}}</view>
+                <view class="result-content">
+                    <view>{{item.teamName}}</view>
+                    <view>{{item.serviceStartDate}}</view>
+                    <view wx:if="{{item.joinStatus == 'unrelated'&&role==='user'}}">
+                        <view class="padding-xs">
+                            <view class="cu-tag bg-red">可加入</view>
+                        </view>
+                    </view>
+                    <view wx:if="{{item.joinStatus == 'unverified'&&role==='user'}}">
+                        <view class="padding-xs">
+                            <view class="cu-tag bg-yellow">审核中</view>
+                        </view>
+                    </view>
+                    <view wx:if="{{item.joinStatus == 'agreed'&&role==='user'}}">
+                        <view class="padding-xs">
+                            <view class="cu-tag bg-green">已通过</view>
+                        </view>
+                    </view>
+                    <view wx:if="{{item.joinStatus == 'disagreed'&&role==='user'}}">
+                        <view class="padding-xs">
+                            <view class="cu-tag bg-blue">未通过</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="result-info">
+                    <view style="margin-right:20rpx">{{item.centerName}}</view>
+                </view>
             </view>
         </view>
-    </view>
+    </block>
+    <block wx:else>
+        <view class="item-blank"> 暂无</view>
+    </block>
 </view>

@@ -1,17 +1,22 @@
-<view>
+<view class="bg-white nav">
 
-<view class="swiper">
-</view>
-<view class="results" wx:for="{{memberList}}">
-    <view class="result-item" bindtap="detail" data-item="{{item}}">
-        <view class="result-title">姓名：{{item.name}}</view>
-        <view class="result-content">
-            <view>性别：{{item.sex}}</view>
-            <view>入队时间：{{item.joinTime}}</view>
-        </view>
-        <view class="result-info">
-            <view style="margin-right:20rpx">手机号：{{item.telephone}}, 邮箱：{{item.email}}</view>
-        </view>
+    <view class="swiper">
     </view>
-</view>
+    <block wx:if="{{memberList.length>0}}">
+        <view class="results" wx:for="{{memberList}}">
+            <view class="result-item" data-item="{{item}}">
+                <view class="result-title">姓名：{{item.name}}</view>
+                <view class="result-content">
+                    <view>性别：{{item.sex}}</view>
+                    <view>入队时间：{{item.joinTime}}</view>
+                </view>
+                <view class="result-info">
+                    <view style="margin-right:20rpx">手机号：{{item.telephone}}, 邮箱：{{item.email}}</view>
+                </view>
+            </view>
+        </view>
+    </block>
+    <block wx:else>
+        <view class="item-blank"> 暂无</view>
+    </block>
 </view>

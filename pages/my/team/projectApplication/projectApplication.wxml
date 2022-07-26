@@ -5,40 +5,65 @@
         </view>
     </view>
     <!-- 这里是 正在进行中 的代码 -->
-    <view class="results" wx:if="{{TabCur == 0}}" wx:for="{{unverifiedList}}">
-        <view class="result-item" bindtap="detail" data-item="{{item}}">
-            <view class="result-title">{{item.projectName}}</view>
-            <view class="result-content">
-                <view>{{item.teamName}}</view>
-                <view>{{item.serviceStartDate}}</view>
+    <block wx:if="{{TabCur == 0}}">
+        <block wx:if="{{unverifiedList.length>0}}">
+            <view class="results" wx:for="{{unverifiedList}}">
+                <view class="result-item" bindtap="detail" data-item="{{item}}">
+                    <view class="result-title">{{item.projectName}}</view>
+                    <view class="result-content">
+                        <view>{{item.teamName}}</view>
+                        <view>{{item.serviceStartDate}}</view>
+                    </view>
+                    <view class="result-info">
+                        <view style="margin-right:20rpx">{{item.centerName}}</view>
+                    </view>
+                </view>
             </view>
-            <view class="result-info">
-                <view style="margin-right:20rpx">{{item.centerName}}</view>
+        </block>
+        <block wx:else>
+            <view class="item-blank"> 暂无</view>
+        </block>
+    </block>
+
+    <block wx:if="{{TabCur == 1}}">
+        <block wx:if="{{agreedList.length>0}}">
+            <view class="results" wx:for="{{agreedList}}">
+                <view class="result-item" bindtap="detail" data-item="{{item}}">
+                    <view class="result-title">{{item.projectName}}</view>
+                    <view class="result-content">
+                        <view>{{item.teamName}}</view>
+                        <view>{{item.serviceStartDate}}</view>
+                    </view>
+                    <view class="result-info">
+                        <view style="margin-right:20rpx">{{item.centerName}}</view>
+                    </view>
+                </view>
             </view>
-        </view>
-    </view>
-    <view class="results" wx:if="{{TabCur == 1}}" wx:for="{{agreedList}}">
-        <view class="result-item" bindtap="detail" data-item="{{item}}">
-            <view class="result-title">{{item.projectName}}</view>
-            <view class="result-content">
-                <view>{{item.teamName}}</view>
-                <view>{{item.serviceStartDate}}</view>
+        </block>
+        <block wx:else>
+            <view class="item-blank"> 暂无</view>
+        </block>
+    </block>
+
+    <block wx:if="{{TabCur == 2}}">
+        <block wx:if="{{disagreedList.length>0}}">
+            <view class="results" wx:for="{{disagreedList}}">
+                <view class="result-item" bindtap="detail" data-item="{{item}}">
+                    <view class="result-title">{{item.projectName}}</view>
+                    <view class="result-content">
+                        <view>{{item.teamName}}</view>
+                        <view>{{item.serviceStartDate}}</view>
+                    </view>
+                    <view class="result-info">
+                        <view style="margin-right:20rpx">{{item.centerName}}</view>
+                    </view>
+                </view>
             </view>
-            <view class="result-info">
-                <view style="margin-right:20rpx">{{item.centerName}}</view>
-            </view>
-        </view>
-    </view>
-    <view class="results" wx:if="{{TabCur == 2}}" wx:for="{{disagreedList}}">
-        <view class="result-item" bindtap="detail" data-item="{{item}}">
-            <view class="result-title">{{item.projectName}}</view>
-            <view class="result-content">
-                <view>{{item.teamName}}</view>
-                <view>{{item.serviceStartDate}}</view>
-            </view>
-            <view class="result-info">
-                <view style="margin-right:20rpx">{{item.centerName}}</view>
-            </view>
-        </view>
-    </view>
+        </block>
+        <block wx:else>
+            <view class="item-blank"> 暂无</view>
+        </block>
+    </block>
+
+
 </scroll-view>

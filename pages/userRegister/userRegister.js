@@ -29,17 +29,23 @@ Page({
     }, 1500)
   },
   onRegister(e) {
+    wx.showLoading({
+      title: '加载中',
+    })
     let self = this;
     if (!this.checkPhone(e.detail.value.username)) {
       self.showAlert("手机格式不对～")
+      wx.hideLoading()
       return
     }
     if (e.detail.value.password.length < 6) {
       self.showAlert("密码至少为6位")
+      wx.hideLoading()
       return
     }
     api.userRegister(e.detail.value).then(data => {
       data = data.data
+      wx.hideLoading();
       if (data.code === 20000) {
         api.login(e.detail.value).then(data2 => {
           wx.setStorage({
@@ -54,7 +60,23 @@ Page({
                     key: 'role',
                     data: data2.data.data.role,
                     success: function (res) {
-                      self.showModal()
+                      wx.showModal({
+                        title: '提示',
+                        content: '申请成功',
+                        cancelText:'返回首页',
+                        confirmText:'完善资料',
+                        success (res) {
+                          if (res.confirm) {
+                            wx.navigateTo({
+                              url: '/pages/my/profile/profile',
+                            })
+                          } else if (res.cancel) {
+                            wx.switchTab({
+                              url: '/pages/index/index',
+                            })
+                          }
+                        }
+                      })
                     },
                   })
                 },

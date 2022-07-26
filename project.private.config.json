@@ -10,8 +10,8 @@
       "list": [
         {
           "name": "",
-          "pathName": "pages/my/project/project",
-          "query": "p=2",
+          "pathName": "pages/index/index",
+          "query": "",
           "launchMode": "default",
           "scene": null
         }

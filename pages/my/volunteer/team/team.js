@@ -5,9 +5,9 @@ import {
 } from '../../../../api/api'
 Page({
   data: {
-    Tabs : ['已报名', '申请中', '被拒绝'],
+    Tabs : ['已通过','审核中',  '未通过'],
     TabCur:0,
-    status:['unverified','agreed','disagreed']
+    status:['agreed','unverified','disagreed']
   },
   tabSelect(e) {
     let TabCur = e.currentTarget.dataset.id;
@@ -17,14 +17,17 @@ Page({
     this.loadTeams();
   },
   loadTeams() {
+    wx.showLoading({
+      title: '加载中',
+    })
     let that = this
     let {
       status,
       TabCur
     } = this.data;
-    let uid = wx.getStorageSync('uid');
-    api.getTeamList(uid, status[TabCur]).then(res => {
-      console.log(res, '获取能够参加的队伍')
+    let uid=wx.getStorageSync('uid')
+    api.getTeamList( uid,status[TabCur]).then(res => {
+      wx.hideLoading()
       if (res.data.code === 20000) {
         that.setData({
           teamLists: res.data.data

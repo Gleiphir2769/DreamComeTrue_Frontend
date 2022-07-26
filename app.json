@@ -34,6 +34,7 @@
     "navigationBarBackgroundColor": "#6db2f2",
     "navigationBarTitleText": "首页",
     "navigationBarTextStyle": "white"
+    
   },
   "tabBar": {
     "color": "#515a6e",

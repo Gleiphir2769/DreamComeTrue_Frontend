@@ -39,7 +39,7 @@
 	<view class="cu-item">
       <view class="content">
         <view>
-          <text class="title">所属志愿中心：</text>
+          <text class="title">所属单位：</text>
           <text class="text-grey">{{item.centerName||'暂无'}}</text>
         </view>
       </view>
@@ -94,8 +94,7 @@
     </view>
   </view>
 </view>
-<view style="height:100px"></view>
-<view class="cu-bar bg-white tabbar border shop fixed-bottom">
-
-  <view class="bg-blue submit" bindtap="apply">我要报名</view>
+<view style="height: 100px;"></view>
+<view  class="cu-bar bg-white tabbar border shop fixed-bottom" wx:if="{{item.joinStatus == 'unrelated'&&role==='user'&&isAdd===false}}">
+  <view class="bg-blue submit" bindtap="apply">我要加入</view>
 </view>

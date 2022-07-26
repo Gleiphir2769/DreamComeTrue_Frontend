@@ -84,7 +84,7 @@
   </view>
 </view>
 
-<view class="cu-bar bg-white tabbar border shop fixed-bottom">
+<view wx:if="{{role==='user'}}" class="cu-bar bg-white tabbar border shop fixed-bottom">
 
   <!-- <view class="action">
     <view class="cuIcon-share">

@@ -37,7 +37,7 @@
 	<view class="cu-item">
       <view class="content">
         <view>
-          <text class="title">所属志愿中心：</text>
+          <text class="title">所属单位：</text>
           <text class="text-grey">{{item.centerName}}</text>
         </view>
       </view>

@@ -36,7 +36,7 @@ const api = {
     return get(`${domain}/api/user/va/${uid}/vapplications?status=${status}`)
   },
   getTeamList(uid,status){
-    return get(`${domain}/api/teams?uid=${uid}&status=${status}`)
+    return get(`${domain}/api/teams/filter/${uid}?&status=${status}`)
   },
   signIn(uid,pid,inTime){
     return post(`${domain}/api/user/activity/${uid}/in/${pid}?inTime=${inTime}`)
