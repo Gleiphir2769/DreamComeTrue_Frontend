@@ -50,7 +50,7 @@ Page({
                 title: '不能重复加入',
                 icon: 'error',
                 duration: 2000
-            })
+              })
             }
         })
     }

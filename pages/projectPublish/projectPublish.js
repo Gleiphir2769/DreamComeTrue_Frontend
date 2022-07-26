@@ -281,6 +281,13 @@ Page({
             duration: 2000
           })
         }
+        else if (res.data.code === 50006) {
+          wx.showToast({
+            title: '不能重复发布',
+            icon: 'error',
+            duration: 2000
+          })
+        }
       })
     }
   }
