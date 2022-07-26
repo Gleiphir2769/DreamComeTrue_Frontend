@@ -10,67 +10,46 @@ Page({
       uid: null,
       pid: null,
       status: null,
+      role:'user'
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
+    onShow(){
+      let role=wx.getStorageSync('role')
+      this.setData({
+        role
+      })
+    },
     onLoad: function (options) {
+<<<<<<< HEAD
       let item = JSON.parse(options.item)
+||||||| merged common ancestors
+      let item = options.item
+      let p = JSON.parse(item)
+      console.log("options.item:" + p)
+      let status = options.status
+      console.log("options.status:" + status)
+=======
+      let item = options.item
+      let p = JSON.parse(item)
+      console.log("options.item:" + p)
+      let status = options.status
+>>>>>>> 0ff52c25fff8a2fe82a91f7710adb0d993fcd020
       this.setData({
           item,
           uid: wx.getStorageSync('uid'),
+<<<<<<< HEAD
           pid: item.id
+||||||| merged common ancestors
+          pid: item.id,
+          status: status
+=======
+          pid: p.id,
+          status: status
+>>>>>>> 0ff52c25fff8a2fe82a91f7710adb0d993fcd020
       })
-    },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function () {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function () {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
-
     },
     
     // 加入

@@ -15,22 +15,22 @@
             <view class="result-content">
                 <view>{{item.teamName}}</view>
                 <view>{{item.serviceStartDate}}</view>
-                <view wx:if="{{item.joinStatus == 'unrelated'}}">
+                <view wx:if="{{item.joinStatus == 'unrelated'&&role==='user'}}">
                     <view class="padding-xs">
                         <view class="cu-tag bg-red">可加入</view>
                     </view>
                 </view>
-                <view wx:if="{{item.joinStatus == 'unverified'}}">
+                <view wx:if="{{item.joinStatus == 'unverified'&&role==='user'}}">
                     <view class="padding-xs">
                         <view class="cu-tag bg-yellow">审核中</view>
                     </view>
                 </view>
-                <view wx:if="{{item.joinStatus == 'agreed'}}">
+                <view wx:if="{{item.joinStatus == 'agreed'&&role==='user'}}">
                     <view class="padding-xs">
                         <view class="cu-tag bg-green">已通过</view>
                     </view>
                 </view>
-                <view wx:if="{{item.joinStatus == 'disagreed'}}">
+                <view wx:if="{{item.joinStatus == 'disagreed'&&role==='user'}}">
                     <view class="padding-xs">
                         <view class="cu-tag bg-blue">未通过</view>
                     </view>

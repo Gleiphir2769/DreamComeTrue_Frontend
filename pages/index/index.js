@@ -1,6 +1,7 @@
 Page({
     data: {
         cardCur: 0,
+        role:'user',
         swiperList: [{
             id: 0,
             type: 'image',
@@ -22,7 +23,12 @@ Page({
     },
     onLoad() {
         this.towerSwiper('swiperList');
-        // 初始化towerSwiper 传已有的数组名即可
+      
+    },
+    onShow(){
+      this.setData({
+        role:wx.getStorageSync('role')
+      })
     },
     navigate: function (e) {
         let url = e.currentTarget.dataset.url;
