@@ -9,6 +9,7 @@ const myapi = {
 
     getMember(tid, status) {
         return get(`${domain}/api/teams/${tid}/applications?status=${status}`)
+        // return get(`${domain}/api/teams/${tid}/members`)
     },
 
     getProjectApplication(uid, status) {
