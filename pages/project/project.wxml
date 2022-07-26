@@ -1,8 +1,8 @@
 <view>
 
-    <view class="swiper">
-    </view>
-    <!-- <view class="filter">
+  <view class="swiper">
+  </view>
+  <!-- <view class="filter">
         <view class="filter-items">
             <view class="filter-item">发布日期</view>
             <view class="filter-item">距离远近</view>

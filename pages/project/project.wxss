@@ -1,56 +1,90 @@
+.header {
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search {
+  height: 40px;
+  width: 100%;
+  padding: 0 20px;
+  background-color: #f8f8f9;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search text {
+  width: 5%;
+}
+
+.search input {
+  width: 95%;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 0 20rpx;
+}
+
 .filter {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 35rpx 20rpx;
-    border-top: 1px solid#dcdee2;
-    background-color: white;
-    border-bottom: 1px solid#dcdee2;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 35rpx 20rpx;
+  border-top: 1px solid#dcdee2;
+  background-color: white;
+  border-bottom: 1px solid#dcdee2;
 }
 
 .filter-items {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .filter-item {
-    margin: 0 10rpx;
+  margin: 0 10rpx;
 }
 
 .results {
-    display: flex;
-    flex-direction: column;
-    background-color: white;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
 }
 
 .result-item {
-    display: flex;
-    flex-direction: column;
-    padding: 30rpx 20rpx;
-    border-bottom: 1px solid#dcdee2;
+  display: flex;
+  flex-direction: column;
+  padding: 30rpx 20rpx;
+  border-bottom: 1px solid#dcdee2;
 }
 
 .result-title {
-    font-size: 32rpx;
-    font-weight: bold;
+  font-size: 32rpx;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .result-content {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-    width: 100%;
-    margin: 30rpx 0;
-    color: #515a6e;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 80%;
+  margin: 30rpx 0;
+  color: #515a6e;
+  justify-content: space-between;
 }
 
 .result-info {
-    color: #515a6e;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  color: #515a6e;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }

@@ -1,9 +1,25 @@
 // pages/project/project.js
-import {api} from '../../api/project-api'
+import {
+  api
+} from '../../api/project-api'
 Page({
 
   data: {
-    role:'user'
+    role: 'user',
+    statusDict:{
+      unrelated:{
+        "text":"可加入",
+        "color":"red"
+      },
+      unverified:{
+        "text":"审核中",
+        "color":"blue"
+      },
+      agreed:{
+        "text":"已通过",
+        "color":"green"
+      }
+    }
   },
 
   onLoad(options) {
@@ -25,11 +41,11 @@ Page({
   onShow() {
     let that = this
     let uid = that.data.uid
-    let role=wx.getStorageSync('role')
+    let role = wx.getStorageSync('role')
     // 获取能够参加的项目
-    api.getProjects(uid).then(res=>{
+    api.getProjects(uid).then(res => {
       console.log(res, '获取能够参加的项目')
-      if(res.data.code === 20000) {
+      if (res.data.code === 20000) {
         that.setData({
           projectLists: res.data.data,
           role
@@ -72,14 +88,21 @@ Page({
   onShareAppMessage() {
 
   },
-    /**
+  /**
    * 跳转到项目详情
    */
   detail(e) {
-    let item = e.currentTarget.dataset.item
-    item = JSON.stringify(item)
-    wx.navigateTo({
-      url: '../project/projectDetail/projectDetail?item=' + item,
-    })
+    let uid = wx.getStorageSync('uid')
+    if (uid) {
+      let item = e.currentTarget.dataset.item
+      item = JSON.stringify(item)
+      wx.navigateTo({
+        url: '../project/projectDetail/projectDetail?item=' + item,
+      })
+    }else{
+      wx.showToast({
+        title: '请先登录',
+      })
+    }
   }
 })

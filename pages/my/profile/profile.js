@@ -112,10 +112,25 @@ Page({
       if (res.data.code !== 20000) {
         self.showAlert(res.data.message)
       } else {
-        self.showAlert(`资料更新成功`)
-        wx.navigateTo({
-          url: '../../my/my',
+        wx.showModal({
+          title: '提示',
+          content: '资料更新成功',
+          confirmText:'返回我的',
+          success (res) {
+            if (res.confirm) {
+              wx.switchTab({
+                url: '/pages/my/my',
+              })
+            } else if (res.cancel) {
+         
+            }
+          }
         })
+        
+        // wx.switchTab({
+        //   url: '/pages/my/my',
+        // })
+       
       }
     })
 

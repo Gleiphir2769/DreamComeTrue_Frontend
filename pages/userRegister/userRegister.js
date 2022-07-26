@@ -35,10 +35,12 @@ Page({
     let self = this;
     if (!this.checkPhone(e.detail.value.username)) {
       self.showAlert("手机格式不对～")
+      wx.hideLoading()
       return
     }
     if (e.detail.value.password.length < 6) {
       self.showAlert("密码至少为6位")
+      wx.hideLoading()
       return
     }
     api.userRegister(e.detail.value).then(data => {
