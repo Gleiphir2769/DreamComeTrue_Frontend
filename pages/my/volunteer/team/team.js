@@ -5,7 +5,7 @@ import {
 } from '../../../../api/api'
 Page({
   data: {
-    Tabs : ['unverified', 'agreed', 'disagreed'],
+    Tabs : ['审核中', '已通过', '未通过'],
     TabCur:0,
     status:['unverified','agreed','disagreed']
   },

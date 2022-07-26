@@ -31,6 +31,11 @@ Page({
     const regex = /^1[3456789]\d{9}$/;
     return regex.test(value)
   },
+  goHome(){
+    wx.switchTab({
+      url: '/pages/index/index',
+    })
+  },
   checkPassword() {},
 
   onLogin(e) {

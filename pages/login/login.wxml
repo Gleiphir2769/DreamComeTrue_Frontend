@@ -17,12 +17,14 @@
         <view class="footer">
            <navigator url="/pages/userRegister/userRegister"> <text>志愿者注册</text></navigator>
            <navigator url="/pages/groupRegister/groupRegister"> <text>志愿队伍注册</text></navigator>
-      
+ 
         </view>
         <view class="privacy">
-            <checkbox class="round blue" checked></checkbox>
-            <view>
-                登录即表示同意<text class="text-blue">《用户协议》</text></view>
+            <view style="display: flex;flex-direction: column;align-items: center;">
+                <view style="display: flex;flex-direction: row;align-items: center;">   
+                  <checkbox style="margin-right: 10px;" class="round blue" checked></checkbox>登录即表示同意<text class="text-blue" style="margin-right: 5px;">《用户协议》</text></view>
+                <view style="margin-top: 5px;" bindtap="goHome"> <text class="text-grey" >返回首页</text></view>
+              </view>
         </view>
     </form>
 </view>

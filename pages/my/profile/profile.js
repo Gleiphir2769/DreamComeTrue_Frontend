@@ -14,10 +14,16 @@ Page({
     alertContent: '',
     sexPicker: ['男', '女'],
     sexIndex: 0,
-    date: '2022-07-25',
+    dateTime: '2022-07-25',
     userInfo: {},
     modalVisible: false,
     educationPicker: ['本科', '硕士', '博士', '其他'],
+    fieldDict:{
+      name:"真实姓名",
+      email:"邮箱",
+      specialty:'专业特长',
+      telephone:'手机号码'
+    },
     educationIndex: 3,
   },
   showAlert(alertContent) {
@@ -84,15 +90,17 @@ Page({
       sexIndex,
       educationIndex,
       educationPicker,
-      date
+      dateTime,
+      fieldDict
     } = this.data
     data.sex = sexPicker[sexIndex]
     data.education = educationPicker[educationIndex]
     let self = this;
-    data.birthDate=date;
+    data.birthDate=dateTime;
+    console.log(data)
     for (let i in data) {
       if (!data[i]) {
-        this.showAlert(`${i} cannot be null`)
+        this.showAlert(`${fieldDict[i]}不能为空`)
         wx.hideLoading()
         return
       }

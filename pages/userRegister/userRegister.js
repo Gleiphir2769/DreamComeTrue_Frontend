@@ -60,7 +60,23 @@ Page({
                     key: 'role',
                     data: data2.data.data.role,
                     success: function (res) {
-                      self.showModal()
+                      wx.showModal({
+                        title: '提示',
+                        content: '申请成功',
+                        cancelText:'返回首页',
+                        confirmText:'完善资料',
+                        success (res) {
+                          if (res.confirm) {
+                            wx.navigateTo({
+                              url: '/pages/my/profile/profile',
+                            })
+                          } else if (res.cancel) {
+                            wx.switchTab({
+                              url: '/pages/index/index',
+                            })
+                          }
+                        }
+                      })
                     },
                   })
                 },

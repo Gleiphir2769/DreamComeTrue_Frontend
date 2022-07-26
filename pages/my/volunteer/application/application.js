@@ -5,9 +5,9 @@ import {
 Page({
 
   data: {
-    Tabs: ['agreed', 'unverified', 'disagreed'],
+    Tabs: ['申请中','已通过', '未通过'],
     TabCur: 0,
-    status: ['agreed', 'unverified', 'disagreed']
+    status: ['unverified','agreed', 'disagreed'],
   },
   tabSelect(e) {
     let TabCur = e.currentTarget.dataset.id;
