@@ -40,10 +40,12 @@ Page({
     let self = this;
     if (!this.checkPhone(e.detail.value.username)) {
       self.showAlert("手机格式不对")
+      wx.hideLoading()
       return
     }
     if (!e.detail.value.password) {
       self.showAlert("密码不能为空")
+      wx.hideLoading()
       return
     }
     api.login(e.detail.value).then(data => {
