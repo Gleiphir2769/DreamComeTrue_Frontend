@@ -38,7 +38,7 @@
             <image src="../../images/icons/join.png"/>
             加入队伍
         </view> -->
-        <view class="grid-item" bindtap="navigate" data-url="projectPublish">
+        <view wx:if="{{role!=='user'}}" class="grid-item" bindtap="navigate" data-url="projectPublish">
             <image src="../../images/icons/query.png"/>
             项目发布
         </view>

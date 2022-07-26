@@ -3,7 +3,7 @@ import {api} from '../../api/project-api'
 Page({
 
   data: {
-
+    role:'user'
   },
 
   onLoad(options) {
@@ -25,12 +25,14 @@ Page({
   onShow() {
     let that = this
     let uid = that.data.uid
+    let role=wx.getStorageSync('role')
     // 获取能够参加的项目
     api.getProjects(uid).then(res=>{
       console.log(res, '获取能够参加的项目')
       if(res.data.code === 20000) {
         that.setData({
-          projectLists: res.data.data
+          projectLists: res.data.data,
+          role
         })
       }
     })
