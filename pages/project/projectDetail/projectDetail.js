@@ -10,7 +10,8 @@ Page({
       uid: null,
       pid: null,
       status: null,
-      role:'user'
+      role:'user',
+      isAdd:false,
     },
 
     /**
@@ -40,9 +41,12 @@ Page({
             console.log(res, '加入')
             if(res.data.code === 20000) {
                 wx.showToast({
-                    title: '加入成功',
+                    title: '审核中',
                     icon: 'success',
                     duration: 2000,
+                })
+                that.setData({
+                  isAdd:true
                 })
             }
             else if (res.data.code === 50006) {
