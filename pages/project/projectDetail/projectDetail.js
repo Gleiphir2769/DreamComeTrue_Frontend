@@ -23,32 +23,11 @@ Page({
       })
     },
     onLoad: function (options) {
-<<<<<<< HEAD
       let item = JSON.parse(options.item)
-||||||| merged common ancestors
-      let item = options.item
-      let p = JSON.parse(item)
-      console.log("options.item:" + p)
-      let status = options.status
-      console.log("options.status:" + status)
-=======
-      let item = options.item
-      let p = JSON.parse(item)
-      console.log("options.item:" + p)
-      let status = options.status
->>>>>>> 0ff52c25fff8a2fe82a91f7710adb0d993fcd020
       this.setData({
           item,
           uid: wx.getStorageSync('uid'),
-<<<<<<< HEAD
           pid: item.id
-||||||| merged common ancestors
-          pid: item.id,
-          status: status
-=======
-          pid: p.id,
-          status: status
->>>>>>> 0ff52c25fff8a2fe82a91f7710adb0d993fcd020
       })
     },
     
