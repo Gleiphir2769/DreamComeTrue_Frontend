@@ -11,7 +11,7 @@ Page({
     rolesDict:{
       "user":"志愿者",
       "master":"志愿队伍",
-      "admin":"支援中心"
+      "admin":"志愿中心"
     },
     colors:{
       "user":"orange",
@@ -72,12 +72,12 @@ Page({
       {
         title: '队伍审核',
         role: 'admin',
-        url:'/pages/my/project/project?p=6&title=队伍审核'
+        url:'/pages/my/teamReviewCenter/teamReviewCenter'
       },
       {
         title: '项目审核',
         role: 'admin',
-        url:'/pages/my/project/project?p=7&title=项目审核'
+        url:'/pages/my/projectReviewCenter/projectReviewCenter'
       }
     ],
     flag: true
