@@ -108,8 +108,7 @@ Page({
   },
 
   onLoad: function (options) {
-    console.log(wx.getStorageSync('uid'))
-    if (!wx.getStorageSync('uid')) {
+    if (wx.getStorageSync('uid')===undefined) {
       wx.navigateTo({
         url: '../../pages/login/login',
       })
@@ -138,7 +137,7 @@ Page({
   onShow: function () {
     
     let that = this
-    if (wx.getStorageSync('uid')) {
+    if (wx.getStorageSync('uid')!==undefined) {
       this.getProjectNumber()
       this.getUserInfo()
       let uid = wx.getStorageSync('uid')

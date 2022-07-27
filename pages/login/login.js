@@ -10,54 +10,89 @@ Page({
     alertVisible: false,
     alertContent: ''
   },
+  chooseRole() {
+
+  },
   onOneClickLogin(e) {
-    wx.showModal({
-      title: '提示',
-      content: '请选择注册角色',
-      confirmColor:"#000000",
-      cancelColor:"#000000",
-      confirmText:'志愿者',
-      cancelText:'志愿队伍',
-      success (res) {
-        if (res.confirm) {
-          console.log('用户点击确定')
-        } else if (res.cancel) {
-          console.log('用户点击取消')
+    wx.request({
+      url: 'https://dream.cihss.net/wxlogin',
+      method: 'POST',
+      data: {
+        code: e.detail.code
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success(res) {
+        wx.setStorageSync('token', res.data.data.token)
+        wx.setStorageSync('role', res.data.data.role)
+        wx.setStorageSync('uid', res.data.data.uid)
+        if (res.data.data.role == "test") {
+          wx.showModal({
+            title: '第一次注册',
+            content: '请选择注册角色',
+            confirmColor: "#000000",
+            cancelColor: "#000000",
+            confirmText: '志愿者',
+            cancelText: '志愿队伍',
+            success(res2) {
+              if (res2.confirm) {
+                wx.setStorageSync('role', "user")
+                api.updateUserProfile(res.data.data.uid, {}).then(res => {
+                  wx.setStorageSync('token', res.data.data.token)
+                  wx.setStorageSync('role', res.data.data.role)
+                  wx.setStorageSync('uid', res.data.data.uid)
+                  wx.showModal({
+                    title: '提示',
+                    content: '登录成功',
+                    cancelText:'返回首页',
+                    confirmText:'完善资料',
+                    success (res) {
+                      if (res.confirm) {
+                        wx.navigateTo({
+                          url: '/pages/my/profile/profile',
+                        })
+                      } else if (res.cancel) {
+                        wx.switchTab({
+                          url: '/pages/index/index',
+                        })
+                      }
+                    }
+                  })
+                })
+              } else if (res2.cancel) {
+                wx.setStorageSync('role', "master")
+                api.updateUserProfile(res.data.data.uid, {}).then(res => {
+                  wx.setStorageSync('token', res.data.data.token)
+                  wx.setStorageSync('role', res.data.data.role)
+                  wx.setStorageSync('uid', res.data.data.uid)
+                  wx.switchTab({
+                    url: '/pages/my/my',
+                    success: function (e) {
+                      var page = getCurrentPages().pop();
+                      if (page == undefined || page == null) return;
+                      page.onLoad();
+                    }
+                  })
+                })
+              }
+            }
+          })
+        } else {
+          wx.switchTab({
+            url: '/pages/my/my',
+            success: function (e) {
+              var page = getCurrentPages().pop();
+              if (page == undefined || page == null) return;
+              page.onLoad();
+            }
+          })
         }
       }
     })
-    
-    // wx.showActionSheet({
-    //   itemList: ['志愿者', '志愿队伍'],
-    //   success (res) {
-    //     console.log(res.tapIndex)
-    //   },
-    //   fail (res) {
-    //     console.log(res.errMsg)
-    //   }
-    // })
-    
-    // console.log(e)
 
-    // wx.request({
-    //   url: 'https://dream.cihss.net/api/login',
-    //   method: 'POST',
-    //   data: {
-    //     code: e.detail.code
-    //   },
-    //   header: {
-    //     'content-type': 'application/x-www-form-urlencoded' // 默认值
-    //   },
-    //   success(res) {
-    //     console.log(res.data)
-    //     // 返回res.data.role 和 res.data.token
-    //     if (res.data.role == "test") {
-    //       // 第一次登录，与后端沟通后续完善信息事宜
-    //     } else {
 
-    //     }
-    //   }
-    // })
+
   },
   onLoad(options) {
 
@@ -93,7 +128,7 @@ Page({
     let self = this;
     if (!this.checkPhone(e.detail.value.username)) {
       wx.showToast({
-        icon:'error',
+        icon: 'error',
         title: '手机格式不对',
       })
       wx.hideLoading()
@@ -101,7 +136,7 @@ Page({
     }
     if (!e.detail.value.password) {
       wx.showToast({
-        icon:'error',
+        icon: 'error',
         title: '密码不能为空',
       })
       wx.hideLoading()
@@ -118,7 +153,7 @@ Page({
         wx.setStorageSync('uid', data.data.uid)
 
         wx.switchTab({
-          url: '../../pages/my/my',
+          url: '/pages/my/my',
           success: function (e) {
             var page = getCurrentPages().pop();
             if (page == undefined || page == null) return;

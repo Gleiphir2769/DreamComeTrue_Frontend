@@ -28,6 +28,7 @@ const api = {
     let role = wx.getStorageSync('role')
     return put(`${domain}/api/${role}/${uid}`,data)
   },
+
   getProjectList(uid,status){
     let query=status?`?status=${status}`:''
     return get(`${domain}/api/user/${uid}/va${query}`)
