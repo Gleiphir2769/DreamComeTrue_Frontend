@@ -10,17 +10,10 @@ Page({
     teamCount: 1,
     timeCount: 0,
     roles: ['user', 'master', 'admin'],
-<<<<<<< HEAD
     rolesDict:{
       "user":"志愿者",
       "master":"志愿队伍",
       "admin":"志愿中心"
-=======
-    rolesDict: {
-      "user": "志愿者",
-      "master": "志愿队伍",
-      "admin": "支援中心"
->>>>>>> 0564538b119cfd497e5cac81934b2f131d583114
     },
     colors: {
       "user": "orange",

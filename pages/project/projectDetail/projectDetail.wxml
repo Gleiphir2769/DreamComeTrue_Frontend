@@ -1,8 +1,8 @@
 
 
-<view class="logo">
+<!-- <view class="logo">
   <image src="https://dummyimage.com/300/&text=logo"></image>
-</view>
+</view> -->
 <view class="detail padding-tb" >
 
   <view class="cu-list menu">
