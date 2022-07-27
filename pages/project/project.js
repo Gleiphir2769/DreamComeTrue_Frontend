@@ -6,7 +6,7 @@ Page({
 
   data: {
     role: 'user',
-    statusDict:{
+    status:{
       unrelated:{
         "text":"可加入",
         "color":"red"

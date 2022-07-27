@@ -7,85 +7,32 @@ Page({
    */
   data: {
     //队伍列表是个json数组
-    teamList : [
-      {
-        name : '小小1',
-        headcount : 15,
-        teamStatus : 1,
-        createTime : 1,
-        area : '丰台',
-        tid : 10
+    teamList : [],
+    status:{
+      "unrelated":{
+        "text":"可加入",
+        "color":"red"
       },
-      {
-        name : '小小2',
-        headcount : 15,
-        teamStatus : 1,
-        createTime : 1,
-        area : '丰台',
-        tid : 15
+      "unverified":{
+        "text":"审核中",
+        "color":"blue"
       },
-    ],
+      "agreed":{
+        "text":"已加入",
+        "color":"green"
+      },
+      "disagreed":{
+        "text":"未通过",
+        "color":"orange"
+      }
+      
+    }
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad(options) {
     this.getTeamList()
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-    this.getTeamList()
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
-  },
-
-  /**
-   * 跳转到队伍详情
-   */
   detail(e) {
     let item = e.currentTarget.dataset.item;
     item = JSON.stringify(item)
@@ -97,7 +44,8 @@ Page({
   // 获取队伍列表
   getTeamList(){
     let that = this
-    teamapi.getTeamList().then(res=>{
+    let uid=wx.getStorageSync('uid')
+    teamapi.getTeamList(uid).then(res=>{
       console.log(res, '获取队伍列表')
       if(res.data.code === 20000) {
         for (let i = 0; i < res.data.data.length; i++) {
