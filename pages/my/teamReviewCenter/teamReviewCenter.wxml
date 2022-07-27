@@ -1,0 +1,53 @@
+<!--pages/my/teamReviewCenter/teamReviewCenter.wxml-->
+<!-- <text>pages/my/teamReviewCenter/teamReviewCenter.wxml</text> -->
+
+<scroll-view scroll-x class="bg-white nav">
+    <view class="flex text-center">
+        <view class="cu-item flex-sub {{index==TabCur?'text-blue cur':''}}" wx:for="{{Tabs}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+            {{item}}
+        </view>
+    </view>
+
+    
+    <view class="" wx:for="{{result}}">
+      <view class="list-item">
+      <view class="item-content">
+        <view>
+          队伍名称：{{item.name}}
+        </view>
+        <view>
+          队伍组长：{{item.leader}}
+        </view>
+        <view>
+          服务领域：{{item.serveField}}
+        </view>
+      </view>
+      
+        <view class="item-result">
+
+          <view class="{{TabCur!==1?'':'hidden'}}">
+            <text class="cuIcon-check text-blue"></text>
+            <text 
+              class="text-blue result-yes" 
+              data-applicationId="{{item.id}}" 
+              data-action="agree" 
+              bindtap="verifyTeamApplication"
+              >通过</text>
+          </view>
+     
+
+          <view class="{{TabCur!==2?'':'hidden'}}">
+            <text class="cuIcon-close text-red"></text>
+            <text 
+              class="text-red result-no" 
+              data-applicationId="{{item.id}}" 
+              data-action="disagree" 
+              bindtap="verifyTeamApplication"
+              >拒绝</text>
+          </view>
+
+        </view>
+
+      </view>
+    </view>
+</scroll-view>

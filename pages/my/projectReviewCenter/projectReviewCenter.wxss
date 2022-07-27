@@ -1,0 +1,40 @@
+/* pages/my/projectReviewCenter/projectReviewCenter.wxss */
+
+.hidden{
+  display: none;
+}
+
+.list-title {
+  font-size: medium;
+  font-weight: bolder;
+}
+
+.list-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  background-color: white;
+  border-bottom:1px solid rgb(241, 241, 241);
+}
+
+.item-content {
+  font-weight: bold;
+}
+
+.item-content view {
+  margin-top: 15rpx;
+  margin-bottom: 15rpx;
+}
+
+.item-result view {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.result-yes, .result-no {
+  font-weight: bold;
+  margin-left: 10rpx;
+}

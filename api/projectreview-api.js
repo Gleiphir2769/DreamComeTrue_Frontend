@@ -16,4 +16,24 @@ const api = {
   }
 }
 
+const api_center = {
+  // 1. 查看待审核的信息
+  getListProjectApplicationsForUid_1(applicationUid, status) {
+    let uid = applicationUid;
+    return get(`${domain}/api/admin/project/application/${uid}?status=${status}`, {})
+  },
+  // 2. 查看通过/不通过的信息
+  getListProjectApplicationsForUid_2(applicationUid, status) {
+    let uid = applicationUid;
+    return get(`${domain}/api/admin/my/project/action/${uid}?status=${status}`, {})
+  },
+
+  verifyProjectApplication(applicationUid, applicationid, action) {
+    // Uid没用上
+    let pid = applicationid;
+    return put(`${domain}/api/admin/project/verify?projectId=${pid}&action=${action}`, {});
+  }
+}
+
 module.exports = {api}
+module.exports = {api_center}

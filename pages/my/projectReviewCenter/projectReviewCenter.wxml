@@ -1,0 +1,66 @@
+<!--pages/my/projectReviewCenter/projectReviewCenter.wxml-->
+
+<scroll-view scroll-x class="bg-white nav">
+    <view class="flex text-center">
+        <view class="cu-item flex-sub {{index==TabCur?'text-blue cur':''}}" wx:for="{{Tabs}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+            {{item}}
+        </view>
+    </view>
+
+    <view class="" wx:for="{{result}}">
+      <view class="list-item">
+      <view class="item-content">
+        <view>
+          项目名称：{{item.projectName}}
+        </view>
+        <view>
+          项目负责人：{{item.leaderName}}
+        </view>
+        <view>
+          项目位置：{{item.projectLocation}}
+        </view>
+        <view>
+          服务目标人群：{{item.serviceTarget}}
+        </view>
+        <view>
+          项目位置：{{item.projectLocation}}
+        </view>
+      </view>
+
+      <!-- <view class="item-content">
+        <view>
+          服务目标人群：{{item.serviceTarget}}
+        </view>
+        <view>
+          项目位置：{{item.projectLocation}}
+        </view>
+      </view> -->
+      
+        <view class="item-result">
+
+          <view class="{{TabCur!==1?'':'hidden'}}">
+            <text class="cuIcon-check text-blue"></text>
+            <text 
+              class="text-blue result-yes" 
+              data-applicationid="{{item.id}}"
+              data-action="agree" 
+              bindtap="verifyProjectApplication"
+              >通过</text>
+          </view>
+     
+
+          <view class="{{TabCur!==2?'':'hidden'}}">
+            <text class="cuIcon-close text-red"></text>
+            <text 
+              class="text-red result-no" 
+              data-applicationid="{{item.id}}"
+              data-action="disagree" 
+              bindtap="verifyProjectApplication"
+              >拒绝</text>
+          </view>
+
+        </view>
+
+      </view>
+    </view>
+</scroll-view>

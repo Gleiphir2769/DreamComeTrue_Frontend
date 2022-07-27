@@ -10,10 +10,17 @@ Page({
     teamCount: 0,
     timeCount: 0,
     roles: ['user', 'master', 'admin'],
+<<<<<<< HEAD
+    rolesDict:{
+      "user":"志愿者",
+      "master":"志愿队伍",
+      "admin":"志愿中心"
+=======
     rolesDict: {
       "user": "志愿者",
       "master": "志愿队伍",
       "admin": "支援中心"
+>>>>>>> 0564538b119cfd497e5cac81934b2f131d583114
     },
     colors: {
       "user": "orange",
@@ -74,12 +81,12 @@ Page({
       {
         title: '队伍审核',
         role: 'admin',
-        url: '/pages/my/project/project?p=6&title=队伍审核'
+        url:'/pages/my/teamReviewCenter/teamReviewCenter'
       },
       {
         title: '项目审核',
         role: 'admin',
-        url: '/pages/my/project/project?p=7&title=项目审核'
+        url:'/pages/my/projectReviewCenter/projectReviewCenter'
       }
     ],
     flag: true

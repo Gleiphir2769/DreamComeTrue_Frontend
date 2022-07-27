@@ -15,4 +15,19 @@ const api = {
   }
 }
 
+const api_center = {
+  getListTeamApplicationsForUid(applicationid, status) {
+    console.log("~~~~~", status);
+    let uid = applicationid;
+    // 不传uid就是查所有
+    // return get(`${domain}/api/teams?status=${status}&uid=${uid}`, {})
+    return get(`${domain}/api/teams?status=${status}`, {})
+  },
+
+  verifyTeamApplication(applicationid, action) {
+    let id = applicationid;
+    return put(`${domain}/api/teams/${id}/verify?action=${action}`, {});
+  }
+}
 module.exports = {api}
+module.exports = {api_center}
