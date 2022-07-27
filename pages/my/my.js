@@ -6,8 +6,8 @@ import {
 } from "../../api/api"
 Page({
   data: {
-    projectCount: 1,
-    teamCount: 1,
+    projectCount: 0,
+    teamCount: 0,
     timeCount: 0,
     roles: ['user', 'master', 'admin'],
     rolesDict:{
@@ -108,6 +108,7 @@ Page({
   },
 
   onLoad: function (options) {
+    console.log(wx.getStorageSync('uid'))
     if (!wx.getStorageSync('uid')) {
       wx.navigateTo({
         url: '../../pages/login/login',
@@ -124,11 +125,18 @@ Page({
 
   },
   logout() {
-    wx.clearStorageSync()
+    wx.clearStorage({
+      success: (res) => {
+        wx.navigateTo({
+          url: '/pages/login/login',
+        })
+      },
+    })
   },
 
 
   onShow: function () {
+    
     let that = this
     if (wx.getStorageSync('uid')) {
       this.getProjectNumber()
@@ -150,6 +158,7 @@ Page({
     let self = this;
     let uid = wx.getStorageSync('uid')
     api.getTeamList(uid, 'agreed').then(res => {
+      console.log(res)
       self.setData({
         teamCount: res.data.data.length
       })

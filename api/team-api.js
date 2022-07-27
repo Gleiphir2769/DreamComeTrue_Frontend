@@ -3,8 +3,8 @@ import {get, post} from './http'
 const domain = "https://dream.cihss.net"
 
 const teamapi = {
-    getTeamList() {
-        return get(`${domain}/api/teams`)
+    getTeamList(uid) {
+        return get(`${domain}/api/teams/all/filter/${uid}`)
     },
 
     getTeamDetail(id) {
