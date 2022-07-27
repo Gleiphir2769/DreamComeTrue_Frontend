@@ -91,5 +91,6 @@
     </view>
     分享
   </view> -->
-  <view class="bg-blue submit" bindtap="joinTeam">我要加入</view>
+  <view class="bg-{{status[item.joinStatus].color}} submit" bindtap="joinTeam">{{status[item.joinStatus].text}}</view>
+
 </view>

@@ -1,33 +1,37 @@
 <view class="my-container">
-    <form class="form" bindsubmit="onLogin">
-        <view class="logo">
-          <image src="../../images/logo.jpg"></image>
+  <form class="form" bindsubmit="onLogin">
+    <view class="logo">
+      <image src="../../images/logo.jpg"></image>
+    </view>
+    <view class="form-item">
+      <text class="cuIcon-people lg text-gray"></text>
+      <input name="username" placeholder="请输入手机号" />
+    </view>
+    <view class="form-item">
+      <text class="cuIcon-lock lg text-gray"></text>
+      <input name="password" placeholder="请输入密码" type="password" />
+    </view>
+    <view class=" flex flex-direction">
+      <button form-type="submit" class="cu-btn bg-blue lg">登录</button>
+    </view>
+    <view class=" flex flex-direction" style="margin-top: 20rpx;">
+      <button open-type="getPhoneNumber" bindgetphonenumber="onOneClickLogin" class="cu-btn bg-green lg">微信手机号一键登录</button>
+    </view>
+    <view class="footer">
+      <navigator url="/pages/userRegister/userRegister"> <text>志愿者注册</text></navigator>
+      <navigator url="/pages/groupRegister/groupRegister"> <text>志愿队伍注册</text></navigator>
+
+    </view>
+    <view class="privacy">
+      <view style="display: flex;flex-direction: column;align-items: center;">
+        <view style="display: flex;flex-direction: row;align-items: center;">
+          <checkbox style="margin-right: 10px;" class="round blue" checked></checkbox>登录即表示同意<text class="text-blue" style="margin-right: 5px;">《用户协议》</text>
         </view>
-        <view class="form-item">
-            <text class="cuIcon-people lg text-gray"></text>
-            <input name="username" placeholder="请输入手机号" />
-        </view>
-        <view class="form-item">
-            <text class="cuIcon-lock lg text-gray"></text>
-            <input name="password" placeholder="请输入密码" type="password" />
-        </view>
-        <view class="padding flex flex-direction">
-            <button form-type="submit" class="cu-btn bg-blue lg">登录</button>
-        </view>
-        <view class="footer">
-           <navigator url="/pages/userRegister/userRegister"> <text>志愿者注册</text></navigator>
-           <navigator url="/pages/groupRegister/groupRegister"> <text>志愿队伍注册</text></navigator>
- 
-        </view>
-        <view class="privacy">
-            <view style="display: flex;flex-direction: column;align-items: center;">
-                <view style="display: flex;flex-direction: row;align-items: center;">   
-                  <checkbox style="margin-right: 10px;" class="round blue" checked></checkbox>登录即表示同意<text class="text-blue" style="margin-right: 5px;">《用户协议》</text></view>
-                <view style="margin-top: 5px;" bindtap="goHome"> <text class="text-grey" >返回首页</text></view>
-              </view>
-        </view>
-    </form>
+        <view style="margin-top: 5px;" bindtap="goHome"> <text class="text-grey">返回首页</text></view>
+      </view>
+    </view>
+  </form>
 </view>
 <view class="alert" wx:if="{{alertVisible}}">
-<view class="alert-content">{{alertContent}}</view>
+  <view class="alert-content">{{alertContent}}</view>
 </view>

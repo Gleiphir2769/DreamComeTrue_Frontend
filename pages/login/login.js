@@ -10,7 +10,55 @@ Page({
     alertVisible: false,
     alertContent: ''
   },
+  onOneClickLogin(e) {
+    wx.showModal({
+      title: '提示',
+      content: '请选择注册角色',
+      confirmColor:"#000000",
+      cancelColor:"#000000",
+      confirmText:'志愿者',
+      cancelText:'志愿队伍',
+      success (res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+    
+    // wx.showActionSheet({
+    //   itemList: ['志愿者', '志愿队伍'],
+    //   success (res) {
+    //     console.log(res.tapIndex)
+    //   },
+    //   fail (res) {
+    //     console.log(res.errMsg)
+    //   }
+    // })
+    
+    // console.log(e)
 
+    // wx.request({
+    //   url: 'https://dream.cihss.net/api/login',
+    //   method: 'POST',
+    //   data: {
+    //     code: e.detail.code
+    //   },
+    //   header: {
+    //     'content-type': 'application/x-www-form-urlencoded' // 默认值
+    //   },
+    //   success(res) {
+    //     console.log(res.data)
+    //     // 返回res.data.role 和 res.data.token
+    //     if (res.data.role == "test") {
+    //       // 第一次登录，与后端沟通后续完善信息事宜
+    //     } else {
+
+    //     }
+    //   }
+    // })
+  },
   onLoad(options) {
 
   },
@@ -31,7 +79,7 @@ Page({
     const regex = /^1[3456789]\d{9}$/;
     return regex.test(value)
   },
-  goHome(){
+  goHome() {
     wx.switchTab({
       url: '/pages/index/index',
     })
@@ -44,12 +92,18 @@ Page({
     })
     let self = this;
     if (!this.checkPhone(e.detail.value.username)) {
-      self.showAlert("手机格式不对")
+      wx.showToast({
+        icon:'error',
+        title: '手机格式不对',
+      })
       wx.hideLoading()
       return
     }
     if (!e.detail.value.password) {
-      self.showAlert("密码不能为空")
+      wx.showToast({
+        icon:'error',
+        title: '密码不能为空',
+      })
       wx.hideLoading()
       return
     }
@@ -60,11 +114,16 @@ Page({
       if (data.code === 20000) {
 
         wx.setStorageSync('token', data.data.token)
-        console.log(data.data.token)
         wx.setStorageSync('role', data.data.role)
         wx.setStorageSync('uid', data.data.uid)
+
         wx.switchTab({
           url: '../../pages/my/my',
+          success: function (e) {
+            var page = getCurrentPages().pop();
+            if (page == undefined || page == null) return;
+            page.onLoad();
+          }
         })
       }
       // login failed

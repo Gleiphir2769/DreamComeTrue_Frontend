@@ -14,20 +14,26 @@
         </view>
         <view>筛选</view>
     </view> -->
-  <view class="results">
-    <view class="result-item" bindtap="detail" wx:for="{{teamList}}" data-item="{{item}}">
-      <view class="result-title">
-        {{item.name}}
-        <view style="margin-left:15rpx" class="cu-tag bg-{{status[item.joinStatus].color}} light round">{{status[item.joinStatus].text}}</view>
-      </view>
-      <view class="result-content">
-        <view>正式成员：{{item.headcount}}</view>
-        <view>服务领域：{{item.serveField}}</view>
-      </view>
-      <view class="result-info">
-        <view>成立日期：{{item.createTime}}</view>
-        <view style="margin-left:20rpx" class="">{{item.area}}</view>
+  <block wx:if="{{teamList.length>0}}">
+    <view class="results">
+      <view class="result-item" bindtap="detail" wx:for="{{teamList}}" data-item="{{item}}">
+        <view class="result-title">
+          {{item.name}}
+          <view style="margin-left:15rpx" class="cu-tag bg-{{status[item.joinStatus].color}} light round">{{status[item.joinStatus].text}}</view>
+        </view>
+        <view class="result-content">
+          <view>正式成员：{{item.headcount}}</view>
+          <view>服务领域：{{item.serveField}}</view>
+        </view>
+        <view class="result-info">
+          <view>成立日期：{{item.createTime}}</view>
+          <view style="margin-left:20rpx" class="">{{item.area}}</view>
+        </view>
       </view>
     </view>
-  </view>
+
+</block>
+<block wx:else>
+  <view class="item-blank">暂无</view>
+</block>
 </view>

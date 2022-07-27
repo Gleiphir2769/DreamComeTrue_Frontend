@@ -7,7 +7,11 @@
         <view class="title">邮箱</view>
         <input value="{{userInfo.email||''}}" name="email" type="email" placeholder="请输入邮箱"></input>
     </view>
-
+    <view class="cu-form-group">
+        <view class="title">手机号码</view>
+        <input value="{{userInfo.telephone||userInfo.username}}" name="telephone" placeholder="输入手机号"></input>
+      
+    </view>
 
     <view class="cu-form-group">
         <view class="title">性别</view>
@@ -18,6 +22,7 @@
         </picker>
     </view>
     
+    
     <view class="cu-form-group">
         <view class="title">出生日期</view>
         <picker  name="birthDate" mode="date" value="{{date}}" start="1960-09-01" end="2030-09-01" bindchange="datePickerChange">
@@ -26,18 +31,7 @@
             </view>
         </picker>
     </view>
-    <view class="cu-form-group">
-        <view class="title">手机号码</view>
-        <input value="{{userInfo.telephone}}" name="telephone" placeholder="输入手机号"></input>
-        <view class="cu-capsule radius">
-            <view class="cu-tag bg-blue">
-                +86
-            </view>
-            <view class="cu-tag line-blue">
-                中国大陆
-            </view>
-        </view>
-    </view>
+
 
 
     <view class="cu-form-group">

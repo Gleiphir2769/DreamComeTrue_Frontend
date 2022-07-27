@@ -6,7 +6,7 @@
     </view>
     <view class="info">
       <view class="name">
-        <view style="margin-right: 10px;">{{userInfo.name?userInfo.name:"志愿者"+userInfo.uid}}</view>
+        <view style="margin-right: 10px;">{{userInfo.name?userInfo.name:"志愿者"}}</view>
         <view class="cu-tag bg-{{colors[role]}} light">{{rolesDict[role]}}</view>
       </view>
       <!-- <view class="desc">

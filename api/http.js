@@ -1,69 +1,82 @@
-const headers={}
-const getToken=()=>{
-  let token=wx.getStorageSync('token')
-  if(token)
-    token=`Bearer ${token}`
+const headers = {}
+const getToken = () => {
+  let token = wx.getStorageSync('token')
+  if (token)
+    token = `Bearer ${token}`
   return token
 }
-const getHeader=(extraHeaders)=>{
-    let h={"Authorization":getToken()}
-    for(let item in extraHeaders){
-      h[item]=extraHeaders[item]
-    }
-    return h
+const getHeader = (extraHeaders) => {
+  let h = {
+    "Authorization": getToken()
+  }
+  for (let item in extraHeaders) {
+    h[item] = extraHeaders[item]
+  }
+  return h
 }
 
-function get(url, header={}) {
-    return new Promise((resolve, reject) => {
-        wx.request({
-            url,
-            method:'get',
-            header:getHeader(header),
-            success: (res) => {
-                resolve(res)
-            },
-            fail: (res) => {
-                reject(res)
-            }
+function get(url, header = {}) {
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url,
+      method: 'get',
+      header: getHeader(header),
+      success: (res) => {
+        resolve(res)
+      },
+      fail: (res) => {
+        wx.showToast({
+          title: '网络问题',
         })
+        reject(res)
+      }
     })
-}
-
-function post(url,data,header={}) {
-  console.log(getHeader(header))
-  return new Promise((resolve, reject) => {
-      wx.request({
-          url,
-          method:'post',
-          header:getHeader(header),
-          data,
-          success: (res) => {
-              resolve(res)
-          },
-          fail: (res) => {
-              reject(res)
-          }
-      })
   })
 }
 
-function put(url,data,header={}) {
+function post(url, data, header = {}) {
   console.log(getHeader(header))
   return new Promise((resolve, reject) => {
-      wx.request({
-          url,
-          method:'put',
-          header:getHeader(header),
-          data,
-          success: (res) => {
-              resolve(res)
-          },
-          fail: (res) => {
-              reject(res)
-          }
-      })
+    wx.request({
+      url,
+      method: 'post',
+      header: getHeader(header),
+      data,
+      success: (res) => {
+        resolve(res)
+      },
+      fail: (res) => {
+        wx.showToast({
+          title: '网络问题',
+        })
+        reject(res)
+      }
+    })
   })
 }
-module.exports={
-  get,post,put
+
+function put(url, data, header = {}) {
+  console.log(getHeader(header))
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url,
+      method: 'put',
+      header: getHeader(header),
+      data,
+      success: (res) => {
+        resolve(res)
+      },
+      fail: (res) => {
+        wx.showToast({
+          title: '网络问题',
+        })
+        reject(res)
+      }
+    })
+  })
+}
+module.exports = {
+  get,
+  post,
+  put
 }

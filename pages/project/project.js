@@ -6,18 +6,18 @@ Page({
 
   data: {
     role: 'user',
-    status:{
-      unrelated:{
-        "text":"可加入",
-        "color":"red"
+    status: {
+      unrelated: {
+        "text": "可加入",
+        "color": "red"
       },
-      unverified:{
-        "text":"审核中",
-        "color":"blue"
+      unverified: {
+        "text": "审核中",
+        "color": "blue"
       },
-      agreed:{
-        "text":"已通过",
-        "color":"green"
+      agreed: {
+        "text": "已通过",
+        "color": "green"
       }
     }
   },
@@ -34,16 +34,25 @@ Page({
   onReady() {
 
   },
+  onUnload(){
+    this.setData({
+      projectLists:[]
+    })
+  },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow() {
+    wx.showLoading({
+      title: '获取中',
+    })
     let that = this
     let uid = that.data.uid
     let role = wx.getStorageSync('role')
     // 获取能够参加的项目
     api.getProjects(uid).then(res => {
+      wx.hideLoading()
       console.log(res, '获取能够参加的项目')
       if (res.data.code === 20000) {
         that.setData({
@@ -54,52 +63,16 @@ Page({
     })
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
 
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
-  },
-  /**
-   * 跳转到项目详情
-   */
   detail(e) {
     let uid = wx.getStorageSync('uid')
-    if (uid) {
+    if (uid !== undefined) {
       let item = e.currentTarget.dataset.item
       item = JSON.stringify(item)
       wx.navigateTo({
         url: '../project/projectDetail/projectDetail?item=' + item,
       })
-    }else{
+    } else {
       wx.showToast({
         title: '请先登录',
       })

@@ -70,11 +70,7 @@ Page({
     const reg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
     return reg.test(val)
   },
-  // onUnload(){
-  //   wx.navigateTo({
-  //     url: '../../my/my',
-  //   })
-  // },
+
   checkPhone(value) {
     const regex = /^1[3456789]\d{9}$/;
     return regex.test(value)

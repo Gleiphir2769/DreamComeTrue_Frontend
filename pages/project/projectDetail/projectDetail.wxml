@@ -95,6 +95,6 @@
   </view>
 </view>
 <view style="height: 100px;"></view>
-<view  class="cu-bar bg-white tabbar border shop fixed-bottom" wx:if="{{item.joinStatus == 'unrelated'&&role==='user'&&isAdd===false}}">
-  <view class="bg-blue submit" bindtap="apply">我要加入</view>
+<view  class="cu-bar bg-white tabbar border shop fixed-bottom" wx:if="{{role==='user'}}">
+  <view class="bg-{{status[item.joinStatus].color}} submit" bindtap="apply">{{status[item.joinStatus].text}}</view>
 </view>

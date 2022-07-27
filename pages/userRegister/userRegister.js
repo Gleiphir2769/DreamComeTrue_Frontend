@@ -48,6 +48,7 @@ Page({
       wx.hideLoading();
       if (data.code === 20000) {
         api.login(e.detail.value).then(data2 => {
+          console.log(data2)
           wx.setStorage({
             key: 'token',
             data: data2.data.data.token,
@@ -85,7 +86,7 @@ Page({
           })
         })
       } else {
-        self.showAlert(data.message)
+        self.showAlert("手机号已经注册")
       }
     })
   },
