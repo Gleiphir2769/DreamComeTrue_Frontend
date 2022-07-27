@@ -1,7 +1,7 @@
-
+<!-- 
 <view class="logo">
   <image src="https://dummyimage.com/300/&text=logo"></image>
-</view>
+</view> -->
 <view class="detail">
 
   <view class="cu-list menu margin-top">

@@ -10,11 +10,11 @@ Page({
     teamCount: 0,
     timeCount: 0,
     roles: ['user', 'master', 'admin'],
-
     rolesDict:{
       "user":"志愿者",
       "master":"志愿队伍",
-      "admin":"志愿中心"},
+      "admin":"志愿中心"
+    },
     colors: {
       "user": "orange",
       "master": "olive",
@@ -108,27 +108,20 @@ Page({
   },
 
   onLoad: function (options) {
- 
-    if (wx.getStorageSync('uid')===undefined) {
+    console.log(wx.getStorageSync('uid'))
+    if (!wx.getStorageSync('uid')) {
       wx.navigateTo({
         url: '../../pages/login/login',
       })
     } else {
-      wx.showLoading({
-        title: '获取中',
-      })
+      this.loadMenu()
       this.setData({
         uid: wx.getStorageSync('uid')
       })
-      this.getUserInfo()
-      this.loadMenu()
       this.getProjectNumber()
       this.getTeamNumber()
-      wx.hideLoading({
-        success: (res) => {},
-      })
     }
-  
+
 
   },
   logout() {
@@ -143,9 +136,9 @@ Page({
 
 
   onShow: function () {
-  
+    
     let that = this
-    if (wx.getStorageSync('uid')!==undefined) {
+    if (wx.getStorageSync('uid')) {
       this.getProjectNumber()
       this.getUserInfo()
       let uid = wx.getStorageSync('uid')
@@ -158,7 +151,6 @@ Page({
           })
         }
       })
-   
     }
 
   },
